@@ -52,6 +52,7 @@ export default function About({ content }) {
         <Note>
           * Books pulled from my Goodreads library using the{" "}
           <a
+            className="hvr-underline-from-left"
             href="https://www.goodreads.com/api"
             rel="noreferrer"
             target="_blank"

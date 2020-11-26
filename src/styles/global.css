@@ -1,10 +1,11 @@
 body {
   --bg: #f6f6f6;
-  --containerBackground: white;
+  --containerBackground: none;
   --textNormal: #222;
-  --textTitle: #52057b;
-  --textLink: #52057b;
+  --textTitle: #2098d1;
+  --textLink: #2098d1;
   --toggler: #121212;
+  --pOpacity: 1;
 
   background-color: var(--bg);
   transition: background-color 0.5s ease-out;
@@ -19,4 +20,36 @@ body.dark {
   --textTitle: #bc6ff1;
   --textLink: #bc6ff1;
   --toggler: #f6f6f6;
+  --pOpacity: 0.87;
+}
+
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #2098d1;
+  height: 4px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before,
+.hvr-underline-from-left:focus:before,
+.hvr-underline-from-left:active:before {
+  right: 0;
 }

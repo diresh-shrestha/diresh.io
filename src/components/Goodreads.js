@@ -42,7 +42,7 @@ export default function Goodreads({ index }) {
   return (
     <a href={data.goodreadsShelf.reviews[index].book.link} target="_blank">
       <div style={{}}>
-        <img src={imgUrl} alt="" />
+        <img style={{ maxWidth: `80%` }} src={imgUrl} alt="" />
       </div>
     </a>
   )
