@@ -31,6 +31,7 @@ const StyledLink = styled(AnchorLink)`
   letter-spacing: 0.5rem;
   color: var(--textNormal);
   transition: color 0.5s linear;
+
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
