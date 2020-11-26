@@ -1,20 +1,51 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Personal Website | Diresh Shrestha`,
+    description: `Diresh Shrestha's personal website`,
+    author: `@diresh`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/content/`,
       },
     },
+    {
+      resolve: "gatsby-source-goodreads",
+      options: {
+        developerKey: "n64tyIdRZf7Ymjj0rULGow",
+        goodReadsUserId: "57923769-diresh-shrestha",
+      },
+    },
+
+    `gatsby-transformer-remark`,
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    "gatsby-theme-elements",
+    "gatsby-plugin-dark-mode",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

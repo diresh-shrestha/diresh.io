@@ -1,0 +1,22 @@
+body {
+  --bg: #f6f6f6;
+  --containerBackground: white;
+  --textNormal: #222;
+  --textTitle: #52057b;
+  --textLink: #52057b;
+  --toggler: #121212;
+
+  background-color: var(--bg);
+  transition: background-color 0.5s ease-out;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #121212;
+  --containerBackground: #212121;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textTitle: #bc6ff1;
+  --textLink: #bc6ff1;
+  --toggler: #f6f6f6;
+}
