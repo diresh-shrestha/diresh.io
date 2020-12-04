@@ -2,7 +2,7 @@
 
 My personal portfolio website with an integrated blog published on [diresh.io](diresh.io). This is the first website I have ever built and it will be under constant development. If you have any suggestions or advice, I am open to all of them!
 
-# Motivation
+## Motivation
 
 I have been learning web development for the past few months on my spare time, and I had just finished learning React. I wanted to build a static website using what I had learned but I didn't know what. So, I thought I'd build my own personal website using [Gatsby](https://www.gatsbyjs.com/). I learned more building this than I had in the past few months just studying by myself.
 
