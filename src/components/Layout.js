@@ -10,8 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
-import ScrollToTop from "./scroll-to-top"
-import Footer from "./sections/Footer"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,7 +30,6 @@ const Layout = ({ children }) => {
       <div style={{ marginTop: `4rem` }}>
         <main>{children}</main>
         <Footer />
-        {/* <ScrollToTop /> */}
       </div>
     </>
   )

@@ -38,7 +38,7 @@ const LinkToHome = styled(Link)`
 const HeaderContent = styled.div`
   margin: auto;
   max-width: 1200px;
-  padding: 0.7rem 3rem;
+  padding: 0.7rem 1rem;
 `
 
 const LogoImg = styled(FontAwesomeIcon)`

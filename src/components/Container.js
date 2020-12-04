@@ -11,7 +11,8 @@ const Container = styled.div`
     margin: 2rem auto;
   }
   @media (max-width: 768px) {
-    margin: 0;
+    margin: 1rem;
   }
+  transition: background 0.5s ease-out;
 `
 export default Container

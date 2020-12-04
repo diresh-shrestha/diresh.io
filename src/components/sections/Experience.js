@@ -19,8 +19,11 @@ const Content = styled.div`
     width: 100%;
     position: relative;
   }
-  .ul {
-    display: inline-block;
+  ul {
+    display: list-item;
+  }
+  h4 {
+    margin-top: 0rem;
   }
 `
 const TextWrapper = styled.p`
@@ -31,18 +34,20 @@ export default function Experience({ content }) {
   const experience = content.map(exp => {
     const { body, frontmatter } = exp.node
     const technologies = frontmatter.technologies.map(item => {
-      return (
-        <ul className="ul">
-          <li>{item}</li>
-        </ul>
-      )
+      return <li>{item}</li>
     })
     return (
       <div style={{ marginBottom: `1rem` }}>
-        <a href={frontmatter.external} target="_blank">
+        <a
+          className="hvr-underline-from-left"
+          href={frontmatter.external}
+          target="_blank"
+        >
           <h4>{frontmatter.name}</h4>
         </a>
-        <p>{frontmatter.title}</p>
+        <p>
+          <em>{frontmatter.title}</em>
+        </p>
         <p>{frontmatter.date}</p>
         <Content>
           <Img
@@ -53,7 +58,7 @@ export default function Experience({ content }) {
           <TextWrapper>
             <MDXRenderer>{body}</MDXRenderer>
             <p>Technologies Used:</p>
-            {technologies}
+            <ul>{technologies}</ul>
           </TextWrapper>
         </Content>
         <hr />

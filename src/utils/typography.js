@@ -8,6 +8,7 @@ fairyGateTheme.overrideThemeStyles = () => ({
     color: "var(--textTitle)",
     opacity: "var(--pOpacity)",
   },
+
   p: {
     opacity: "var(--pOpacity)",
     color: "var(--textNormal)",
