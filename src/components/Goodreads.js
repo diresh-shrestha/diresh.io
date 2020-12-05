@@ -44,7 +44,6 @@ export default function Goodreads({ index }) {
       <div>
         <img
           className="hvr-float-shadow"
-          style={{ maxWidth: `80%` }}
           src={imgUrl}
           alt={data.goodreadsShelf.reviews[index].book.title}
         />

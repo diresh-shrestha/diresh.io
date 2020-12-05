@@ -57,13 +57,22 @@ const StyledImg = styled(Img)`
   left: 0;
   width: 100%;
   z-index: -1;
-  margin: 2rem auto;
+  margin: 2rem 1rem;
   border: 20px;
 
   height: 700px;
   max-width: 600px;
   @media (max-width: 768px) {
-    height: 400px;
+    max-width: 700px;
+    margin: 2rem auto;
+    height: 600px;
+  }
+  @media (max-width: 425px) {
+    width: 380px;
+    height: auto;
+  }
+  @media (max-width: 320px) {
+    width: 300px;
   }
 `
 

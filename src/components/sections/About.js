@@ -4,6 +4,15 @@ import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Goodreads from "../Goodreads"
 
+const Wrapper = styled(Container)`
+  @media (max-width: 768px) {
+    margin-top: 20rem;
+  }
+  @media (max-width: 425px) {
+    margin-top: 15rem;
+  }
+`
+
 const ContentWrapper = styled.div`
   margin: auto 2rem;
 `
@@ -11,6 +20,7 @@ const ContentWrapper = styled.div`
 const BookContainer = styled.div`
   display: flex;
   flex-direction: row;
+  text-align: center;
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -30,7 +40,7 @@ const Note = styled.p`
 export default function About({ content }) {
   const { frontmatter, body } = content[0].node
   return (
-    <Container id="about">
+    <Wrapper id="about">
       <ContentWrapper>
         <h1>{frontmatter.title}</h1>
         <p>
@@ -61,6 +71,6 @@ export default function About({ content }) {
           </a>
         </Note>
       </ContentWrapper>
-    </Container>
+    </Wrapper>
   )
 }
