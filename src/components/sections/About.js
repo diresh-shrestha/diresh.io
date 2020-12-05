@@ -62,9 +62,6 @@ export default function About({ content }) {
   const { frontmatter, body } = content[0].node
   return (
     <Wrapper
-      data-sal="slide-up"
-      data-sal-delay="200"
-      data-sal-easing="ease"
       id="about"
     >
       <ContentWrapper>
