@@ -61,7 +61,12 @@ const AboutImg = styled.img`
 export default function About({ content }) {
   const { frontmatter, body } = content[0].node
   return (
-    <Wrapper id="about">
+    <Wrapper
+      data-sal="slide-up"
+      data-sal-delay="200"
+      data-sal-easing="ease"
+      id="about"
+    >
       <ContentWrapper>
         <h1>{frontmatter.title}</h1>
 
