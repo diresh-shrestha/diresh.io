@@ -6,10 +6,7 @@ import Goodreads from "../Goodreads"
 
 const Wrapper = styled(Container)`
   @media (max-width: 768px) {
-    margin-top: 20rem;
-  }
-  @media (max-width: 425px) {
-    margin-top: 15rem;
+    margin-top: 25rem;
   }
 `
 
