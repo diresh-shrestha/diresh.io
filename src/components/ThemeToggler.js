@@ -29,7 +29,7 @@ const Ball = styled.div`
   transform: translateX(0px);
 
   ${({ theme }) =>
-    window.localStorage.theme === "dark" &&
+    localStorage.getItem("theme") === "dark" &&
     `
     transform: translateX(20px);
 
