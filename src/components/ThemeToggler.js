@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import styled from "styled-components"
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 
 const StyledLabel = styled.label`
   background-color: var(--toggler);
@@ -47,7 +46,7 @@ export default function MyComponent() {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
-        <StyledLabel class="label" for="chk">
+        <StyledLabel for="chk">
           <StyledInput
             id="chk"
             type="checkbox"
