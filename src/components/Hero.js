@@ -3,6 +3,8 @@ import styled from "styled-components"
 import Typer from "./Typer"
 import Img from "gatsby-image"
 import Container from "./Container"
+import SocialLinks from "./icons/SocialLinks"
+import { Link } from "gatsby"
 
 const ContainerWrapper = styled.div`
   width: 100%;
@@ -28,22 +30,17 @@ const TextWrapper = styled(Container)`
   background: none;
   position: relative;
   padding: 0;
-  padding: 1rem;
   text-align: left;
   margin-top: 10rem;
   h1 {
     margin: 0;
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: var(--textTitle);
   }
   @media (max-width: 768px) {
     margin-top: 4rem;
   }
-  @media (max-width: 1040px) {
-    h1 {
-      font-size: 4rem;
-    }
-  }
+
   @media (max-width: 425px) {
     h1 {
       font-size: 3rem;
@@ -93,14 +90,27 @@ const ImageWrapper = styled.div`
   max-width: 600px;
 `
 
+const Links = styled.div`
+  margin-top: 2rem;
+`
+
 export default function Hero({ desktop, mobile }) {
   return (
     <Wrapper>
       <ContainerWrapper>
         <TextWrapper>
-          <h1>Hi! I'm Diresh.</h1>
-
-          <p>A Software Developer</p>
+          <h1>Hello!</h1>
+          <p>My name is</p>
+          <h1>Diresh Shrestha</h1>
+          <div style={{ marginTop: `2rem` }}>
+            <p>
+              A Software Developer having experience with React, Gatsby and
+              Graphql
+            </p>
+          </div>
+          <Links>
+            <SocialLinks />
+          </Links>
         </TextWrapper>
 
         <StyledImg fluid={desktop} />
