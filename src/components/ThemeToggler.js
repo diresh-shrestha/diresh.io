@@ -29,7 +29,7 @@ const Ball = styled.div`
   transform: translateX(0px);
 
   ${({ theme }) =>
-    theme === "dark" &&
+    window.localStorage.theme === "dark" &&
     `
     transform: translateX(20px);
 
@@ -43,6 +43,7 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
+  //const current = window.localStorage.theme;
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
