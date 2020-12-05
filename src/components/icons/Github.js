@@ -7,12 +7,12 @@ const Links = styled.a`
 const Github = () => {
   return (
     <Links
+      className="hvr-float-shadow"
       href="https://github.com/diresh-shrestha"
       rel="noreferrer"
       target="_blank"
     >
       <svg
-        className="hvr-float-shadow"
         xmlns="http://www.w3.org/2000/svg"
         width="32"
         height="32"

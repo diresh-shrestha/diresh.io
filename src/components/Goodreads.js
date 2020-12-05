@@ -41,9 +41,9 @@ export default function Goodreads({ index }) {
   imgUrl = imgUrl.replace("98", "2000")
   return (
     <a href={data.goodreadsShelf.reviews[index].book.link} target="_blank">
-      <div>
+      <div className="hvr-float-shadow">
         <img
-          className="hvr-float-shadow"
+          style={{ marginBottom: `0` }}
           src={imgUrl}
           alt={data.goodreadsShelf.reviews[index].book.title}
         />

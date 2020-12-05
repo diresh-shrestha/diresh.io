@@ -8,12 +8,12 @@ const Links = styled.a`
 const Linkedin = ({ color }) => {
   return (
     <Links
+      className="hvr-float-shadow"
       href="https://www.linkedin.com/in/diresh-shrestha/"
       rel="noreferrer"
       target="_blank"
     >
       <svg
-        className="hvr-float-shadow"
         height="32"
         width="32"
         xmlns="http://www.w3.org/2000/svg"

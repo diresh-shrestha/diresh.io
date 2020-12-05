@@ -3,10 +3,11 @@ import Container from "../Container"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Goodreads from "../Goodreads"
+import AboutPic from "../../images/About.jpg"
 
 const Wrapper = styled(Container)`
   @media (max-width: 768px) {
-    margin-top: 25rem;
+    margin-top: 30rem;
   }
 `
 
@@ -30,8 +31,31 @@ const Book = styled.div`
   }
 `
 
+const Content = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
+
 const Note = styled.p`
+  margin-top: 1rem;
   font-size: 0.8rem;
+`
+
+const AboutImg = styled.img`
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 1rem;
+  @media (max-width: 768px) {
+    margin: 2rem auto;
+  }
+  @media (max-width: 375px) {
+    width: 200px;
+    height: 200px;
+  }
 `
 
 export default function About({ content }) {
@@ -40,10 +64,14 @@ export default function About({ content }) {
     <Wrapper id="about">
       <ContentWrapper>
         <h1>{frontmatter.title}</h1>
-        <p>
-          <MDXRenderer>{body}</MDXRenderer>
-        </p>
 
+        <Content>
+          <AboutImg className="hvr-float-shadow" src={AboutPic} alt="" />
+
+          <p>
+            <MDXRenderer>{body}</MDXRenderer>
+          </p>
+        </Content>
         <BookContainer>
           <Book>
             <h3>Currently Reading</h3>

@@ -29,7 +29,7 @@ module.exports = {
     },
 
     `gatsby-transformer-remark`,
-
+    `gatsby-plugin-scroll-reveal`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     "gatsby-theme-elements",

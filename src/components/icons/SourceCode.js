@@ -8,12 +8,12 @@ const Links = styled.a`
 const SourceCode = () => {
   return (
     <Links
+      className="hvr-float-shadow"
       href="https://github.com/diresh-shrestha/diresh.io"
       rel="noreferrer"
       target="_blank"
     >
       <svg
-        className="hvr-float-shadow"
         height="32"
         width="32"
         color={"var(--textLink)"}

@@ -31,6 +31,7 @@ const TextWrapper = styled(Container)`
   position: relative;
   padding: 0;
   text-align: left;
+  margin: 0 1rem;
   margin-top: 10rem;
   h1 {
     margin: 0;
@@ -49,16 +50,20 @@ const TextWrapper = styled(Container)`
 `
 
 const StyledImg = styled(Img)`
-  //  top: 40px;
   border-radius: 20px;
   left: 0;
   width: 100%;
   z-index: -1;
-  margin: 2rem 1rem;
+
   border: 20px;
 
   height: 700px;
-  max-width: 600px;
+  width: 600px;
+  margin: auto 1rem;
+  @media (max-width: 1024px) {
+    width: 500px;
+    height: 600px;
+  }
   @media (max-width: 768px) {
     max-width: 700px;
     margin: 2rem auto;
@@ -85,9 +90,7 @@ const MobileImg = styled(Img)`
 `
 
 const ImageWrapper = styled.div`
-  padding: 1rem;
-
-  max-width: 600px;
+  margin: 2rem auto;
 `
 
 const Links = styled.div`
@@ -112,8 +115,9 @@ export default function Hero({ desktop, mobile }) {
             <SocialLinks />
           </Links>
         </TextWrapper>
-
-        <StyledImg fluid={desktop} />
+        <ImageWrapper className="hvr-float-shadow">
+          <StyledImg fluid={desktop} />
+        </ImageWrapper>
 
         {/* <MobileImg fluid={mobile} /> */}
       </ContainerWrapper>

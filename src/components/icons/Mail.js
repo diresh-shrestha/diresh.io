@@ -6,9 +6,11 @@ const Links = styled.a`
 `
 const Mail = () => {
   return (
-    <Links href="mailto:direshshrestha95@gmail.com">
+    <Links
+      className="hvr-float-shadow"
+      href="mailto:direshshrestha95@gmail.com"
+    >
       <svg
-        className="hvr-float-shadow"
         width="32"
         height="32"
         xmlns="http://www.w3.org/2000/svg"
