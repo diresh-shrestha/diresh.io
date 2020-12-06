@@ -8,6 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import favicon from "../images/favicon.ico"
+import Helmet from "react-helmet"
 
 import Header from "./Header"
 import Footer from "./Footer"
@@ -25,7 +27,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={"DS"} />
+      <Helmet>
+        <link rel="icon" href={favicon} />
+      </Helmet>
+      <Header siteTitle={"Diresh Shrestha"} />
 
       <div style={{ marginTop: `4rem` }}>
         <main>{children}</main>

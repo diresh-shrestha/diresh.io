@@ -8,9 +8,7 @@ import { faMountain } from "@fortawesome/free-solid-svg-icons"
 import Hamburger from "./Navbar/Hamburger"
 import Menu from "./Navbar/Menu"
 import { ClickAwayListener } from "@material-ui/core"
-import Time from "./Time"
-import ThemeToggler from "./ThemeToggler"
-
+import Mountain from "./icons/Mountain"
 const HeaderWrapper = styled.header`
   height: 80px;
   background-color: var(--bg);
@@ -72,10 +70,7 @@ const Header = () => {
     <HeaderWrapper>
       <HeaderContent>
         <LinkToHome onClick={handleScroll} to="/">
-          <LogoImg
-            style={{ width: `40px`, height: `40px` }}
-            icon={faMountain}
-          />
+          <Mountain />
         </LinkToHome>
         {/* <Contain>
 
