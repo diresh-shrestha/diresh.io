@@ -34,13 +34,7 @@ const Ball = styled.div`
     transform: translateX(20px);
 
   `};
-  /* ${({ current }) =>
-    current === "dark" &&
-    `
-  transform: translateX(20px);
 
-`};
- */
   transition: transform 0.2s linear;
 `
 
@@ -50,7 +44,10 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
-  const current = localStorage.getItem("theme")
+  if (typeof window !== "undefined") {
+    const current = localStorage.getItem("theme")
+  }
+
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
