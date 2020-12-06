@@ -28,6 +28,7 @@ const Content = styled.div`
 `
 const TextWrapper = styled.p`
   margin: 1rem;
+  width: fit-content;
 `
 
 export default function Experience({ content }) {

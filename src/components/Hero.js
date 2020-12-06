@@ -105,6 +105,7 @@ export default function Hero({ desktop, mobile }) {
           <h1>Hello!</h1>
           <p>My name is</p>
           <h1>Diresh Shrestha</h1>
+
           <div style={{ marginTop: `2rem` }}>
             <p>
               A Software Developer having experience with React, Gatsby and

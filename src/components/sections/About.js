@@ -5,6 +5,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Goodreads from "../Goodreads"
 import AboutPic from "../../images/About.jpg"
 
+import Skills from "../icons/Skills"
+
 const Wrapper = styled(Container)`
   @media (max-width: 768px) {
     margin-top: 30rem;
@@ -58,12 +60,14 @@ const AboutImg = styled.img`
   }
 `
 
+const InnerHeading = styled.h1`
+  text-align: center;
+`
+
 export default function About({ content }) {
   const { frontmatter, body } = content[0].node
   return (
-    <Wrapper
-      id="about"
-    >
+    <Wrapper id="about">
       <ContentWrapper>
         <h1>{frontmatter.title}</h1>
 
@@ -74,6 +78,14 @@ export default function About({ content }) {
             <MDXRenderer>{body}</MDXRenderer>
           </p>
         </Content>
+        <InnerHeading>Skills</InnerHeading>
+        <Skills />
+
+        <InnerHeading>Books</InnerHeading>
+        <p>
+          I love reading books. My favorite genre is science fiction but i also
+          read biographies, educational and self-help.
+        </p>
         <BookContainer>
           <Book>
             <h3>Currently Reading</h3>

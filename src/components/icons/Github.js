@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Links = styled.a`
   margin-right: 1rem;
 `
-const Github = () => {
+const Github = link => {
   return (
     <Links
       className="hvr-float-shadow"
