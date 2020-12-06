@@ -8,8 +8,9 @@ import Java from "./Java"
 import Python from "./Python"
 
 const SkillWrapper = styled.div`
+  display: flex;
   margin: 2.5rem 0px;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
   justify-content: center;
 `
