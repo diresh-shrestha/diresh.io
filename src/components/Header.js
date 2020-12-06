@@ -50,14 +50,18 @@ const Header = () => {
   // For OutsideClickHandler
   const handleClickAway = () => {
     setOpen(false)
-    clearAllBodyScrollLocks()
   }
 
-  if (open) {
-    disableBodyScroll(document.querySelector("#lock"))
-  } else {
-    enableBodyScroll(document.querySelector("#lock"))
-  }
+  // const targetElement =
+  //   typeof window !== `undefined` ? document.querySelector("#lock") : null
+
+  // const targetElement = document.querySelector("#lock")
+
+  // if (open) {
+  //   disableBodyScroll(document.querySelector("#lock"))
+  // } else {
+  //   enableBodyScroll(document.querySelector("#lock"))
+  // }
 
   // Scroll to top function
   const handleScroll = () => {
