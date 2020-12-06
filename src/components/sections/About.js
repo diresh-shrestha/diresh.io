@@ -3,13 +3,15 @@ import Container from "../Container"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Goodreads from "../Goodreads"
-import AboutPic from "../../images/About.jpg"
 
 import Skills from "../icons/Skills"
 
 const Wrapper = styled(Container)`
   @media (max-width: 768px) {
-    margin-top: 30rem;
+    margin-top: 40rem;
+  }
+  @media (max-width: 425px) {
+    margin-top: 35rem;
   }
 `
 
@@ -49,20 +51,6 @@ const Note = styled.p`
   font-size: 0.8rem;
 `
 
-const AboutImg = styled.img`
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  margin: 1rem;
-  @media (max-width: 768px) {
-    margin: 2rem auto;
-  }
-  @media (max-width: 375px) {
-    width: 200px;
-    height: 200px;
-  }
-`
-
 const InnerHeading = styled.p`
   margin-top: 5rem;
   text-align: center;
@@ -76,8 +64,6 @@ export default function About({ content }) {
         <h1>{frontmatter.title}</h1>
 
         <Content>
-          <AboutImg className="hvr-float-shadow" src={AboutPic} alt="" />
-
           <p>
             <MDXRenderer>{body}</MDXRenderer>
           </p>

@@ -132,7 +132,7 @@ export default function Hero({ desktop, mobile }) {
             </a>
           </ButtonWrapper>
         </TextWrapper>
-        <ImageWrapper className="hvr-float-shadow">
+        <ImageWrapper>
           <StyledImg fluid={desktop} />
         </ImageWrapper>
 
