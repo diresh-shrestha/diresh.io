@@ -59,7 +59,7 @@ export default function MyComponent() {
             checked={theme === "dark"}
           />
 
-          <Ball theme={theme} current={current} />
+          <Ball theme={theme} />
         </StyledLabel>
       )}
     </ThemeToggler>
