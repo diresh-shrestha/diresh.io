@@ -22,6 +22,9 @@ const StyledButton = styled.button`
   font-size: 16px;
   margin: 2rem 0rem;
   margin-right: 1rem;
+  @media (max-width: 320px) {
+    margin-right: 0.5rem;
+  }
 `
 
 export default function Button({ text }) {

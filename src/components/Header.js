@@ -3,12 +3,17 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import NavLink from "./navlink"
 import { Link } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMountain } from "@fortawesome/free-solid-svg-icons"
+
 import Hamburger from "./Navbar/Hamburger"
 import Menu from "./Navbar/Menu"
 import { ClickAwayListener } from "@material-ui/core"
 import Mountain from "./icons/Mountain"
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock"
+
 const HeaderWrapper = styled.header`
   height: 80px;
   background-color: var(--bg);
@@ -39,27 +44,20 @@ const HeaderContent = styled.div`
   padding: 0.7rem 1rem;
 `
 
-const LogoImg = styled(FontAwesomeIcon)`
-  vertical-align: middle;
-  color: var(--textNormal);
-`
-
-const Contain = styled.div`
-  position: fixed;
-  left: 40%;
-  top: 30px;
-  display: inline-flex;
-`
-
 const Header = () => {
   // States to display the hamburger menu for mobile and tablet devices
   const [open, setOpen] = useState(false)
   // For OutsideClickHandler
   const handleClickAway = () => {
     setOpen(false)
+    clearAllBodyScrollLocks()
   }
 
-  const [hover, setHover] = useState(false)
+  if (open) {
+    disableBodyScroll(document.querySelector("#lock"))
+  } else {
+    enableBodyScroll(document.querySelector("#lock"))
+  }
 
   // Scroll to top function
   const handleScroll = () => {
@@ -72,10 +70,7 @@ const Header = () => {
         <LinkToHome onClick={handleScroll} to="/">
           <Mountain />
         </LinkToHome>
-        {/* <Contain>
 
-          <ThemeToggler />
-        </Contain> */}
         <NavLink />
 
         <ClickAwayListener onClickAway={handleClickAway}>
