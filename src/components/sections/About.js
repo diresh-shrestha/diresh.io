@@ -28,6 +28,9 @@ const BookContainer = styled.div`
 `
 const Book = styled.div`
   margin: 0rem 3rem;
+  p {
+    margin-top: 1rem;
+  }
   @media (max-width: 425px) {
     margin: 0;
   }
@@ -60,7 +63,8 @@ const AboutImg = styled.img`
   }
 `
 
-const InnerHeading = styled.h1`
+const InnerHeading = styled.p`
+  margin-top: 5rem;
   text-align: center;
 `
 
@@ -78,22 +82,23 @@ export default function About({ content }) {
             <MDXRenderer>{body}</MDXRenderer>
           </p>
         </Content>
-        <InnerHeading>Skills</InnerHeading>
+        <InnerHeading>
+          <strong>Technologies</strong> I've been using recently
+        </InnerHeading>
         <Skills />
 
-        <InnerHeading>Books</InnerHeading>
-        <p>
-          I love reading books. My favorite genre is science fiction but i also
-          read biographies, educational and self-help.
-        </p>
+        <InnerHeading>
+          <strong>Books</strong> I've been reading recently{" "}
+        </InnerHeading>
+
         <BookContainer>
           <Book>
-            <h3>Currently Reading</h3>
+            <p>Currently Reading</p>
 
             <Goodreads index={0} />
           </Book>
           <Book>
-            <h3>Last Read</h3>
+            <p>Last Read</p>
 
             <Goodreads index={1} />
           </Book>

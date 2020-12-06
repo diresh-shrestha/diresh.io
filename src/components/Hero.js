@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Container from "./Container"
 import SocialLinks from "./icons/SocialLinks"
 import { Link } from "gatsby"
+import Button from "./Button"
 
 const ContainerWrapper = styled.div`
   width: 100%;
@@ -38,6 +39,7 @@ const TextWrapper = styled(Container)`
     font-size: 2.5rem;
     color: var(--textTitle);
   }
+
   @media (max-width: 768px) {
     margin-top: 4rem;
   }
@@ -97,6 +99,11 @@ const Links = styled.div`
   margin-top: 2rem;
 `
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 export default function Hero({ desktop, mobile }) {
   return (
     <Wrapper>
@@ -107,14 +114,23 @@ export default function Hero({ desktop, mobile }) {
           <h1>Diresh Shrestha</h1>
 
           <div style={{ marginTop: `2rem` }}>
-            <p>
-              A Software Developer having experience with React, Gatsby and
-              Graphql
-            </p>
+            <p>A Software Developer</p>
           </div>
           <Links>
             <SocialLinks />
           </Links>
+          <ButtonWrapper>
+            <Link to="/contact">
+              <Button text="CONTACT" />
+            </Link>
+            <a
+              href="https://drive.google.com/file/d/1Y-Yin6Q1JhdJSlYTc-DFjtFyf626Tjgm/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button text="RESUME" />
+            </a>
+          </ButtonWrapper>
         </TextWrapper>
         <ImageWrapper className="hvr-float-shadow">
           <StyledImg fluid={desktop} />

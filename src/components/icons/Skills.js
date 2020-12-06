@@ -7,6 +7,9 @@ import Javascript from "./JavaScript"
 import Java from "./Java"
 import Python from "./Python"
 import Graphql from "./Graphql"
+import Node from "./Node"
+import Gatsby from "./Gatsby"
+import Mongodb from "./Mongodb"
 
 const SkillWrapper = styled.div`
   display: flex;
@@ -79,23 +82,22 @@ export default function Skills() {
         </SkillList>
 
         <SkillList>
-          <Python />
+          <Node />
         </SkillList>
         <SkillList>
-          <Java />
+          <Gatsby />
+        </SkillList>
+        <SkillList>
+          <Mongodb />
         </SkillList>
       </StyledUl>
-      <StyledUl
-        style={{ animationPlayState: enter && "paused" }}
-        aria-hidden="true"
-      >
+      <StyledUl style={{ animationPlayState: enter && "paused" }}>
         <SkillList>
           <Html />
         </SkillList>
         <SkillList>
           <Css />
         </SkillList>
-
         <SkillList>
           <Javascript />
         </SkillList>
@@ -105,24 +107,21 @@ export default function Skills() {
         <SkillList>
           <Graphql />
         </SkillList>
+
         <SkillList>
-          <Python />
+          <Node />
         </SkillList>
         <SkillList>
-          <Java />
+          <Gatsby />
         </SkillList>
       </StyledUl>
-      <StyledUl
-        style={{ animationPlayState: enter && "paused" }}
-        aria-hidden="true"
-      >
+      <StyledUl style={{ animationPlayState: enter && "paused" }}>
         <SkillList>
           <Html />
         </SkillList>
         <SkillList>
           <Css />
         </SkillList>
-
         <SkillList>
           <Javascript />
         </SkillList>
@@ -132,11 +131,12 @@ export default function Skills() {
         <SkillList>
           <Graphql />
         </SkillList>
+
         <SkillList>
-          <Python />
+          <Node />
         </SkillList>
         <SkillList>
-          <Java />
+          <Gatsby />
         </SkillList>
       </StyledUl>
     </SkillWrapper>

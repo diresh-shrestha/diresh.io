@@ -16,7 +16,7 @@ const SourceCode = () => {
       <svg
         height="32"
         width="32"
-        color={"var(--textLink)"}
+        color="grey"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 640 512"
       >
