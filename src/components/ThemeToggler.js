@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import styled from "styled-components"
+import { check } from "prettier"
 
 const StyledLabel = styled.label`
   background-color: var(--toggler);
@@ -45,7 +46,7 @@ const StyledInput = styled.input`
 
 export default function MyComponent() {
   if (typeof window !== "undefined") {
-    const current = localStorage.getItem("theme")
+    localStorage.setItem("theme", "light")
   }
 
   return (
