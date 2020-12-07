@@ -110,11 +110,11 @@ export default function Hero({ desktop, mobile }) {
       <ContainerWrapper>
         <TextWrapper>
           <h1>Hello!</h1>
-          <p>My name is</p>
+          <p style={{ marginBottom: `0`, marginTop: `1rem` }}>My name is</p>
           <h1>Diresh Shrestha</h1>
 
-          <div style={{ marginTop: `2rem` }}>
-            <p>A Software Developer</p>
+          <div style={{ marginTop: `1rem` }}>
+            <p>Software Developer</p>
           </div>
           <Links>
             <SocialLinks />

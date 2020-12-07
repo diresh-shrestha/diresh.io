@@ -21,6 +21,9 @@ const ListWrapper = styled.ul`
   list-style: none;
   float: right;
   margin: 0.5rem auto;
+  @media (max-width: 425px) {
+    margin: 0.8rem 1rem;
+  }
 `
 
 const Links = styled(AnchorLink)`

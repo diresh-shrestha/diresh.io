@@ -29,8 +29,8 @@ const Ball = styled.div`
   width: 18px;
   transform: translateX(0px);
 
-  ${({ theme }) =>
-    theme === "dark" &&
+  ${({ theme, current }) =>
+    (theme === "dark" || current === "dark") &&
     `
     transform: translateX(20px);
 
@@ -45,8 +45,13 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
-  if (typeof window !== "undefined") {
-    localStorage.setItem("theme", "light")
+  let current = window !== "undefined" && localStorage.getItem("theme")
+  // if (typeof window !== "undefined") {
+  //   localStorage.setItem("theme", "light")
+  // }
+  console.log(current)
+  const getCurrent = theme => {
+    return (current = theme)
   }
 
   return (
@@ -60,7 +65,7 @@ export default function MyComponent() {
             checked={theme === "dark"}
           />
 
-          <Ball theme={theme} />
+          <Ball theme={theme} current={getCurrent} />
         </StyledLabel>
       )}
     </ThemeToggler>

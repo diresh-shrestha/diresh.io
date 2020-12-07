@@ -57,7 +57,7 @@ export default function RecentPosts() {
           <h3>{post.node.frontmatter.title}</h3>
         </Link>
         <em>
-          <span>{post.node.frontmatter.date}</span>
+          <p>{post.node.frontmatter.date}</p>
         </em>
         <p className="text">{post.node.excerpt}</p>
       </Content>
