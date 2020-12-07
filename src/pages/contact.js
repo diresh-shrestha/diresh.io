@@ -8,34 +8,38 @@ const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
     <Container>
-      <form name="contact" method="POST" data-netlify="true">
+      {/* <form
+        method="post"
+        action="https://getform.io/f/af7663e4-8485-4f29-a9c7-32e6ca04bcb5"
+      > */}
+      <form
+        method="post"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        name="contact"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
         <p>
           <label>
-            Your Name: <input type="text" name="name" />
+            Email
+            <input type="email" name="email" />
           </label>
         </p>
         <p>
           <label>
-            Your Email: <input type="email" name="email" />
+            Name
+            <input type="text" name="name" />
           </label>
         </p>
         <p>
           <label>
-            Your Role:{" "}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
+            Message
+            <input type="text" name="message" />
           </label>
         </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+        <button type="submit">Send</button>
+        <input type="reset" value="Clear" />
       </form>
     </Container>
   </Layout>
