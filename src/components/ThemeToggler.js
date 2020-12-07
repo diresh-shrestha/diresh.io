@@ -50,9 +50,9 @@ export default function MyComponent() {
   // if (typeof window !== "undefined") {
   //   localStorage.setItem("theme", "light")
   // }
-  console.log(current)
   const getCurrent = theme => {
-    return (current = theme)
+    current = theme
+    return current
   }
 
   return (
@@ -66,7 +66,7 @@ export default function MyComponent() {
             checked={theme === "dark"}
           />
 
-          <Ball theme={theme} current={getCurrent} />
+          <Ball theme={theme} current={getCurrent(theme)} />
         </StyledLabel>
       )}
     </ThemeToggler>
