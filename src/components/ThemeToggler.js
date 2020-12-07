@@ -45,7 +45,7 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
-  let current = window !== "undefined" && localStorage.getItem("theme")
+  let current = document !== "undefined" && localStorage.getItem("theme")
   // if (typeof window !== "undefined") {
   //   localStorage.setItem("theme", "light")
   // }
