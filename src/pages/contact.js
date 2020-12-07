@@ -65,6 +65,7 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact" />
       <Content>
+        <h1>LET'S GET IN TOUCH!</h1>
         <form onSubmit={handleOnSubmit}>
           <InputWrapper>
             <StyledInput
