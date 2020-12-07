@@ -27,14 +27,8 @@ const Ball = styled.div`
   left: 1px;
   height: 18px;
   width: 18px;
-  transform: translateX(0px);
-
-  ${({ theme, current }) =>
-    (theme === "dark" || current === "dark") &&
-    `
-    transform: translateX(20px);
-
-  `};
+  transform: ${props =>
+    props.theme === "light" ? "translateX(0px)" : "translateX(20px)"};
 
   transition: transform 0.2s linear;
 `
