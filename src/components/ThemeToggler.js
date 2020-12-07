@@ -27,8 +27,6 @@ const Ball = styled.div`
   left: 1px;
   height: 18px;
   width: 18px;
-  transform: ${props =>
-    props.theme === "light" ? "translateX(0px)" : "translateX(20px)"};
 
   transition: transform 0.2s linear;
 `
@@ -39,14 +37,18 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
-  let current =
-    typeof window !== "undefined" ? localStorage.getItem("theme") : null
-  // if (typeof window !== "undefined") {
-  //   localStorage.setItem("theme", "light")
+  // let current =
+  //   typeof window !== "undefined" ? localStorage.getItem("theme") : null
+  // // if (typeof window !== "undefined") {
+  // //   localStorage.setItem("theme", "light")
+  // // }
+  // const getCurrent = theme => {
+  //   current = theme
+  //   return current
   // }
-  const getCurrent = theme => {
-    current = theme
-    return current
+  const current = {
+    light: "translateX(0px)",
+    dark: "translateX(20px",
   }
 
   return (
@@ -60,7 +62,7 @@ export default function MyComponent() {
             checked={theme === "dark"}
           />
 
-          <Ball theme={theme} current={getCurrent(theme)} />
+          <Ball style={{ transform: current[theme] }} />
         </StyledLabel>
       )}
     </ThemeToggler>
