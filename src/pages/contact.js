@@ -49,6 +49,10 @@ const ContactPage = () => {
 
   const [disabled, setDisabled] = useState(false)
 
+  const handleChange = () => {
+    setDisabled(true)
+  }
+
   const handleOnSubmit = e => {
     e.preventDefault()
     const form = e.target
@@ -130,7 +134,7 @@ const ContactPage = () => {
           <InputWrapper>
             <ReCAPTCHA
               sitekey="6Lf7KgAaAAAAAHob7aBBAPI8Y2RZD6Bq5-8eCZLH"
-              onChange={setDisabled(!disabled)}
+              onChange={handleChange}
             />
           </InputWrapper>
 
