@@ -15,7 +15,7 @@ const StyledLabel = styled.label`
   height: 20px;
   width: 40px;
   transform: scale(1.5);
-  margin: 0rem 2rem;
+  margin: 0rem 3rem;
   vertical-align: middle;
 `
 

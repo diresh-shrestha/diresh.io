@@ -33,6 +33,16 @@ const StyledLink = styled(AnchorLink)`
   transition: color 0.5s linear;
 `
 
+const PageLinks = styled(Link)`
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  color: var(--textNormal);
+  transition: color 0.5s linear;
+`
+
 export default function Menu({ open, setOpen }) {
   return (
     <StyledMenu
@@ -49,6 +59,12 @@ export default function Menu({ open, setOpen }) {
           </StyledLink>
         )
       })}
+      <PageLinks className="hvr-sweep-to-right" to="/contact">
+        CONTACT
+      </PageLinks>
+      <PageLinks className="hvr-sweep-to-right" to="/blog">
+        BLOG
+      </PageLinks>
     </StyledMenu>
   )
 }

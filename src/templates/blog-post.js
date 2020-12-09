@@ -23,9 +23,9 @@ export default function BlogPost({ data }) {
         <ContentWrapper>
           <h1>{post.frontmatter.title}</h1>
           <h2>{post.frontmatter.date}</h2>
-          <CommentCount config={disqusConfig} placeholder={"..."} />
+          <CommentCount config={disqusConfig} />
           <div
-            style={{ marginBottom: `2rem` }}
+            style={{ marginBottom: `10rem` }}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <Disqus config={disqusConfig} />

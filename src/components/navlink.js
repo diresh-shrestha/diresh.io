@@ -68,6 +68,9 @@ const VerticalRule = styled.div`
   width: 2px;
   height: 20px;
   background-color: var(--textNormal);
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const NavLink = () => {
   return (
