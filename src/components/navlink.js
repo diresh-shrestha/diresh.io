@@ -4,6 +4,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import MenuItems from "./Navbar/MenuItems"
 import Time from "./Time"
 import ThemeToggler from "./ThemeToggler"
+import { Link } from "gatsby"
 
 const List = styled.li`
   position: relative;
@@ -43,6 +44,31 @@ const Links = styled(AnchorLink)`
   }
 `
 
+const PageLinks = styled(Link)`
+  position: relative;
+  padding: 0.2rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--textNormal);
+  text-shadow: none;
+  background-image: none;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+  @media (max-width: 1040px) {
+    font-size: 0.7rem;
+  }
+`
+
+const VerticalRule = styled.div`
+  display: inline-flex;
+  margin-right: 0.5rem;
+  margin-bottom: -0.2rem;
+  width: 2px;
+  height: 20px;
+  background-color: var(--textNormal);
+`
 const NavLink = () => {
   return (
     <ListWrapper>
@@ -57,6 +83,14 @@ const NavLink = () => {
           </List>
         )
       })}
+      <VerticalRule />
+
+      <PageLinks className="hvr-sweep-to-right" to="/contact">
+        CONTACT
+      </PageLinks>
+      <PageLinks className="hvr-sweep-to-right" to="/blog">
+        BLOG
+      </PageLinks>
     </ListWrapper>
   )
 }

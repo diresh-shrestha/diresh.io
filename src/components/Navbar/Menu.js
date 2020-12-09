@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import MenuItems from "./MenuItems"
+import { Link } from "gatsby"
 
 const StyledMenu = styled.nav`
   display: flex;

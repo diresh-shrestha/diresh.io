@@ -8,11 +8,6 @@ import Hamburger from "./Navbar/Hamburger"
 import Menu from "./Navbar/Menu"
 import { ClickAwayListener } from "@material-ui/core"
 import Mountain from "./icons/Mountain"
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock"
 
 const HeaderWrapper = styled.header`
   height: 80px;
