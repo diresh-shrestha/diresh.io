@@ -65,10 +65,15 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact" />
       <Content>
-        <h1>LET'S GET IN TOUCH!</h1>
+        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          LET'S GET IN TOUCH!
+        </h1>
         <form onSubmit={handleOnSubmit}>
           <InputWrapper>
             <StyledInput
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
               type="text"
               name="name"
               placeholder="*Full Name"
@@ -77,6 +82,9 @@ const ContactPage = () => {
           </InputWrapper>
           <InputWrapper>
             <StyledInput
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
               type="email"
               name="email"
               placeholder="*Email"
@@ -85,6 +93,9 @@ const ContactPage = () => {
           </InputWrapper>
           <InputWrapper>
             <StyledInput
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
               type="text"
               name="subject"
               placeholder="*Subject"
@@ -93,6 +104,9 @@ const ContactPage = () => {
           </InputWrapper>
           <InputWrapper>
             <StyledInput
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
               type="tel"
               name="telephone"
               placeholder="Phone Number"
@@ -100,24 +114,37 @@ const ContactPage = () => {
           </InputWrapper>
           <InputWrapper>
             <TextArea
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
               name="message"
               rows="5"
               required
-              placeholder="Write a message.."
+              placeholder="*Write a message.."
             />
           </InputWrapper>
-          <InputWrapper>
+          <InputWrapper
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
+            {serverState.status && (
+              <p className={!serverState.status.ok ? "errorMsg" : ""}>
+                {serverState.status.msg}
+              </p>
+            )}
+          </InputWrapper>
+          <InputWrapper
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <Button
               type="submit"
               text="SEND"
               disabled={serverState.submitting}
             />
           </InputWrapper>
-          {serverState.status && (
-            <p className={!serverState.status.ok ? "errorMsg" : ""}>
-              {serverState.status.msg}
-            </p>
-          )}
         </form>
       </Content>
     </Layout>

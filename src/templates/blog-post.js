@@ -28,11 +28,21 @@ export default function BlogPost({ data }) {
       />
       <Container>
         <ContentWrapper>
-          <h1>{post.frontmatter.title}</h1>
-          <h2>{post.frontmatter.date}</h2>
-          <CommentCount config={disqusConfig} />
+          <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            {post.frontmatter.title}
+          </h1>
+          <h2 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            {post.frontmatter.date}
+          </h2>
+          <CommentCount
+            style={{ color: `var(--textNormal)` }}
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+            config={disqusConfig}
+          />
           <div
-            style={{ marginBottom: `10rem` }}
+            style={{ marginBottom: `10rem`, marginTop: `2rem` }}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <Disqus config={disqusConfig} />

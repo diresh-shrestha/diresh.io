@@ -40,23 +40,32 @@ export default function Experience({ content }) {
     return (
       <div style={{ marginBottom: `1rem` }}>
         <a
+          data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="ease"
           className="hvr-underline-from-left"
           href={frontmatter.external}
           target="_blank"
         >
           <h4>{frontmatter.name}</h4>
         </a>
-        <p>
+        <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
           <em>{frontmatter.title}</em>
         </p>
-        <p>{frontmatter.date}</p>
+        <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          {frontmatter.date}
+        </p>
         <Content>
           <Img
             className="img"
             fluid={frontmatter.image.childImageSharp.fluid}
             imgStyle={{ objectFit: `contain` }}
           />
-          <TextWrapper>
+          <TextWrapper
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <MDXRenderer>{body}</MDXRenderer>
             <p>Technologies Used:</p>
             <ul>{technologies}</ul>
@@ -69,7 +78,9 @@ export default function Experience({ content }) {
   return (
     <Container id="experience">
       <ContentWrapper>
-        <h1>EXPERIENCE</h1>
+        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          EXPERIENCE
+        </h1>
         {experience}
       </ContentWrapper>
     </Container>

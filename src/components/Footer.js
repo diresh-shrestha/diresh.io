@@ -54,10 +54,16 @@ export default function Footer() {
           fluid={data.file.childImageSharp.fluid}
         />
         <div style={{ margin: `1rem 1rem` }}>
-          <Links>
+          <Links
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <SocialLinks />
           </Links>
-          <p>© {new Date().getFullYear()} - Diresh Shrestha</p>
+          <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            © {new Date().getFullYear()} - Diresh Shrestha
+          </p>
         </div>
       </Wrapper>
     </StyledFooter>

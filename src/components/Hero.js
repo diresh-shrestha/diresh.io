@@ -109,17 +109,39 @@ export default function Hero({ desktop, mobile }) {
     <Wrapper>
       <ContainerWrapper>
         <TextWrapper>
-          <h1>Hello!</h1>
-          <p style={{ marginBottom: `0`, marginTop: `1rem` }}>My name is</p>
-          <h1>Diresh Shrestha</h1>
+          <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            Hello!
+          </h1>
+          <p
+            data-sal="slide-up"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            data-sal-duration="1000"
+            style={{ marginBottom: `0`, marginTop: `1rem` }}
+          >
+            My name is
+          </p>
+          <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            Diresh Shrestha
+          </h1>
 
           <div style={{ marginTop: `1rem` }}>
-            <p>Software Developer</p>
+            <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+              Software Developer
+            </p>
           </div>
-          <Links>
+          <Links
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <SocialLinks />
           </Links>
-          <ButtonWrapper>
+          <ButtonWrapper
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <Link to="/contact">
               <Button text="CONTACT" />
             </Link>

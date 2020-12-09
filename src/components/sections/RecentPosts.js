@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 import Container from "../Container"
+import { CommentCount } from "gatsby-plugin-disqus"
 
 const Wrapper = styled.div`
   display: flex;
@@ -51,15 +52,40 @@ export default function RecentPosts() {
   const node = edges.slice(0, 2)
 
   const posts = node.map(post => {
+    const siteUrl = "https://www.diresh.io/"
+
+    let disqusConfig = {
+      url: `${siteUrl + post.node.fields.slug}`,
+      identifier: post.node.id,
+      title: post.node.frontmatter.title,
+    }
     return (
       <Content>
         <Link to={post.node.fields.slug}>
-          <h3>{post.node.frontmatter.title}</h3>
+          <h3 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            {post.node.frontmatter.title}
+          </h3>
         </Link>
         <em>
-          <p>{post.node.frontmatter.date}</p>
+          <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            {post.node.frontmatter.date}
+          </p>
+          <CommentCount
+            style={{ color: `var(--textNormal)` }}
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+            config={disqusConfig}
+          />
         </em>
-        <p className="text">{post.node.excerpt}</p>
+        <p
+          data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          className="text"
+        >
+          {post.node.excerpt}
+        </p>
       </Content>
     )
   })
@@ -67,7 +93,9 @@ export default function RecentPosts() {
   return (
     <Container>
       <ContentWrapper>
-        <h1>RECENT POSTS</h1>
+        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          RECENT POSTS
+        </h1>
         <Wrapper>{posts}</Wrapper>
       </ContentWrapper>
     </Container>

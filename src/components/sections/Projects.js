@@ -36,12 +36,20 @@ export default function Projects({ content }) {
     })
     return (
       <div>
-        <h4>{frontmatter.name}</h4>
+        <h4 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          {frontmatter.name}
+        </h4>
         <em>
-          <p>{frontmatter.description}</p>
+          <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+            {frontmatter.description}
+          </p>
         </em>
         <Content>
-          <TextWrapper>
+          <TextWrapper
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <MDXRenderer>{body}</MDXRenderer>
             <p>Technologies Used:</p>
             <ul>{technologies}</ul>

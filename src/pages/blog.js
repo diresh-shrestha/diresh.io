@@ -18,17 +18,33 @@ const BlogPage = ({ data }) => (
     <SEO title="Blog" />
     <StyledContainer>
       <ContentWrapper>
-        <h1>Hi</h1>
-        <p>Welcome to my blog</p>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>{" "}
+        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          Hi
+        </h1>
+        <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          Welcome to my blog
+        </p>
+        <h4 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          {data.allMarkdownRemark.totalCount} Posts
+        </h4>{" "}
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <Link to={node.fields.slug}>
-              <h3>
+              <h3
+                data-sal="slide-up"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+              >
                 {node.frontmatter.title}
                 <span> - {node.frontmatter.date}</span>
               </h3>
-              <p>{node.excerpt}</p>
+              <p
+                data-sal="slide-up"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+              >
+                {node.excerpt}
+              </p>
             </Link>
           </div>
         ))}
