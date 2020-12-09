@@ -3,26 +3,32 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 import styled from "styled-components"
-import { Disqus } from "gatsby-plugin-disqus"
+import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
 `
 export default function BlogPost({ data }) {
+  const siteUrl = "https://www.diresh.io/"
   const post = data.markdownRemark
-  const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
-    config: { identifier: post.frontmatter.title },
+  let disqusConfig = {
+    url: `${siteUrl + post.frontmatter.slug}`,
+    identifier: post.id,
+    title: post.frontmatter.title,
   }
-
+  console.log(post.frontmatter.slug)
   return (
     <Layout>
       <Container>
         <ContentWrapper>
           <h1>{post.frontmatter.title}</h1>
           <h2>{post.frontmatter.date}</h2>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <Disqus config={disqusConfig.config} />
+          <CommentCount config={disqusConfig} placeholder={"..."} />
+          <div
+            style={{ marginBottom: `2rem` }}
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+          <Disqus config={disqusConfig} />
         </ContentWrapper>
       </Container>
     </Layout>
