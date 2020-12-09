@@ -6,6 +6,7 @@ import Container from "../components/Container"
 import styled from "styled-components"
 import Button from "../components/Button"
 import axios from "axios"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const Content = styled(Container)`
   display: flex;
@@ -45,6 +46,9 @@ const ContactPage = () => {
       form.reset()
     }
   }
+
+  const [disabled, setDisabled] = useState(false)
+
   const handleOnSubmit = e => {
     e.preventDefault()
     const form = e.target
@@ -123,6 +127,13 @@ const ContactPage = () => {
               placeholder="*Write a message.."
             />
           </InputWrapper>
+          <InputWrapper>
+            <ReCAPTCHA
+              sitekey="6Lf7KgAaAAAAAHob7aBBAPI8Y2RZD6Bq5-8eCZLH"
+              onChange={setDisabled(!disabled)}
+            />
+          </InputWrapper>
+
           <InputWrapper
             data-sal="slide-up"
             data-sal-delay="300"
@@ -139,11 +150,7 @@ const ContactPage = () => {
             data-sal-delay="300"
             data-sal-easing="ease"
           >
-            <Button
-              type="submit"
-              text="SEND"
-              disabled={serverState.submitting}
-            />
+            <Button type="submit" text="SEND" disabled={disabled} />
           </InputWrapper>
         </form>
       </Content>
