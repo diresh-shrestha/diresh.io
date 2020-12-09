@@ -1,8 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: `Diresh Shrestha`,
-    description: `Diresh Shrestha's Personal Website`,
+    description: `Diresh Shrestha | Software Developer`,
     author: `@diresh`,
+    siteUrl: `https://www.diresh.io/`,
+    image: "/src/images/hero.jpg",
+    social: {
+      twitter: "https://twitter.com/diresheverest",
+      github: "https://github.com/diresh-shrestha",
+    },
   },
   plugins: [
     {

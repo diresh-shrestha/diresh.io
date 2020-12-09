@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import Container from "../components/Container"
 import styled from "styled-components"
 import { Disqus, CommentCount } from "gatsby-plugin-disqus"
+import SEO from "../components/Seo"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -19,6 +20,12 @@ export default function BlogPost({ data }) {
   console.log(post.frontmatter.slug)
   return (
     <Layout>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+        // image={image}
+        pathname={post.frontmatter.slug}
+      />
       <Container>
         <ContentWrapper>
           <h1>{post.frontmatter.title}</h1>

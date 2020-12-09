@@ -10,7 +10,7 @@ const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: var(--bg);
-  height: 110vh;
+  height: 100vh;
   text-align: center;
   padding: 2rem;
   position: absolute;

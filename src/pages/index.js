@@ -14,11 +14,8 @@ import RecentPosts from "../components/sections/RecentPosts"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <Hero
-      desktop={data.desktopHeroImg.childImageSharp.fluid}
-      mobile={data.mobileHeroImg.childImageSharp.fluid}
-    />
+    <SEO title="Home" image={data.desktopHeroImg.childImageSharp.fluid} />
+    <Hero desktop={data.desktopHeroImg.childImageSharp.fluid} />
     <About content={data.about.edges} />
     <Experience content={data.experience.edges} />
     <Projects content={data.projects.edges} />
