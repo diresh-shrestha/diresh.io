@@ -41,6 +41,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `diresh`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -100,
