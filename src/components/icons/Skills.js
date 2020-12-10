@@ -32,6 +32,9 @@ const SkillWrapper = styled.div`
     right: 0;
     bottom: 0;
   }
+  @media (max-width: 768px) {
+    overflow: scroll;
+  }
 `
 
 const StyledUl = styled.ul`
