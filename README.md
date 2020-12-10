@@ -35,7 +35,7 @@ I have been learning web development for the past few months on my spare time, a
 - [Scroll-reveal](https://www.gatsbyjs.com/plugins/gatsby-plugin-scroll-reveal/)
 - [Disqus](https://www.gatsbyjs.com/plugins/gatsby-plugin-disqus/)
 
-## Credits
+## Acknowledgements
 I took some of my inspiration from a few well-crafted websites.
  - [Chase Ohlson](https://chaseohlson.com/)
  - [Konstantin Münster](https://www.konstantin.digital/)
