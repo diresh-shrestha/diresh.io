@@ -146,7 +146,7 @@ export default function Hero({ desktop, mobile }) {
               <Button text="CONTACT" />
             </Link>
             <a
-              href="https://drive.google.com/file/d/1Y-Yin6Q1JhdJSlYTc-DFjtFyf626Tjgm/view?usp=sharing"
+              href="https://drive.google.com/file/d/1mWu_KdZF-Dk6dVpaBS2XF-nRZz1yPw-B/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
