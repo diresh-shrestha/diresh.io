@@ -39,7 +39,7 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : title}
       link={
         canonical
           ? [
