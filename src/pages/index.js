@@ -15,7 +15,7 @@ import SEOImage from "../images/hero.jpg"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO />
+    <SEO image={data.mainImg.childImageSharp.resize} />
     <Hero desktop={data.desktopHeroImg.childImageSharp.fluid} />
     <About content={data.about.edges} />
     <Experience content={data.experience.edges} />
@@ -81,8 +81,21 @@ export const query = graphql`
     }
     desktopHeroImg: file(relativePath: { eq: "sections/Hero/hero.jpg" }) {
       childImageSharp {
+        resize
         fluid(jpegQuality: 100, maxWidth: 1440) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mainImg: file(relativePath: { eq: "sections/Main/Main.jpg" }) {
+      childImageSharp {
+        resize(height: 500, width: 600) {
+          src
+          tracedSVG
+          width
+          height
+          aspectRatio
+          originalName
         }
       }
     }
