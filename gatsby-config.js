@@ -6,7 +6,11 @@ module.exports = {
     Diresh is a software developer having experience with React, Gatsby, Graphql, NodeJs and MongoDB.`,
     author: `@diresh`,
     siteUrl: `https://www.diresh.io/`,
-    image: "/hero.jpg",
+    image: {
+      metaImage: {
+        src: "/hero.jpg",
+      },
+    },
     social: {
       twitter: "https://twitter.com/diresheverest",
       github: "https://github.com/diresh-shrestha",
