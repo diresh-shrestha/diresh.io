@@ -81,7 +81,6 @@ export const query = graphql`
     }
     desktopHeroImg: file(relativePath: { eq: "sections/Hero/hero.jpg" }) {
       childImageSharp {
-        resize
         fluid(jpegQuality: 100, maxWidth: 1440) {
           ...GatsbyImageSharpFluid
         }
