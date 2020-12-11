@@ -15,7 +15,7 @@ import SEOImage from "../images/hero.jpg"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO image={data.mainImg.childImageSharp.resize} />
+    <SEO title="Home" image={data.mainImg.childImageSharp.resize} />
     <Hero desktop={data.desktopHeroImg.childImageSharp.fluid} />
     <About content={data.about.edges} />
     <Experience content={data.experience.edges} />
