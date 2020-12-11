@@ -79,7 +79,7 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
         },
         {
           name: `twitter:title`,
-          content: `title | ${defaultTitle}`,
+          content: `${title} | ${defaultTitle}`,
         },
 
         {
