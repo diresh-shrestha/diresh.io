@@ -1,9 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Diresh Shrestha`,
-    description: `Personal portfolio website of Diresh Shrestha. 
-    About to receive his Bachelor's degree in Computer Science, 
-    Diresh is a software developer having experience with React, Gatsby, Graphql, NodeJs and MongoDB.`,
+    description: `Personal portfolio website of Diresh Shrestha.`,
     author: `@diresh`,
     siteUrl: `https://www.diresh.io/`,
     image: {
