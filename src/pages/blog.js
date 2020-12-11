@@ -15,7 +15,7 @@ const ContentWrapper = styled.div`
 
 const BlogPage = ({ data }) => (
   <Layout>
-    <SEO title="Blog" />
+    <SEO title="Blog" pathname="blog/" />
     <StyledContainer>
       <ContentWrapper>
         <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">

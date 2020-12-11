@@ -71,7 +71,7 @@ const ContactPage = () => {
   }
   return (
     <Layout>
-      <SEO title="Contact" />
+      <SEO title="Contact" pathname="contact/" />
       <Content>
         <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
           LET'S GET IN TOUCH!
