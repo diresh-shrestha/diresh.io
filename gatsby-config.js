@@ -8,7 +8,7 @@ module.exports = {
     siteUrl: `https://www.diresh.io/`,
     image: {
       metaImage: {
-        src: "/hero.jpg",
+        src: "hero.jpg",
       },
     },
     social: {
