@@ -5,9 +5,9 @@ module.exports = {
     author: `@diresh`,
     siteUrl: `https://www.diresh.io/`,
     image: {
-      metaImage: {
-        src: "hero.jpg",
-      },
+      src: "hero.webp",
+      width: 600,
+      height: 500,
     },
     social: {
       twitter: "https://twitter.com/diresheverest",
