@@ -59,7 +59,7 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
 
         {
           property: `og:title`,
-          content: title,
+          content: `${title} | ${defaultTitle}`,
         },
         {
           property: `og:description`,
