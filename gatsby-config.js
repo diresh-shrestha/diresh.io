@@ -3,7 +3,7 @@ module.exports = {
     title: `Diresh Shrestha | Software Developer`,
     description: `Personal portfolio website of Diresh Shrestha.`,
     author: `@diresh`,
-    siteUrl: `https://www.diresh.io/`,
+    siteUrl: `https://www.diresh.io`,
     image: {
       src: "hero.webp",
       width: 600,
