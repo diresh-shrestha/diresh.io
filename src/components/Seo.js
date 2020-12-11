@@ -56,7 +56,6 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
           name: `description`,
           content: metaDescription,
         },
-
         {
           property: `og:title`,
           content: `${title} | ${defaultTitle}`,
@@ -68,6 +67,10 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          name: `google-site-verification`,
+          content: `qcZtuPfJn3k5tLePakA62xwn0pmZQHwV7elygQqmGvk`,
         },
         {
           name: `twitter:card`,
