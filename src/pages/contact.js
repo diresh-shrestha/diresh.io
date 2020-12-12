@@ -73,14 +73,14 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact" pathname="contact/" />
       <Content>
-        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           LET'S GET IN TOUCH!
         </h1>
         <form onSubmit={handleOnSubmit}>
           <InputWrapper>
             <StyledInput
               data-sal="slide-up"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="ease"
               type="text"
               name="name"
@@ -91,7 +91,7 @@ const ContactPage = () => {
           <InputWrapper>
             <StyledInput
               data-sal="slide-up"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="ease"
               type="email"
               name="email"
@@ -102,7 +102,7 @@ const ContactPage = () => {
           <InputWrapper>
             <StyledInput
               data-sal="slide-up"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="ease"
               type="text"
               name="subject"
@@ -113,7 +113,7 @@ const ContactPage = () => {
           <InputWrapper>
             <StyledInput
               data-sal="slide-up"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="ease"
               type="tel"
               name="telephone"
@@ -123,7 +123,7 @@ const ContactPage = () => {
           <InputWrapper>
             <TextArea
               data-sal="slide-up"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="ease"
               name="message"
               rows="5"
@@ -140,7 +140,7 @@ const ContactPage = () => {
 
           <InputWrapper
             data-sal="slide-up"
-            data-sal-delay="300"
+            data-sal-delay="100"
             data-sal-easing="ease"
           >
             {serverState.status && (
@@ -151,7 +151,7 @@ const ContactPage = () => {
           </InputWrapper>
           <InputWrapper
             data-sal="slide-up"
-            data-sal-delay="300"
+            data-sal-delay="100"
             data-sal-easing="ease"
           >
             <Button type="submit" text="SEND" disabled={disabled} />

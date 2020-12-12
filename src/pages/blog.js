@@ -18,13 +18,13 @@ const BlogPage = ({ data }) => (
     <SEO title="Blog" pathname="blog/" />
     <StyledContainer>
       <ContentWrapper>
-        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           Hi
         </h1>
-        <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           Welcome to my blog
         </p>
-        <h4 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <h4 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           {data.allMarkdownRemark.totalCount} Posts
         </h4>{" "}
         {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -32,7 +32,7 @@ const BlogPage = ({ data }) => (
             <Link to={node.fields.slug}>
               <h3
                 data-sal="slide-up"
-                data-sal-delay="300"
+                data-sal-delay="100"
                 data-sal-easing="ease"
               >
                 {node.frontmatter.title}
@@ -40,7 +40,7 @@ const BlogPage = ({ data }) => (
               </h3>
               <p
                 data-sal="slide-up"
-                data-sal-delay="300"
+                data-sal-delay="100"
                 data-sal-easing="ease"
               >
                 {node.excerpt}

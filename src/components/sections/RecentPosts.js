@@ -62,25 +62,25 @@ export default function RecentPosts() {
     return (
       <Content>
         <Link to={post.node.fields.slug}>
-          <h3 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          <h3 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
             {post.node.frontmatter.title}
           </h3>
         </Link>
         <em>
-          <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
             {post.node.frontmatter.date}
           </p>
           <CommentCount
             style={{ color: `var(--textNormal)` }}
             data-sal="slide-up"
-            data-sal-delay="300"
+            data-sal-delay="100"
             data-sal-easing="ease"
             config={disqusConfig}
           />
         </em>
         <p
           data-sal="slide-up"
-          data-sal-delay="300"
+          data-sal-delay="100"
           data-sal-easing="ease"
           className="text"
         >
@@ -93,7 +93,7 @@ export default function RecentPosts() {
   return (
     <Container>
       <ContentWrapper>
-        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           RECENT POSTS
         </h1>
         <Wrapper>{posts}</Wrapper>

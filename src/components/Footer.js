@@ -56,12 +56,12 @@ export default function Footer() {
         <div style={{ margin: `1rem 1rem` }}>
           <Links
             data-sal="slide-up"
-            data-sal-delay="300"
+            data-sal-delay="100"
             data-sal-easing="ease"
           >
             <SocialLinks />
           </Links>
-          <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
             © {new Date().getFullYear()} - Diresh Shrestha
           </p>
         </div>

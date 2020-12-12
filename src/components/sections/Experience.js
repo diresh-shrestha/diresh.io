@@ -41,7 +41,7 @@ export default function Experience({ content }) {
       <div style={{ marginBottom: `1rem` }}>
         <a
           data-sal="slide-up"
-          data-sal-delay="300"
+          data-sal-delay="100"
           data-sal-easing="ease"
           className="hvr-underline-from-left"
           href={frontmatter.external}
@@ -49,10 +49,10 @@ export default function Experience({ content }) {
         >
           <h4>{frontmatter.name}</h4>
         </a>
-        <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           <em>{frontmatter.title}</em>
         </p>
-        <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           {frontmatter.date}
         </p>
         <Content>
@@ -63,7 +63,7 @@ export default function Experience({ content }) {
           />
           <TextWrapper
             data-sal="slide-up"
-            data-sal-delay="300"
+            data-sal-delay="100"
             data-sal-easing="ease"
           >
             <MDXRenderer>{body}</MDXRenderer>
@@ -78,7 +78,7 @@ export default function Experience({ content }) {
   return (
     <Container id="experience">
       <ContentWrapper>
-        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           EXPERIENCE
         </h1>
         {experience}

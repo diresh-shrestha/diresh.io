@@ -61,12 +61,12 @@ export default function About({ content }) {
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           {frontmatter.title}
         </h1>
 
         <Content>
-          <p data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+          <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
             <MDXRenderer>{body}</MDXRenderer>
           </p>
         </Content>
