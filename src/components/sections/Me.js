@@ -42,29 +42,39 @@ export default function Etc() {
   return (
     <Container id="me">
       <ContentWrapper>
-        <h1>ME</h1>
-        <p>
+        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
+          ME
+        </h1>
+        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           I spend my free time hiking, playing the guitar, reading books,
           meditating, working out, listening to podcasts, geeking out to scifi
           stuffs, cooking, playing video games and traveling.{" "}
         </p>
-        <InnerHeading>
+        <InnerHeading
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-easing="ease"
+        >
           <strong>Books</strong> I've been reading recently{" "}
         </InnerHeading>
 
         <BookContainer>
           <Book>
-            <p>Currently Reading</p>
+            <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
+              Currently Reading
+            </p>
 
             <Goodreads index={0} />
           </Book>
           <Book>
-            <p>Last Read</p>
+            <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
+              Last Read
+            </p>
 
             <Goodreads index={1} />
           </Book>
         </BookContainer>
-        <Note>
+        <Note data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           * Books pulled from my Goodreads library using the{" "}
           <a
             className="hvr-underline-from-left"
