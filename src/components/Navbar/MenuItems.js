@@ -11,6 +11,10 @@ const MenuItems = [
     title: "PROJECTS",
     url: "/#projects",
   },
+  {
+    title: "ME",
+    url: "/#me",
+  },
 ]
 
 export default MenuItems

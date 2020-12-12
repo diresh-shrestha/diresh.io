@@ -93,9 +93,9 @@ export default function RecentPosts() {
   return (
     <Container>
       <ContentWrapper>
-        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
+        <h2 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           RECENT POSTS
-        </h1>
+        </h2>
         <Wrapper>{posts}</Wrapper>
       </ContentWrapper>
     </Container>
