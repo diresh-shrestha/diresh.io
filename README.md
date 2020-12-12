@@ -1,6 +1,6 @@
 # Personal Website
 
-My personal portfolio website with an integrated blog published on [diresh.io](diresh.io). This is the first website I have ever built and it will be under constant development. If you have any suggestions or advice, I am open to all of them!
+My personal portfolio website with an integrated blog published on [diresh.io](https://www.diresh.io/). This is the first website I have ever built and it will be under constant development. If you have any suggestions or advice, I am open to all of them!
 
 
 # Motivation
