@@ -47,6 +47,7 @@ module.exports = {
       options: {
         developerKey: "n64tyIdRZf7Ymjj0rULGow",
         goodReadsUserId: "57923769-diresh-shrestha",
+        userShelf: "currently-reading",
       },
     },
 

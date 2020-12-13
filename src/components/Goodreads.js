@@ -7,29 +7,13 @@ export default function Goodreads({ index }) {
     graphql`
       query {
         goodreadsShelf {
-          id
           shelfName
           reviews {
-            reviewID
-            rating
-            votes
-            spoilerFlag
-            dateAdded
-            dateUpdated
-            body
             book {
-              bookID
-              isbn
-              isbn13
-              textReviewsCount
-              uri
+              description
+              imageUrl
               link
               title
-              titleWithoutSeries
-              imageUrl
-              smallImageUrl
-              largeImageUrl
-              description
             }
           }
         }
@@ -40,7 +24,11 @@ export default function Goodreads({ index }) {
   let imgUrl = data.goodreadsShelf.reviews[index].book.imageUrl
   imgUrl = imgUrl.replace("98", "2000")
   return (
-    <a href={data.goodreadsShelf.reviews[index].book.link} target="_blank">
+    <a
+      href={data.goodreadsShelf.reviews[index].book.link}
+      rel="noreferrer"
+      target="_blank"
+    >
       <div className="hvr-float-shadow">
         <img
           style={{ marginBottom: `0` }}

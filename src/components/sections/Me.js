@@ -11,11 +11,12 @@ const ContentWrapper = styled.div`
 const Note = styled.p`
   margin: 2rem;
   font-size: 0.8rem;
+  text-align: center;
 `
 
 const BookContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   text-align: center;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -65,13 +66,6 @@ export default function Etc() {
             </p>
 
             <Goodreads index={0} />
-          </Book>
-          <Book>
-            <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-              Last Read
-            </p>
-
-            <Goodreads index={1} />
           </Book>
         </BookContainer>
         <Note data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
