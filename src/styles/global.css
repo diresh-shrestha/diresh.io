@@ -9,6 +9,8 @@ body {
   --linkHover: #2098d1;
   --hoverCenter: rgba(0, 0, 0, 0.35);
   --hoverEllipse: rgba(0, 0, 0, 0);
+  --blog: #ffffff;
+  --boxShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   background-color: var(--bg);
   transition: background-color 0.5s ease-out;
@@ -27,6 +29,8 @@ body.dark {
   --linkHover: #bc6ff1;
   --hoverCenter: rgba(247, 244, 244, 0.692);
   --hoverEllipse: rgba(0, 0, 0, 0);
+  --blog: #272626;
+  --boxShadow: none;
 }
 
 .hvr-underline-from-left {

@@ -1,5 +1,4 @@
 import React from "react"
-import RecentPosts from "./RecentPosts"
 import Container from "../Container"
 import styled from "styled-components"
 import Goodreads from "../Goodreads"
@@ -79,7 +78,6 @@ export default function Etc() {
             Goodreads API
           </a>
         </Note>
-        <RecentPosts />
       </ContentWrapper>
     </Container>
   )

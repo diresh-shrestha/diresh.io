@@ -5,11 +5,40 @@ import Container from "../components/Container"
 import styled from "styled-components"
 import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 import SEO from "../components/Seo"
+import Clock from "../components/icons/clock"
 
 const ContentWrapper = styled.div`
-  margin: auto 2rem;
+  margin: auto 1.5rem;
 `
+
+const Content = styled.div`
+  h2 {
+    margin: 3rem auto;
+  }
+  img {
+    margin: 2rem auto;
+    border-radius: 10px;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+  ul {
+    color: var(--textNormal);
+  }
+`
+
+const TitleContainer = styled.div`
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+`
+
+const SubTitle = styled.p`
+  font-size: 1rem;
+`
+
 export default function BlogPost({ data }) {
+  const image = data.markdownRemark.frontmatter.image.childImageSharp.resize
   const siteUrl = "https://www.diresh.io/"
   const post = data.markdownRemark
   let disqusConfig = {
@@ -23,25 +52,40 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        // image={image}
+        image={image}
         pathname={post.frontmatter.slug}
       />
       <Container>
         <ContentWrapper>
-          <h1 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
-            {post.frontmatter.title}
-          </h1>
-          <h2 data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
-            {post.frontmatter.date}
-          </h2>
-          <CommentCount
-            style={{ color: `var(--textNormal)` }}
-            data-sal="slide-up"
-            data-sal-delay="300"
-            data-sal-easing="ease"
-            config={disqusConfig}
-          />
-          <div
+          <TitleContainer>
+            <h1
+              style={{ margin: `0.5rem auto` }}
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
+            >
+              {post.frontmatter.title}
+            </h1>
+            <em>
+              <SubTitle
+                data-sal="slide-up"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+              >
+                Published: {post.frontmatter.date}, <Clock /> {post.timeToRead}{" "}
+                min read
+              </SubTitle>
+              <CommentCount
+                style={{ color: `var(--textNormal)` }}
+                data-sal="slide-up"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+                config={disqusConfig}
+              />
+            </em>
+          </TitleContainer>
+
+          <Content
             style={{ marginBottom: `10rem`, marginTop: `2rem` }}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
@@ -60,7 +104,20 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        image {
+          childImageSharp {
+            resize(height: 500, width: 600) {
+              src
+              tracedSVG
+              width
+              height
+              aspectRatio
+              originalName
+            }
+          }
+        }
       }
+      timeToRead
     }
   }
 `

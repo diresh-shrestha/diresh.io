@@ -6,6 +6,7 @@ import SEO from "../components/Seo"
 import { graphql } from "gatsby"
 import About from "../components/sections/About"
 import Projects from "../components/sections/Projects"
+import RecentPosts from "../components/sections/RecentPosts"
 
 import Hero from "../components/Hero"
 import Experience from "../components/sections/Experience"
@@ -23,6 +24,7 @@ const IndexPage = ({ data }) => (
     <Experience content={data.experience.edges} />
     <Projects content={data.projects.edges} />
     <Me />
+    <RecentPosts />
   </Layout>
 )
 
