@@ -5,7 +5,7 @@ date: "2020-12-25"
 image: "frontend.png"
 ---
 
-Learning web development can be very daunting because of the sheer number of technologies/libraries/frameworks you need to learn and keep up w. Luckily, there are numerous resources online (for free) that will help smoothen out the process.
+Learning web development can be very daunting because of the sheer number of technologies/libraries/frameworks you need to learn and keep up with. Luckily, there are numerous resources online (for free) that will help smoothen out the process.
 
 ![Frontend Web Development](https://fabiopacifici.com/wp-content/uploads/2019/11/frontend_dev.png)
 _Credits: unDraw_
