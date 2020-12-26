@@ -109,7 +109,6 @@ export const query = graphql`
             fluid {
               ...GatsbyImageSharpFluid
             }
-            }
           }
         }
       }
