@@ -46,7 +46,12 @@ const Date = styled.p`
 
 const BlogPage = ({ data }) => (
   <Layout>
-    <SEO title="Blog" pathname="blog/" />
+    <SEO
+      title="Blog"
+      description="Welcome to my blog. I write about web development, philosophy, books
+          and anything that interests me."
+      pathname="blog/"
+    />
     <StyledContainer>
       <ContentWrapper>
         <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">

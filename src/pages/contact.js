@@ -71,7 +71,11 @@ const ContactPage = () => {
   }
   return (
     <Layout>
-      <SEO title="Contact" pathname="contact/" />
+      <SEO
+        title="Contact"
+        pathname="contact/"
+        description="Contact Diresh Shrestha"
+      />
       <Content>
         <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           LET'S GET IN TOUCH!
