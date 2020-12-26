@@ -14,6 +14,8 @@ _Credits: unDraw_
 
 Summer of 2019, I did an internship in Tokyo at a company called Emurgo. The company focused on providing blockchain solutions to governments and businesses. I was tasked with updating the landing page for a product that they created called Yoroi Wallet. Since I had never coded in JavaScript or even heard of React before, I took it as a learning opportunity and spent the first week trying to familiarize myself with it. I did manage to update the landing page by the end of the internship and I came out of the experience with a newfound interest and appreciation for web development.
 
+Upon returning, I spent the past summer trying to learn everything from scratch. After a few months, I felt I was ready for my first project and I wanted it to be a personal portfolio website. After a few weeks of working on it, I finally published this website early December.
+
 My goal with this post is to provide some great resources that I have found in my journey and share them and to make the process less intimidating to someone interested in becoming a web developer. I am by no means an expert or a web developer. However, I have learned a few things along the way that I wish I knew when I first started.
 
 ## Where to begin?
