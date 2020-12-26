@@ -38,7 +38,7 @@ const SubTitle = styled.p`
 `
 
 export default function BlogPost({ data }) {
-  const image = data.markdownRemark.frontmatter.image.childImageSharp.resize
+  const image = data.markdownRemark.frontmatter.image.childImageSharp.fluid
   const siteUrl = "https://www.diresh.io/"
   const post = data.markdownRemark
   let disqusConfig = {
@@ -106,13 +106,9 @@ export const query = graphql`
         title
         image {
           childImageSharp {
-            resize(height: 500, width: 600) {
-              src
-              tracedSVG
-              width
-              height
-              aspectRatio
-              originalName
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
             }
           }
         }
