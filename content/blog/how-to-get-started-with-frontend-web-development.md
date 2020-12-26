@@ -45,13 +45,13 @@ After a basic understanding of how the internet works, we are ready to move on t
 
 ### [Interneting is Hard](https://www.internetingishard.com/html-and-css/)
 
-Great for learning: HTML & CSS
+_Great for learning: HTML & CSS_
 
 [Interneting is Hard](https://www.internetingishard.com/html-and-css/) is a free website geared towards complete beginners, which makes it the perfect place to start your journey. It covers everything you need to know about HTML and CSS and contains beautiful diagrams, concise explanations of concepts, and hands-on examples.
 
 ### [FreeCodeCamp](https://www.freecodecamp.org/)
 
-Great for learning: Fullstack
+_Great for learning: Fullstack_
 
 [FreeCodeCamp](https://www.freecodecamp.org/) is a tool created by software developers to help other software developers. The best part is that it's completely free. It's a non-profit supported through donations, so if you feel like it has helped you, I recommend donating whatever you can. It's a great place to practice HTML and CSS that you have learned so far and even practice JavaScript.
 
@@ -59,25 +59,25 @@ After you sign up and create your profile, you will be greeted with a bunch of w
 
 ### [RithmSchool](https://www.rithmschool.com/courses)
 
-Great for learning: Fullstack
+_Great for learning: Fullstack_
 
 [RithmSchool](https://www.rithmschool.com/courses) is another free resource that you can use to learn Fullstack development. What I like most about RithmSchool is that almost every technology is divided into different levels based on difficulty, and the number of hours required to complete those topics is more accurate. You can even learn how to use the terminal and basics of Git and GitHub.
 
 ### [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
 
-Great for learning: JavaScript
+_Great for learning: JavaScript_
 
 If you want to dive deeper into JavaScript and how it works, the [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md) book series is a completely free resource.
 
 ### [Angela Yu's Course](https://www.udemy.com/course/the-complete-web-development-bootcamp/)
 
-Great for learning: FullStack
+_Great for learning: FullStack_
 
 Angela Yu's [course](https://www.udemy.com/course/the-complete-web-development-bootcamp/) on Udemy is great for learning Fullstack web development. The only caveat is that it is not free but you can grab it at a relatively cheap price while it's on sale. Angela is a phenomenal teacher and she does a great job preparing you for the course and provides plenty of resources to help you along the way.
 
 ### [NodeSchool](https://nodeschool.io/)
 
-Great for learning: Backend
+_Great for learning: Backend_
 
 If you want to practice JavaScript while simultaneously using the terminal, [NodeSchool](https://nodeschool.io/) has some great modules (I talk about package managers below). You will need to install NodeJs and npm first on your computer before you can use these modules but once you have done that, installing them is very easy, and using them is just as easy.
 
