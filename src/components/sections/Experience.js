@@ -10,7 +10,7 @@ const ContentWrapper = styled.div`
 
 const Content = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ direction }) => direction};
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -55,7 +55,7 @@ export default function Experience({ content }) {
         <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           {frontmatter.date}
         </p>
-        <Content>
+        <Content direction={frontmatter.direction}>
           <Img
             className="img"
             fluid={frontmatter.image.childImageSharp.fluid}

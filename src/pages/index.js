@@ -55,6 +55,7 @@ export const query = graphql`
             external
             technologies
             date
+            direction
             image {
               childImageSharp {
                 fluid(fit: CONTAIN) {
