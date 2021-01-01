@@ -57,7 +57,7 @@ export default function BlogPost({ data }) {
     <Layout>
       <SEO
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={post.frontmatter.excerpt}
         image={image}
         pathname={post.frontmatter.slug}
       />
