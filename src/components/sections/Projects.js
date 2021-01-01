@@ -71,17 +71,18 @@ export default function Projects({ content }) {
             data-sal-easing="ease"
           >
             <MDXRenderer>{body}</MDXRenderer>
-            <div>{technologies}</div>
+
             <TechContainer>
-              <a
-                href={frontmatter.external}
-                className="hvr-float-shadow"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Github />
-              </a>
+              <div>{technologies}</div>
             </TechContainer>
+            <a
+              href={frontmatter.external}
+              className="hvr-float-shadow"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Github />
+            </a>
           </TextWrapper>
         </Content>
         <Break />
