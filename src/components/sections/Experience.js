@@ -18,6 +18,7 @@ const Content = styled.div`
   .img {
     width: 100%;
     position: relative;
+    border-radius: 10%;
   }
   ul {
     display: list-item;
@@ -44,6 +45,13 @@ const Technologies = styled.span`
   border-radius: 10px;
   font-size: 0.8rem;
   border-width: 1px;
+`
+
+const Break = styled.hr`
+  margin: 1rem auto;
+  border: none;
+  height: 1px;
+  background-color: grey;
 `
 
 const TechContainer = styled.div`
@@ -92,7 +100,7 @@ export default function Experience({ content }) {
             <TechContainer>{technologies}</TechContainer>
           </TextWrapper>
         </Content>
-        <hr />
+        <Break />
       </div>
     )
   })

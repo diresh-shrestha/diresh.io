@@ -41,6 +41,12 @@ const Technologies = styled.span`
 const TechContainer = styled.div`
   margin: 1rem auto;
 `
+const Break = styled.hr`
+  margin: 1rem auto;
+  border: none;
+  height: 1px;
+  background-color: grey;
+`
 
 export default function Projects({ content }) {
   const projects = content.map(proj => {
@@ -78,6 +84,7 @@ export default function Projects({ content }) {
             </TechContainer>
           </TextWrapper>
         </Content>
+        <Break />
       </div>
     )
   })
