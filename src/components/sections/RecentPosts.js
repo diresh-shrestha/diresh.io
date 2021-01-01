@@ -23,7 +23,9 @@ const Content = styled.div`
   padding: 1rem;
   background: var(--blog);
   border-radius: 10%;
-  margin-right: 2rem;
+  :nth-child(odd) {
+    margin-right: 4rem;
+  }
   .text {
     margin-top: 1rem;
   }
@@ -43,6 +45,7 @@ export default function RecentPosts() {
             frontmatter {
               title
               date(formatString: "DD MMMM, YYYY")
+              excerpt
               image {
                 childImageSharp {
                   fluid {
@@ -77,7 +80,7 @@ export default function RecentPosts() {
       <Content className="hvr-float-shadow">
         <Link to={post.node.fields.slug}>
           <Img
-            style={{ borderRadius: `10px` }}
+            style={{ borderRadius: `10px`, maxHeight: `250px` }}
             fluid={post.node.frontmatter.image.childImageSharp.fluid}
           />
           <h3
@@ -106,7 +109,7 @@ export default function RecentPosts() {
             data-sal-easing="ease"
             className="text"
           >
-            {post.node.excerpt}
+            {post.node.frontmatter.excerpt}
           </p>
         </Link>
       </Content>
@@ -116,14 +119,17 @@ export default function RecentPosts() {
   return (
     <Container>
       <ContentWrapper>
-        <h2
-          style={{ marginBottom: `2rem` }}
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-easing="ease"
-        >
-          RECENT POSTS
-        </h2>
+        <Link to={"/blog"}>
+          <h2
+            style={{ marginBottom: `2rem` }}
+            data-sal="slide-up"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+          >
+            RECENT POSTS
+          </h2>
+        </Link>
+
         <Wrapper>{posts}</Wrapper>
       </ContentWrapper>
     </Container>

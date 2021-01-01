@@ -31,12 +31,16 @@ const Content = styled.div`
   padding: 1rem;
   background: var(--blog);
   border-radius: 10%;
-  margin-right: 1rem;
+  :nth-child(odd) {
+    margin-right: 4rem;
+  }
+
   .text {
     margin-top: 1rem;
   }
   @media (max-width: 768px) {
     width: 100%;
+    margin: 2rem 0rem;
   }
 `
 
@@ -69,7 +73,7 @@ const BlogPage = ({ data }) => (
             <Content className="hvr-float-shadow" key={node.id}>
               <Link to={node.fields.slug}>
                 <Img
-                  style={{ borderRadius: `10px` }}
+                  style={{ borderRadius: `10px`, maxHeight: `250px` }}
                   fluid={node.frontmatter.image.childImageSharp.fluid}
                 />
                 <h3
@@ -96,7 +100,7 @@ const BlogPage = ({ data }) => (
                   data-sal-delay="100"
                   data-sal-easing="ease"
                 >
-                  {node.excerpt}
+                  {node.frontmatter.excerpt}
                 </p>
               </Link>
             </Content>
@@ -119,6 +123,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            excerpt
             image {
               childImageSharp {
                 fluid {

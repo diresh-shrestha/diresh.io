@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 import SEO from "../components/Seo"
 import Clock from "../components/icons/clock"
+import ScrollToTop from "../components/scroll-to-top"
 
 const ContentWrapper = styled.div`
   margin: auto 1.5rem;
@@ -16,21 +17,26 @@ const Content = styled.div`
     margin: 3rem auto;
   }
   img {
+    display: block;
     margin: 2rem auto;
     border-radius: 10px;
   }
   p {
     margin-bottom: 2rem;
   }
-  ul {
+  ul,
+  ol {
     color: var(--textNormal);
+  }
+  em {
+    text-align: center;
   }
 `
 
 const TitleContainer = styled.div`
   text-align: center;
   margin-top: 8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 `
 
 const SubTitle = styled.p`
@@ -57,6 +63,7 @@ export default function BlogPost({ data }) {
       />
       <Container>
         <ContentWrapper>
+          <ScrollToTop styled={{ opacity: `0.5` }} />
           <TitleContainer>
             <h1
               style={{ margin: `0.5rem auto` }}
@@ -89,6 +96,7 @@ export default function BlogPost({ data }) {
             style={{ marginBottom: `10rem`, marginTop: `2rem` }}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
+
           <Disqus config={disqusConfig} />
         </ContentWrapper>
       </Container>

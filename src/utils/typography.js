@@ -12,7 +12,7 @@ fairyGateTheme.overrideThemeStyles = () => ({
   p: {
     opacity: "var(--pOpacity)",
     color: "var(--textNormal)",
-    fontSize: "1.2rem",
+    fontSize: "1.1rem",
     marginBottom: "0.5rem",
   },
   a: {

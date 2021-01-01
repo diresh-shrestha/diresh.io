@@ -1,5 +1,5 @@
 import React from "react"
-import ScrollUpButton from "react-scroll-up-button"
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button"
 
 const ScrollToTop = () => {
   return (
