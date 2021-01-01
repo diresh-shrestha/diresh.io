@@ -14,7 +14,7 @@ Some books that I left out are Recursion by Blake Crouch which was a fantastic b
 
 ## Why We Sleep
 
-![Why We Sleep](https://m.media-amazon.com/images/I/51WOq1TRGdL.jpg)
+[![Why We Sleep](https://m.media-amazon.com/images/I/51WOq1TRGdL.jpg)](https://www.goodreads.com/book/show/34466963-why-we-sleep?ac=1&from_search=true&qid=53crTGcvVf&rank=1)
 
 I'm a big fan of sleep and I am not ashamed of it. In our society, we have somehow equated sleep with being lazy, and being sleepless or pulling an all-nighter is something to be proud of. Personally, when I get anything less than 8 hours of sleep my productivity the next day drops sharply. I can't think straight, control my emotions too well, or make good decisions. For the longest time, I believed there was something wrong with me. Matthew Walker's Why We Sleep put all my misconceptions about sleep to rest. Walker is a neuroscientist who does sleep research at UC Berkeley and is also the founder of the Center for Human Sleep Science. He's spent most of his life doing sleep research and he lays out his findings in this book and urges the readers to get more sleep. Here are some of the key takeaways from the book:
 
@@ -44,7 +44,7 @@ So how can we get more sleep or better sleep? Walker outlines a few tips that co
 
 ## The Three-Body Problem
 
-![The Three-Body Problem](https://i.imgur.com/66uTxPL.jpg)
+[![The Three-Body Problem](https://i.imgur.com/66uTxPL.jpg)](https://www.goodreads.com/book/show/20518872-the-three-body-problem?ac=1&from_search=true&qid=hbwaH2vAnH&rank=1)
 
 The Three-Body Problem by Chinese science fiction author Cixin Liu and translated by Ken Liu is an amazing piece of hard science fiction. It also won one of the most prestigious awards in science fiction, the Hugo Award. The book is the first part of a trilogy called Remembrance of Earth's Past. It was also recommended by plenty of high-profile people such as Barack Obama and Mark Zuckerberg.
 
@@ -54,7 +54,7 @@ The first book spans generations and sets the stage for humanity's battle agains
 
 ## The Dark Forest
 
-![The Dark Forest](https://i.imgur.com/okCXu63.jpg)
+[![The Dark Forest](https://i.imgur.com/okCXu63.jpg)](https://www.goodreads.com/book/show/23168817-the-dark-forest?ac=1&from_search=true&qid=Qt7YnxdQbs&rank=1)
 
 The Dark Forest is the second book in the Remembrance of Earth's Past trilogy written by Cixin Liu but translated by Joel Martinsen this time around. While the first book spanned generations, this book spans centuries.
 
@@ -64,7 +64,7 @@ This book was a slow burn but when the action came, I was at the edge of my seat
 
 ## Sapiens: A Brief History of Humankind by Yuval Noah Harari
 
-![Sapiens by Yuval Noah Harari](https://prodimage.images-bn.com/pimages/9780062316110_p0_v5_s1200x630.jpg)
+[![Sapiens by Yuval Noah Harari](https://prodimage.images-bn.com/pimages/9780062316110_p0_v5_s1200x630.jpg)](https://www.goodreads.com/book/show/23692271-sapiens?ac=1&from_search=true&qid=1wGt0OpGCQ&rank=2)
 
 Sapiens by Yuval Noah Harari was one of the best books I read this year. Harari is a historian and a professor in the Department of History at the Hebrew University of Jerusalem and also the writer of other bestsellers such as Homo Deus and 21 Lessons for the 21st Century. The book chronicles how humans went from being an insignificant animal in the middle of the food chain to jumping our way to the top of the food chain, and how we went from using sticks and stones to building rockets and walking on the moon. The book is divided into four parts first of which is the cognitive revolution followed by the agricultural revolution, the unification of humankind, and the scientific revolution. It takes you through the three major revolutions in human history that brought us where we are today. Harari does a masterful job of conveying this information in a very beginner-friendly and digestible manner. It almost reads like a story, the story of humankind. This is a massive book and so dense in information that trying to condense the important points is a tough ask. I will attempt to write the main points from the first part but feel free to skip it. If you do find it interesting, I highly recommending reading the entire book.
 
