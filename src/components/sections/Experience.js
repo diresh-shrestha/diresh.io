@@ -31,11 +31,30 @@ const TextWrapper = styled.p`
   width: fit-content;
 `
 
+const Location = styled.p`
+  font-size: 0.9rem;
+  line-height: 10px;
+`
+
+const Technologies = styled.span`
+  display: inline-block;
+  border: solid;
+  margin-right: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  border-width: 1px;
+`
+
+const TechContainer = styled.div`
+  margin: 1rem auto;
+`
+
 export default function Experience({ content }) {
   const experience = content.map(exp => {
     const { body, frontmatter } = exp.node
     const technologies = frontmatter.technologies.map(item => {
-      return <li>{item}</li>
+      return <Technologies>{item}</Technologies>
     })
     return (
       <div style={{ marginBottom: `1rem` }}>
@@ -52,6 +71,9 @@ export default function Experience({ content }) {
         <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           <em>{frontmatter.title}</em>
         </p>
+        <Location>
+          <em>{frontmatter.location}</em>
+        </Location>
         <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           {frontmatter.date}
         </p>
@@ -67,8 +89,7 @@ export default function Experience({ content }) {
             data-sal-easing="ease"
           >
             <MDXRenderer>{body}</MDXRenderer>
-            <p>Technologies Used:</p>
-            <ul>{technologies}</ul>
+            <TechContainer>{technologies}</TechContainer>
           </TextWrapper>
         </Content>
         <hr />

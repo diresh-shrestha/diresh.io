@@ -28,11 +28,25 @@ const TextWrapper = styled.p`
   margin: 1rem;
 `
 
+const Technologies = styled.span`
+  display: inline-block;
+  border: solid;
+  margin-right: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  border-width: 1px;
+`
+
+const TechContainer = styled.div`
+  margin: 1rem auto;
+`
+
 export default function Projects({ content }) {
   const projects = content.map(proj => {
     const { body, frontmatter } = proj.node
     const technologies = frontmatter.technologies.map(item => {
-      return <li>{item}</li>
+      return <Technologies>{item}</Technologies>
     })
     return (
       <div>
@@ -51,13 +65,17 @@ export default function Projects({ content }) {
             data-sal-easing="ease"
           >
             <MDXRenderer>{body}</MDXRenderer>
-            <p>Technologies Used:</p>
-            <ul>{technologies}</ul>
-            <div>
-              <a href={frontmatter.external} rel="noreferrer" target="_blank">
+            <div>{technologies}</div>
+            <TechContainer>
+              <a
+                href={frontmatter.external}
+                className="hvr-float-shadow"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <Github />
               </a>
-            </div>
+            </TechContainer>
           </TextWrapper>
         </Content>
       </div>

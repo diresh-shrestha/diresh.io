@@ -7,7 +7,15 @@ import SourceCode from "./SourceCode"
 export default function SocialLinks() {
   return (
     <div>
-      <Github />
+      <a
+        href="https://github.com/diresh-shrestha"
+        className="hvr-float-shadow"
+        rel="noreferrer"
+        target="_blank"
+        style={{ marginRight: `1rem` }}
+      >
+        <Github />
+      </a>
       <Linkedin />
       <Mail />
       <SourceCode />
