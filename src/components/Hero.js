@@ -68,7 +68,6 @@ const StyledImg = styled(Img)`
   }
   @media (max-width: 768px) {
     max-width: 700px;
-    margin: 2rem auto;
     height: 600px;
   }
   @media (max-width: 425px) {
@@ -78,6 +77,12 @@ const StyledImg = styled(Img)`
   @media (max-width: 320px) {
     width: 300px;
   }
+`
+
+const ImgCaption = styled.p`
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 1rem;
 `
 
 const MobileImg = styled(Img)`
@@ -102,6 +107,7 @@ const Links = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
+  line-height: 2;
 `
 
 export default function Hero({ desktop, mobile }) {
@@ -155,6 +161,17 @@ export default function Hero({ desktop, mobile }) {
         </TextWrapper>
         <ImageWrapper>
           <StyledImg fluid={desktop} />
+          <ImgCaption>
+            Picture taken in{" "}
+            <a
+              className="hvr-underline-from-left"
+              target="_blank"
+              rel="noreferrer"
+              href="https://en.wikipedia.org/wiki/Sibelius_Monument_(Helsinki)"
+            >
+              Sibelius Monument
+            </a>{" "}
+          </ImgCaption>
         </ImageWrapper>
 
         {/* <MobileImg fluid={mobile} /> */}
