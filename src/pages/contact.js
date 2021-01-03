@@ -47,10 +47,10 @@ const ContactPage = () => {
     }
   }
 
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(true)
 
   const handleChange = () => {
-    setDisabled(true)
+    setDisabled(false)
   }
 
   const handleOnSubmit = e => {

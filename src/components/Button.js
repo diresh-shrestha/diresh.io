@@ -27,6 +27,10 @@ const StyledButton = styled.button`
   }
 `
 
-export default function Button({ text }) {
-  return <StyledButton className="hvr-sweep-to-right">{text}</StyledButton>
+export default function Button({ text, disabled }) {
+  return (
+    <StyledButton disabled={disabled} className="hvr-sweep-to-right">
+      {text}
+    </StyledButton>
+  )
 }
