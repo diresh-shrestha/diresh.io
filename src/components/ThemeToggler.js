@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import styled from "styled-components"
 import { check } from "prettier"
@@ -13,7 +13,7 @@ const StyledLabel = styled.label`
   padding: 5px;
   position: relative;
   height: 20px;
-  width: 40px;
+  width: 20px;
   transform: scale(1.5);
   margin: 0rem 3rem;
   vertical-align: middle;
@@ -27,6 +27,8 @@ const Ball = styled.div`
   left: 1px;
   height: 18px;
   width: 18px;
+  transform: ${theme => (theme ? "light" : "translateX(0px)")};
+  transform: ${theme => (theme ? "dark" : "translateX(20px)")};
 
   transition: transform 0.2s linear;
 `
@@ -35,6 +37,16 @@ const StyledInput = styled.input`
   opacity: 0;
   position: absolute;
 `
+
+function useDarkMode() {
+  const [theme, setTheme] = useState("light")
+
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem("theme")
+    localTheme && setTheme(localTheme)
+  }, [])
+  return theme
+}
 
 export default function MyComponent() {
   // let current =
@@ -46,10 +58,8 @@ export default function MyComponent() {
   //   current = theme
   //   return current
   // }
-  const current = {
-    light: "translateX(0px)",
-    dark: "translateX(20px",
-  }
+
+  const theme = useDarkMode()
 
   return (
     <ThemeToggler>
@@ -61,8 +71,6 @@ export default function MyComponent() {
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
             checked={theme === "dark"}
           />
-
-          <Ball style={{ transform: current[theme] }} />
         </StyledLabel>
       )}
     </ThemeToggler>
