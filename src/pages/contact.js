@@ -32,7 +32,7 @@ const TextArea = styled.textarea`
   border-radius: 10px;
 `
 
-const ContactPage = () => {
+const ContactPage = ({ data }) => {
   const image = data.file.childImageSharp.fluid
   const [serverState, setServerState] = useState({
     submitting: false,
