@@ -174,7 +174,7 @@ const ContactPage = ({ data }) => {
 
 export default ContactPage
 
-const data = graphql`
+export const data = graphql`
   query {
     file(relativePath: { eq: "sections/Footer/About.jpg" }) {
       childImageSharp {
