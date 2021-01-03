@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import styled from "styled-components"
 import { check } from "prettier"
+import Moon from "./icons/Moon"
+import Sun from "./icons/Sun"
 
 const StyledLabel = styled.label`
-  background-color: var(--toggler);
   border-radius: 50px;
   cursor: pointer;
   display: inline-block;
@@ -17,60 +18,56 @@ const StyledLabel = styled.label`
   transform: scale(1.5);
   margin: 0rem 3rem;
   vertical-align: middle;
+
+  svg {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    &:nth-child(2) {
+      transform: ${({ theme }) =>
+        theme === "light" ? "translateY(0)" : "translateY(-100px)"};
+    }
+
+    &:nth-child(3) {
+      transform: ${({ theme }) =>
+        theme === "light" ? "translateY(-100px)" : "translateY(0)"};
+    }
+    transition: all 0.3s linear;
 `
 
-const Ball = styled.div`
-  background-color: var(--bg);
-  border-radius: 50%;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  height: 18px;
-  width: 18px;
-  transform: ${theme => (theme ? "light" : "translateX(0px)")};
-  transform: ${theme => (theme ? "dark" : "translateX(20px)")};
+// const Ball = styled.div`
+//   background-color: var(--bg);
+//   border-radius: 50%;
+//   position: absolute;
+//   top: 1px;
+//   left: 1px;
+//   height: 18px;
+//   width: 18px;
+//   transform: ${theme => (theme ? "light" : "translateX(0px)")};
+//   transform: ${theme => (theme ? "dark" : "translateX(20px)")};
 
-  transition: transform 0.2s linear;
-`
+//   transition: transform 0.2s linear;
+// `
 
 const StyledInput = styled.input`
   opacity: 0;
   position: absolute;
 `
 
-function useDarkMode() {
-  const [theme, setTheme] = useState("light")
-
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme")
-    localTheme && setTheme(localTheme)
-  }, [])
-  return theme
-}
-
 export default function MyComponent() {
-  // let current =
-  //   typeof window !== "undefined" ? localStorage.getItem("theme") : null
-  // // if (typeof window !== "undefined") {
-  // //   localStorage.setItem("theme", "light")
-  // // }
-  // const getCurrent = theme => {
-  //   current = theme
-  //   return current
-  // }
-
-  const theme = useDarkMode()
-
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
-        <StyledLabel for="chk">
+        <StyledLabel for="chk" theme={theme}>
           <StyledInput
             id="chk"
             type="checkbox"
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
             checked={theme === "dark"}
           />
+          <Moon />
+          <Sun />
         </StyledLabel>
       )}
     </ThemeToggler>
