@@ -70,7 +70,6 @@ export default function MyComponent() {
             id="chk"
             type="checkbox"
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
-            checked={(theme = "dark")}
           />
           <Moon />
           <Sun />
