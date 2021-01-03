@@ -34,6 +34,10 @@ const Content = styled.div`
   }
 `
 
+const Title = styled.h3`
+  font-size: 1.3rem;
+`
+
 export default function RecentPosts() {
   const data = useStaticQuery(graphql`
     query {
@@ -83,14 +87,14 @@ export default function RecentPosts() {
             style={{ borderRadius: `10px`, maxHeight: `250px` }}
             fluid={post.node.frontmatter.image.childImageSharp.fluid}
           />
-          <h3
+          <Title
             style={{ marginTop: `1rem` }}
             data-sal="slide-up"
             data-sal-delay="100"
             data-sal-easing="ease"
           >
             {post.node.frontmatter.title}
-          </h3>
+          </Title>
           <em>
             <p
               style={{ fontSize: `1rem` }}

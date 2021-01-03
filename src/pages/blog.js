@@ -48,6 +48,10 @@ const Date = styled.p`
   font-size: 1rem;
 `
 
+const Title = styled.h3`
+  font-size: 1.3rem;
+`
+
 const BlogPage = ({ data }) => (
   <Layout>
     <SEO
@@ -76,13 +80,13 @@ const BlogPage = ({ data }) => (
                   style={{ borderRadius: `10px`, maxHeight: `250px` }}
                   fluid={node.frontmatter.image.childImageSharp.fluid}
                 />
-                <h3
+                <Title
                   data-sal="slide-up"
                   data-sal-delay="100"
                   data-sal-easing="ease"
                 >
                   {node.frontmatter.title}
-                </h3>
+                </Title>
                 <em>
                   <Date
                     data-sal="slide-up"
