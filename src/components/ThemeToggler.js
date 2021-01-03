@@ -56,6 +56,12 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
+  // const [currentTheme, setCurrentTheme] = useState("light")
+  // useEffect(() => {
+  //   const localTheme = window.localStorage.getItem("theme")
+  //   setCurrentTheme(localTheme)
+  // }, [])
+  // console.log(currentTheme)
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
@@ -64,7 +70,6 @@ export default function MyComponent() {
             id="chk"
             type="checkbox"
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
-            checked={theme === "dark"}
           />
           <Moon />
           <Sun />
