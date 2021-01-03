@@ -63,7 +63,11 @@ const ContactPage = () => {
       data: new FormData(form),
     })
       .then(r => {
-        handleServerResponse(true, "Thanks!", form)
+        handleServerResponse(
+          true,
+          "Thanks for reaching out to me! I will get back to you soon.",
+          form
+        )
       })
       .catch(r => {
         handleServerResponse(false, r.response.data.error, form)
