@@ -1,5 +1,5 @@
 ---
-slug: "/blog/how-to-get-started-with-frontend-web-development"
+slug: "/blog/how-to-get-started-with-frontend-web-development/"
 title: "How To Get Started With Frontend Web Development"
 date: "2020-12-25"
 image: "frontend.png"

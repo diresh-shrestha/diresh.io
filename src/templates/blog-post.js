@@ -106,6 +106,12 @@ export default function BlogPost({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

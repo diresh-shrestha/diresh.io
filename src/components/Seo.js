@@ -61,6 +61,10 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
           content: `${title} | ${defaultTitle}`,
         },
         {
+          property: `og:url`,
+          content: canonical,
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
