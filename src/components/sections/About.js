@@ -2,6 +2,8 @@ import React from "react"
 import Container from "../Container"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import GitHubCalendar from "react-github-calendar"
+import ReactTooltip from "react-tooltip"
 
 import Skills from "../icons/Skills"
 
@@ -28,6 +30,7 @@ const Content = styled.div`
 
 const InnerHeading = styled.p`
   margin-top: 5rem;
+  margin-bottom: 1rem;
   text-align: center;
 `
 
@@ -49,6 +52,22 @@ export default function About({ content }) {
           <strong>Technologies</strong> I've been using recently
         </InnerHeading>
         <Skills />
+        <InnerHeading>
+          <strong>Days</strong> I've been coding recently
+        </InnerHeading>
+        <GitHubCalendar
+          style={{
+            textAlign: `center`,
+            color: `var(--textNormal)`,
+          }}
+          username="diresh-shrestha"
+          fullYear={false}
+          blockSize={15}
+          blockMargin={4}
+          color="#2098d1"
+        >
+          <ReactTooltip delayShow={50} html />
+        </GitHubCalendar>
       </ContentWrapper>
     </Wrapper>
   )
