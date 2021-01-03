@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import Container from "../components/Container"
@@ -33,6 +33,7 @@ const TextArea = styled.textarea`
 `
 
 const ContactPage = () => {
+  const image = data.file.childImageSharp.fluid
   const [serverState, setServerState] = useState({
     submitting: false,
     status: null,
@@ -79,6 +80,7 @@ const ContactPage = () => {
         title="Contact"
         pathname="contact/"
         description="Contact Diresh Shrestha"
+        image={image}
       />
       <Content>
         <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
@@ -171,3 +173,15 @@ const ContactPage = () => {
 }
 
 export default ContactPage
+
+const data = graphql`
+  query {
+    file(relativePath: { eq: "sections/Footer/About.jpg" }) {
+      childImageSharp {
+        fluid(jpegQuality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
