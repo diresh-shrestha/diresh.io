@@ -31,7 +31,7 @@ const StyledLabel = styled.label`
 
     &:nth-child(3) {
       transform: ${({ theme }) =>
-        theme === "light" ? "translateY(-100px)" : "translateY(0)"};
+        theme === "dark" ? "translateY(0)" : "translateY(-100px)"};
     }
     transition: all 0.3s linear;
 `
