@@ -26,7 +26,7 @@ const StyledLabel = styled.label`
     left: 0px;
     &:nth-child(2) {
       transform: ${({ theme }) =>
-        theme === "light" ? "translateY(0)" : "translateY(-100px)"};
+        theme === "dark" ? "translateY(-100px)" : "translateY(0)"};
     }
 
     &:nth-child(3) {
