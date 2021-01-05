@@ -13,11 +13,13 @@ const StyledContainer = styled(Container)`
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
+  max-width: 1100px;
 `
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -25,14 +27,14 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  margin: 5rem 0rem;
+  margin: 2rem 0rem;
   box-shadow: var(--boxShadow);
-  width: 50%;
+  width: 46%;
   padding: 1rem;
   background: var(--blog);
   border-radius: 10%;
   :nth-child(odd) {
-    margin-right: 4rem;
+    margin-right: 3rem;
   }
 
   .text {
