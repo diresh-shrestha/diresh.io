@@ -1,6 +1,6 @@
 ---
-slug: "/blog/books-ill-read-in-2021/"
-title: "Books I'll Read In 2021"
+slug: "/blog/books-ill--be-reading-in-2021/"
+title: "Books I'll Be Reading In 2021"
 date: "2021-01-05"
 image: "tweet.png"
 description: "I have planned to read 25 books this year. This is an overview of my year ahead in books."
