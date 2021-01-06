@@ -11,7 +11,7 @@ excerpt: "One of my resolutions this year is to read at least 25 books and to re
 
 The above tweet is from my favorite Twitter account [Orange Book](https://twitter.com/orangebook_) and even though I am writing a blog post about reading books, I believe it's an important thought to keep in mind.
 
-One of my resolutions this year is to read at least 25 books and to really solidify the plan and keep myself accountable, I decided to plan out all the books I am going to read. I have added books that have been sitting in my online library collecting digital dust, books that I recently discovered, and books that are yet to be released. They are divided into 5 categories which are Science Fiction, Nonfiction, Fiction, Self-help, and Philosophy with 5 books in each category for a wide range of topics and variety.
+One of my resolutions this year is to read at least 25 books and to really solidify the plan and keep myself accountable, I decided to plan out all the books I am going to read. I made a list of books that have been sitting in my online library collecting digital dust, books that I recently discovered, and books that are yet to be released. They are divided into 5 categories which are Science Fiction, Nonfiction, Fiction, Self-help, and Philosophy with 5 books in each category for a wide range of topics and variety.
 
 Also, recently I have been interested in learning philosophy and since Socrates never wrote anything down, I couldn't think of a better place to start than Plato and some of his essential works. Plato wrote a total of 27 treatises (that we know of), and I have listed 5 of them under the philosophy category that I would like to read this year. So, without further ado, here is the list of books I will be reading this year.
 
