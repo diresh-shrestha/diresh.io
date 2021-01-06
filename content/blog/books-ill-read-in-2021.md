@@ -143,7 +143,7 @@ With the same insight and clarity that made _Sapiens_ an international hit and a
 
 ![enter image description here](https://i.imgur.com/r3aNL4N.jpg)
 
-The Rosie Effect is the second book in the series. The first book The Rosie Project was the first and only romance I have ever read. It was recommended by Bill Gates, and I figured I would give it a read. I ended up loving it and I have since read it multiple times. I could relate with Don Tillman struggling in his love life and trying to solve the problem the only way he knew how by embarking on a wife project through which he meets Rosie who is the complete opposite of him.
+The Rosie Effect is the second book in the Don Tillman series. The first book The Rosie Project was the first and only romance novel I have ever read, and the only reason I picked it up was because Bill Gates had recommended it in his blog. I ended up loving it and I have since read it multiple times. I could relate with Don Tillman struggling in his love life and trying to solve the problem the only way he knew how by embarking on a wife project through which he meets Rosie who is the complete opposite of him.
 
 **Official Synopsis**: Don Tillman and Rosie Jarman are back. The Wife Project is complete, and Don and Rosie are happily married and living in New York. But they're about to face a new challenge because - surprise - Rosie is pregnant.
 
@@ -155,7 +155,7 @@ As Don tries to schedule time for pregnancy research, getting Gene and Claudia t
 
 ![enter image description here](https://m.media-amazon.com/images/I/41OYUErwpNL.jpg)
 
-I want to complete the journey of Don and Rosie with the final book in the series.
+I have decided to complete the journey of Don and Rosie with the final book in the series this year.
 
 **Official Synopsis**: Don and Rosie are back in Melbourne after a decade in New York, and they’re about to face their most important project.
 
@@ -191,7 +191,7 @@ Brimming with humour, a glittering cast of characters, and one beautifully rende
 
 ### Blood of Elves by Andrzej Sapkowski
 
-![enter image description here](https://prodimage.images-bn.com/pimages/9780316438988_p0_v2_s550x406.jpg)
+![Blood of Elves](https://prodimage.images-bn.com/pimages/9780316438988_p0_v2_s550x406.jpg)
 
 By this point, I assume a lot of people have already watched the Netflix adaptation of the Witcher novels. As a book reader myself, and having played the games, I was eagerly anticipating the series. The show had a lot of problems and I wouldn't necessarily call it a faithful adaptation either. I think majority of book readers are unhappy with the writing of the show but that's with most book adaptations. To be fair, the show was fun to watch. The first season was based on the two short story novels The Last Wish and Sword of Destiny. Blood of Elves is the first full length novel in the series and the second season is going to be based on it. Reading the book is probably going to ruin the show for me but that will not stop me.
 
@@ -223,7 +223,7 @@ Accessible and portable, The Headspace Guide to Meditation and Mindfulness offer
 
 ![Atomic Habits](https://m.media-amazon.com/images/I/51-nXsSRfZL.jpg)
 
-One of the most important things I have learned is that small consistent efforts and good habits over a period of time leads to profound change. We all want to become an overnight success but that's hardly the way it ever works. Most success stories we hear are the result of decades of consistent work. Success is built on top of good habits and practicing good habits is a tough thing to do especially when most of our habits don't serve us.
+One of the most important things I have learned in recent years is that small consistent efforts and good habits over a period of time leads to profound change. We all want to become an overnight success but that's hardly the way it ever works. Most success stories we hear are the result of decades of consistent work. Success is built on top of good habits and practicing good habits is a tough thing to do especially when most of our habits don't serve us.
 
 **Official Synopsis**: No matter your goals, _Atomic Habits_ offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.
 
@@ -241,7 +241,7 @@ A yogi lives life in this expansive state, and in this transformative book Sadhg
 
 ![The Power of Now](https://images-na.ssl-images-amazon.com/images/I/41cbPheOxmL._SX323_BO1,204,203,200_.jpg)
 
-Have read a few self-help books by now and if I learn atleast good thing from this book, I will be happy with it.
+I have read a few self-help books by now and if I learn at least one good thing from this book, I will be happy with it.
 
 **Official Synopsis**: Eckhart Tolle's message is simple: living in the now is the truest path to happiness and enlightenment. And while this message may not seem stunningly original or fresh, Tolle's clear writing, supportive voice and enthusiasm make this an excellent manual for anyone who's ever wondered what exactly "living in the now" means. Foremost, Tolle is a world-class teacher, able to explain complicated concepts in concrete language. More importantly, within a chapter of reading this book, readers are already holding the world in a different container--more conscious of how thoughts and emotions get in the way of their ability to live in genuine peace and happiness.
 
