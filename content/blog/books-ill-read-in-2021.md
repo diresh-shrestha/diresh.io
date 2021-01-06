@@ -69,7 +69,7 @@ When House Atreides is betrayed, the destruction of Paul’s family will set the
 
 ![To Sleep in a Sea of Stars](https://i.imgur.com/8sPeKJj.jpg)
 
-To Sleep in a Sea of Stars was the Goodreads Choice 2020 winner in Science Fiction, which made me add the books to my reading list this year.
+To Sleep in a Sea of Stars was the Goodreads Choice 2020 winner in Science Fiction, which made me add the book to my reading list this year.
 
 **Official Synopsis**: Kira Navárez dreamed of life on new worlds. Now she's awakened a nightmare. During a routine survey mission on an uncolonized planet, Kira finds an alien relic. At first she's delighted, but elation turns to terror when the ancient dust around her begins to _move_.
 
@@ -117,7 +117,7 @@ A few years ago, I was in a really bad spot mentally and emotionally and to reme
 
 ![Permanent Record](https://i.imgur.com/mykMf07.jpg)
 
-Edward Snowden is a whistleblower who exposed the mass surveillance programs implemented by the US government specifically the NSA, spying on citizens, and collecting data unlawfully. Some consider him a hero, some call him a traitor and although I am in the former group, I believe that's beside the point and we should not be focusing on his character but instead on the actual information that he risked his life to leak. His only goal according to him, was to bring to light the unprecedented level of privacy-invading operations by the government agencies and make the general public aware. Fast forward to now, most people have seemed to forget or simply not care whether or not the government's spying on them or if their privacy is a matter of utmost importance in a free world.
+Edward Snowden is a whistleblower who exposed the mass surveillance programs implemented by the US government specifically the NSA, that spied on citizens, and collected data unlawfully. Some consider him a hero, some call him a traitor and although I am in the former group, I believe that's beside the point and we should not be focusing on his character but instead on the actual information that he risked his life to leak. His only goal according to him, was to bring to light the unprecedented level of privacy-invading operations by the government agencies and make the general public aware. Fast forward to now, most people have seemed to forget or simply not care whether or not the government's spying on them or if their privacy is a matter of utmost importance in a free world.
 
 **Official Synopsis**: In 2013, twenty-nine-year-old Edward Snowden shocked the world when he broke with the American intelligence establishment and revealed that the United States government was secretly pursuing the means to collect every single phone call, text message, and email. The result would be an unprecedented system of mass surveillance with the ability to pry into the private lives of every person on earth. Six years later, Snowden reveals for the very first time how he helped to build this system and why he was moved to expose it.
 
