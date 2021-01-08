@@ -61,7 +61,7 @@ const BlogPage = ({ data }) => (
       description="Welcome to my blog. I write about web development, philosophy, books
           and anything that interests me."
       pathname="blog/"
-      image={data.mainImg.childImageSharp.resize}
+      image={data.mainImg.childImageSharp.fluid}
     />
     <StyledContainer>
       <ContentWrapper>
@@ -122,15 +122,11 @@ export default BlogPage
 
 export const query = graphql`
   query {
-    mainImg: file(relativePath: { eq: "sections/Main/Main.jpg" }) {
+    mainImg: file(relativePath: {eq: "blog/frontend.png"}) {
+      id
       childImageSharp {
-        resize(height: 500, width: 600) {
-          src
-          tracedSVG
-          width
-          height
-          aspectRatio
-          originalName
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
