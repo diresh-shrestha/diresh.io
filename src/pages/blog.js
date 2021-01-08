@@ -61,6 +61,7 @@ const BlogPage = ({ data }) => (
       description="Welcome to my blog. I write about web development, philosophy, books
           and anything that interests me."
       pathname="blog/"
+      image={data.mainImg.childImageSharp.resize}
     />
     <StyledContainer>
       <ContentWrapper>
@@ -121,6 +122,18 @@ export default BlogPage
 
 export const query = graphql`
   query {
+    mainImg: file(relativePath: { eq: "sections/Main/Main.jpg" }) {
+      childImageSharp {
+        resize(height: 500, width: 600) {
+          src
+          tracedSVG
+          width
+          height
+          aspectRatio
+          originalName
+        }
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
