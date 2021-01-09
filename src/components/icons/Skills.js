@@ -54,7 +54,7 @@ const StyledUl = styled.ul`
 
 const SkillList = styled.li`
   display: inline-flex;
-  margin: 0px 1rem;
+  margin: 1rem 1.5rem;
 `
 
 export default function Skills() {

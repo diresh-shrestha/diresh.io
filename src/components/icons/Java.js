@@ -3,8 +3,8 @@ import React from "react"
 const Java = () => {
   return (
     <svg
-      width="42"
-      height="42"
+      // width="42"
+      // height="42"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 384 512"
       color="grey"

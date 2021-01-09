@@ -5,9 +5,9 @@ const Mongodb = () => {
     <div>
       <svg
         color="grey"
-        height="42"
         viewBox="0 0 32 32"
-        width="42"
+        height="80"
+        width="80"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -23,7 +23,7 @@ const Mongodb = () => {
           fill="currentColor"
         />
       </svg>
-      <p style={{ textAlign: `center`, fontSize: `0.5rem` }}>mongodb</p>
+      <p style={{ textAlign: `center`, fontSize: `0.8rem` }}>mongodb</p>
     </div>
   )
 }

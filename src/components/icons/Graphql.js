@@ -11,8 +11,8 @@ const Graphql = () => {
         y="0px"
         viewBox="0 0 400 400"
         enable-background="new 0 0 400 400"
-        width="42"
-        height="42"
+        width="80"
+        height="80"
         color="grey"
       >
         <g>
@@ -153,7 +153,7 @@ const Graphql = () => {
           />
         </g>
       </svg>
-      <p style={{ textAlign: `center`, fontSize: `0.5rem` }}>graphql</p>
+      <p style={{ textAlign: `center`, fontSize: `0.8rem` }}>graphql</p>
     </div>
   )
 }
