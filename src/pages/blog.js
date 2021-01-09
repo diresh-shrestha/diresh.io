@@ -32,7 +32,7 @@ const Content = styled.div`
   width: 46%;
   padding: 1rem;
   background: var(--blog);
-  border-radius: 10%;
+  border-radius: 3%;
   :nth-child(odd) {
     margin-right: 3rem;
   }
