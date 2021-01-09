@@ -9,10 +9,19 @@ import { Link } from "gatsby"
 const List = styled.li`
   position: relative;
   display: inline-block;
-  margin-right: 0.5rem;
-  // @media (max-width: 1040px) {
-  //   margin-right: 0.5rem;
-  // }
+  margin-right: 4.5rem;
+  @media (max-width: 1200px) {
+    margin-right: 4rem;
+  }
+  @media (max-width: 1080px) {
+    margin-right: 3rem;
+  }
+  @media (max-width: 940px) {
+    margin-right: 2.5rem;
+  }
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
   // @media (max-width: 950px) {
   //   margin-right: 0.3rem;
   // }
@@ -20,10 +29,16 @@ const List = styled.li`
 
 const ListWrapper = styled.ul`
   list-style: none;
+  font-weight: bold;
   float: right;
-  margin: 0.5rem auto;
+  margin: 0.5rem 3rem;
+
+  @media (max-width: 1200px) {
+    margin: 0.55rem 2rem;
+  }
+
   @media (max-width: 425px) {
-    margin: 0.8rem 1rem;
+    margin: 0.8rem 0rem;
   }
 `
 
@@ -39,9 +54,6 @@ const Links = styled(AnchorLink)`
   @media (max-width: 768px) {
     display: none;
   }
-  @media (max-width: 1040px) {
-    font-size: 0.7rem;
-  }
 `
 
 const PageLinks = styled(Link)`
@@ -52,18 +64,33 @@ const PageLinks = styled(Link)`
   color: var(--textNormal);
   text-shadow: none;
   background-image: none;
-
+  margin-right: 4.5rem;
+  @media (max-width: 1200px) {
+    margin-right: 4rem;
+  }
   @media (max-width: 768px) {
     display: none;
   }
-  @media (max-width: 1040px) {
-    font-size: 0.7rem;
+  @media (max-width: 1080px) {
+    margin-right: 3rem;
   }
+  @media (max-width: 940px) {
+    margin-right: 2.5rem;
+  }
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
+  // @media (max-width: 768px) {
+  //   display: none;
+  // }
+  // @media (max-width: 1040px) {
+  //   font-size: 0.7rem;
+  // }
 `
 
 const VerticalRule = styled.div`
   display: inline-flex;
-  margin-right: 0.5rem;
+  margin: auto 1rem;
   margin-bottom: -0.2rem;
   width: 2px;
   height: 20px;
@@ -75,8 +102,6 @@ const VerticalRule = styled.div`
 const NavLink = () => {
   return (
     <ListWrapper>
-      <ThemeToggler />
-
       {MenuItems.map(item => {
         return (
           <List>
@@ -86,7 +111,7 @@ const NavLink = () => {
           </List>
         )
       })}
-      <VerticalRule />
+      {/* <VerticalRule /> */}
 
       <PageLinks className="hvr-sweep-to-right" to="/contact">
         CONTACT
@@ -94,6 +119,7 @@ const NavLink = () => {
       <PageLinks className="hvr-sweep-to-right" to="/blog">
         BLOG
       </PageLinks>
+      <ThemeToggler />
     </ListWrapper>
   )
 }

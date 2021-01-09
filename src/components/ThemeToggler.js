@@ -16,9 +16,10 @@ const StyledLabel = styled.label`
   height: 20px;
   width: 20px;
   transform: scale(1.5);
-  margin: 0rem 3rem;
   vertical-align: middle;
-
+  @media (max-width: 768px) {
+    margin-right: 5rem;
+  }
   svg {
     position: absolute;
     top: 0px;

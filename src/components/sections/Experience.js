@@ -18,7 +18,7 @@ const Content = styled.div`
   .img {
     width: 100%;
     position: relative;
-    border-radius: 10%;
+    border-radius: 3%;
   }
   ul {
     display: list-item;

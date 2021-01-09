@@ -19,11 +19,10 @@ const Content = styled.div`
   img {
     display: block;
     margin: 2rem auto;
-    border-radius: 10px;
+    border-radius: 3%;
   }
   p {
     margin-bottom: 2rem;
-    
   }
   ul,
   ol {
@@ -31,7 +30,6 @@ const Content = styled.div`
   }
   em {
     font-size: 0.9rem;
-    
   }
 `
 

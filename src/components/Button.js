@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   position: relative;
   border: solid;
   padding: 1em 2em;
-  border-radius: 4px;
+  border-radius: 3%;
   transition: color calc(0.5s * 0.75);
   font-weight: 900;
   cursor: pointer;

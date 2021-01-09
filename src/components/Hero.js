@@ -52,7 +52,7 @@ const TextWrapper = styled(Container)`
 `
 
 const StyledImg = styled(Img)`
-  border-radius: 20px;
+  border-radius: 3%;
   left: 0;
   width: 100%;
   z-index: -1;
