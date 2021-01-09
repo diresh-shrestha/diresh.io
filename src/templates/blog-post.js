@@ -23,13 +23,15 @@ const Content = styled.div`
   }
   p {
     margin-bottom: 2rem;
+    
   }
   ul,
   ol {
     color: var(--textNormal);
   }
   em {
-    text-align: center;
+    font-size: 0.9rem;
+    
   }
 `
 

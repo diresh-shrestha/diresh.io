@@ -29,12 +29,16 @@ const InnerHeading = styled.p`
 `
 
 const Book = styled.div`
-  margin: 0rem 3rem;
+  margin: 0rem auto;
   p {
     margin-top: 1rem;
   }
   @media (max-width: 425px) {
     margin: 0;
+  }
+  img {
+    border-radius: 3%;
+    margin: 1rem;
   }
 `
 
@@ -63,8 +67,8 @@ export default function Etc() {
             <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
               Currently Reading
             </p>
-
             <Goodreads index={0} />
+            <Goodreads index={1} />
           </Book>
         </BookContainer>
         <Note data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
