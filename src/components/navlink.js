@@ -19,6 +19,11 @@ const List = styled.li`
   @media (max-width: 940px) {
     margin-right: 2.5rem;
   }
+
+  @media (max-width: 880px) {
+    margin-right: 1.5rem;
+  }
+
   @media (max-width: 768px) {
     margin-right: 0;
   }
@@ -77,6 +82,11 @@ const PageLinks = styled(Link)`
   @media (max-width: 940px) {
     margin-right: 2.5rem;
   }
+
+  @media (max-width: 880px) {
+    margin-right: 1.5rem;
+  }
+
   @media (max-width: 768px) {
     margin-right: 0;
   }
