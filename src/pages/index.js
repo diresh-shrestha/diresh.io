@@ -19,7 +19,10 @@ const IndexPage = ({ data }) => (
       image={data.mainImg.childImageSharp.resize}
       pathname="/"
     />
-    <Hero desktop={data.desktopHeroImg.childImageSharp.fluid} />
+    <Hero
+      desktop={data.desktopHeroImg.childImageSharp.fluid}
+      mobile={data.mobileHeroImg.childImageSharp.fluid}
+    />
     <About content={data.about.edges} />
     <Experience content={data.experience.edges} />
     <Projects content={data.projects.edges} />
@@ -60,7 +63,7 @@ export const query = graphql`
             image {
               childImageSharp {
                 fluid(fit: CONTAIN) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -85,10 +88,10 @@ export const query = graphql`
         }
       }
     }
-    desktopHeroImg: file(relativePath: { eq: "sections/Hero/hero.jpg" }) {
+    desktopHeroImg: file(relativePath: { eq: "sections/Hero/hero.webp" }) {
       childImageSharp {
-        fluid(jpegQuality: 100, maxWidth: 1440) {
-          ...GatsbyImageSharpFluid
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -104,11 +107,10 @@ export const query = graphql`
         }
       }
     }
-    mobileHeroImg: file(relativePath: { eq: "sections/Hero/hero_small.jpg" }) {
-      id
+    mobileHeroImg: file(relativePath: { eq: "sections/Hero/hero_small.webp" }) {
       childImageSharp {
-        fluid(jpegQuality: 100, maxWidth: 425) {
-          ...GatsbyImageSharpFluid
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

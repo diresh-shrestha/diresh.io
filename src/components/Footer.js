@@ -37,10 +37,10 @@ const AboutImg = styled(Img)`
 export default function Footer() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "sections/Footer/About.jpg" }) {
+      file(relativePath: { eq: "sections/Footer/About.webp" }) {
         childImageSharp {
-          fluid(jpegQuality: 100) {
-            ...GatsbyImageSharpFluid
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

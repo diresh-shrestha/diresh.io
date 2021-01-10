@@ -70,11 +70,7 @@ const StyledImg = styled(Img)`
     height: 600px;
   }
   @media (max-width: 425px) {
-    width: 380px;
-    height: auto;
-  }
-  @media (max-width: 320px) {
-    width: 300px;
+    display: none;
   }
 `
 
@@ -85,14 +81,29 @@ const ImgCaption = styled.p`
 `
 
 const MobileImg = styled(Img)`
-  //position: absolute !important;
+  border-radius: 3%;
+  left: 0;
   width: 100%;
   z-index: -1;
-  //top: 80px;
-  left: 0;
-  // @media (min-width: 769px) {
-  //   display: none;
-  // }
+  margin: auto 1rem;
+  border: 20px;
+  height: auto;
+  width: 380px;
+
+  @media (max-width: 375px) {
+    width: 350px;
+  }
+
+  @media (max-width: 375px) {
+    width: 350px;
+  }
+
+  @media (max-width: 320px) {
+    width: 280px;
+  }
+  @media (min-width: 426px) {
+    display: none;
+  }
 `
 
 const ImageWrapper = styled.div`
@@ -160,6 +171,7 @@ export default function Hero({ desktop, mobile }) {
         </TextWrapper>
         <ImageWrapper>
           <StyledImg fluid={desktop} />
+          <MobileImg fluid={mobile} />
           <ImgCaption>
             Picture taken in{" "}
             <a
@@ -172,8 +184,6 @@ export default function Hero({ desktop, mobile }) {
             </a>{" "}
           </ImgCaption>
         </ImageWrapper>
-
-        {/* <MobileImg fluid={mobile} /> */}
       </ContainerWrapper>
     </Wrapper>
   )
