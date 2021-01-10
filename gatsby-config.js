@@ -46,6 +46,8 @@ module.exports = {
       resolve: `gatsby-plugin-social9-socialshare`,
       options: {
         content: `544b38011e0341079b145fe70389582c`,
+        async: true,
+        defer: true,
       },
     },
     {

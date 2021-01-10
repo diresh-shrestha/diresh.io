@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import MenuItems from "./Navbar/MenuItems"
-import Time from "./Time"
 import ThemeToggler from "./ThemeToggler"
 import { Link } from "gatsby"
 
