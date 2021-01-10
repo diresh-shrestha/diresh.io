@@ -43,6 +43,11 @@ const SubTitle = styled.p`
   font-size: 1rem;
 `
 
+const ShareButton = styled.div`
+  display: flex;
+  float: right;
+`
+
 export default function BlogPost({ data }) {
   const image = data.markdownRemark.frontmatter.image.childImageSharp.resize
   const siteUrl = "https://www.diresh.io/"
@@ -90,6 +95,14 @@ export default function BlogPost({ data }) {
                 config={disqusConfig}
               />
             </em>
+            <div
+              style={{
+                display: `flex`,
+                justifyContent: `center`,
+                margin: `1rem`,
+              }}
+              class="s9-widget-wrapper"
+            ></div>
           </TitleContainer>
 
           <Content
