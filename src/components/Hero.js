@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Typer from "./Typer"
 import Img from "gatsby-image"
 import Container from "./Container"
 import SocialLinks from "./icons/SocialLinks"
