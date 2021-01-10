@@ -52,7 +52,7 @@ export default function About({ content }) {
           <strong>Technologies</strong> I've been using recently
         </InnerHeading>
         <Skills />
-        {/* <InnerHeading>
+        <InnerHeading>
           <strong>Days</strong> I've been coding recently
         </InnerHeading>
         <GitHubCalendar
@@ -67,7 +67,7 @@ export default function About({ content }) {
           color="#2098d1"
         >
           <ReactTooltip delayShow={50} html />
-        </GitHubCalendar> */}
+        </GitHubCalendar>
       </ContentWrapper>
     </Wrapper>
   )
