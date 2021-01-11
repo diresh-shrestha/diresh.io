@@ -8,19 +8,15 @@ import { Link } from "gatsby"
 const List = styled.li`
   position: relative;
   display: inline-block;
-  margin-right: 4.5rem;
+  margin-right: 4rem;
   @media (max-width: 1200px) {
-    margin-right: 4rem;
+    margin-right: 3.5rem;
   }
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     margin-right: 3rem;
   }
   @media (max-width: 940px) {
     margin-right: 2.5rem;
-  }
-
-  @media (max-width: 880px) {
-    margin-right: 1.5rem;
   }
 
   @media (max-width: 768px) {
@@ -35,10 +31,10 @@ const ListWrapper = styled.ul`
   list-style: none;
   font-weight: bold;
   float: right;
-  margin: 0.5rem 3rem;
+  margin: 0.5rem 2rem;
 
   @media (max-width: 1200px) {
-    margin: 0.55rem 2rem;
+    margin: 0.55rem 1rem;
   }
 
   @media (max-width: 425px) {
@@ -49,12 +45,15 @@ const ListWrapper = styled.ul`
 const Links = styled(AnchorLink)`
   position: relative;
   padding: 0.2rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-decoration: none;
   color: var(--textNormal);
   text-shadow: none;
   background-image: none;
 
+  @media (max-width: 1024px) {
+    font-size: 0.9rem;
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -63,7 +62,7 @@ const Links = styled(AnchorLink)`
 const PageLinks = styled(Link)`
   position: relative;
   padding: 0.2rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-decoration: none;
   color: var(--textNormal);
   text-shadow: none;
@@ -72,6 +71,11 @@ const PageLinks = styled(Link)`
   @media (max-width: 1200px) {
     margin-right: 4rem;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 0.9rem;
+  }
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -80,10 +84,6 @@ const PageLinks = styled(Link)`
   }
   @media (max-width: 940px) {
     margin-right: 2.5rem;
-  }
-
-  @media (max-width: 880px) {
-    margin-right: 1.5rem;
   }
 
   @media (max-width: 768px) {
