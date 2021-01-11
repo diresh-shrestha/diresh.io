@@ -19,6 +19,10 @@ const List = styled.li`
     margin-right: 2.5rem;
   }
 
+  @media (max-width: 854px) {
+    margin-right: 2rem;
+  }
+
   @media (max-width: 768px) {
     margin-right: 0;
   }
@@ -35,6 +39,10 @@ const ListWrapper = styled.ul`
 
   @media (max-width: 1200px) {
     margin: 0.55rem 1rem;
+  }
+
+  @media (max-width: 780px) {
+    margin: 0.55rem 0.5rem;
   }
 
   @media (max-width: 425px) {
@@ -54,6 +62,9 @@ const Links = styled(AnchorLink)`
   @media (max-width: 1024px) {
     font-size: 0.9rem;
   }
+  @media (max-width: 882px) {
+    font-size: 0.8rem;
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -68,33 +79,32 @@ const PageLinks = styled(Link)`
   text-shadow: none;
   background-image: none;
   margin-right: 4.5rem;
+
   @media (max-width: 1200px) {
     margin-right: 4rem;
+  }
+
+  @media (max-width: 1080px) {
+    margin-right: 3rem;
   }
 
   @media (max-width: 1024px) {
     font-size: 0.9rem;
   }
 
-  @media (max-width: 768px) {
-    display: none;
-  }
-  @media (max-width: 1080px) {
-    margin-right: 3rem;
-  }
   @media (max-width: 940px) {
     margin-right: 2.5rem;
   }
 
+  @media (max-width: 854px) {
+    font-size: 0.8rem;
+    margin-right: 2rem;
+  }
+
   @media (max-width: 768px) {
+    display: none;
     margin-right: 0;
   }
-  // @media (max-width: 768px) {
-  //   display: none;
-  // }
-  // @media (max-width: 1040px) {
-  //   font-size: 0.7rem;
-  // }
 `
 
 const VerticalRule = styled.div`

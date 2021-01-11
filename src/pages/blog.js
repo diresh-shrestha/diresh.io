@@ -40,9 +40,12 @@ const Content = styled.div`
   .text {
     margin-top: 1rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 830px) {
     width: 100%;
     margin: 2rem 0rem;
+    :nth-child(odd) {
+      margin-right: 0rem;
+    }
   }
 `
 
@@ -122,7 +125,7 @@ export default BlogPage
 
 export const query = graphql`
   query {
-    mainImg: file(relativePath: {eq: "blog/frontend.png"}) {
+    mainImg: file(relativePath: { eq: "blog/frontend.png" }) {
       id
       childImageSharp {
         fluid {
