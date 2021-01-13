@@ -17,6 +17,11 @@ const ContainerWrapper = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+  &:nth-child(2) {
+    @media (max-width: 768px) {
+      margin-left: 5rem;
+    }
+  }
 `
 
 const Wrapper = styled.div`
@@ -34,13 +39,15 @@ const TextWrapper = styled(Container)`
   text-align: left;
   margin: 0 2.5rem;
   margin-top: 8rem;
-  margin-right: 10rem;
+  margin-right: 5rem;
   h1 {
     margin: 0;
     font-size: 2.5rem;
     color: var(--textTitle);
   }
-
+  @media (max-width: 1024px) {
+    margin-right: 0rem;
+  }
   @media (max-width: 768px) {
     margin-top: 4rem;
     margin-right: 1rem;
@@ -82,32 +89,6 @@ const ImgCaption = styled.p`
   margin-top: 1rem;
 `
 
-const MobileImg = styled(Img)`
-  border-radius: 3%;
-  left: 0;
-  width: 100%;
-
-  margin: auto 1rem;
-  border: 20px;
-  height: auto;
-  width: 380px;
-
-  @media (max-width: 375px) {
-    width: 350px;
-  }
-
-  @media (max-width: 375px) {
-    width: 350px;
-  }
-
-  @media (max-width: 320px) {
-    width: 280px;
-  }
-  @media (min-width: 426px) {
-    display: none;
-  }
-`
-
 const ImageWrapper = styled.div`
   margin: 2rem auto;
 `
@@ -121,6 +102,17 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   line-height: 2;
   z-index: 1;
+`
+
+const StyledParticles = styled(Particles)`
+  margin-left: 8rem;
+  @media (max-width: 950px) {
+    margin-left: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0rem;
+  }
 `
 
 export default function Hero({ desktop, mobile }) {
@@ -172,9 +164,8 @@ export default function Hero({ desktop, mobile }) {
             </a>
           </ButtonWrapper>
         </TextWrapper>
-        <Particles
+        <StyledParticles
           height={500}
-          width={400}
           style={{ position: `relative`, marginTop: `5rem` }}
           id="tsparticles"
           options={{

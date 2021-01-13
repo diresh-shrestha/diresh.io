@@ -17,6 +17,12 @@ const StyledLabel = styled.label`
   width: 20px;
   transform: scale(1.5);
   vertical-align: middle;
+  @media (max-width: 1100px) {
+    margin-left: 2rem;
+  }
+  @media (max-width: 1024px) {
+    margin-left: 1rem;
+  }
   @media (max-width: 768px) {
     margin-right: 5rem;
   }
@@ -26,19 +32,14 @@ const StyledLabel = styled.label`
     right: 0px;
     left: 0px;
     &:nth-child(2) {
-      transform: ${({ currentTheme }) =>
-        currentTheme === true ? "translateY(-100px)" : "translateY(0)"};
-
+      
       transform: ${({ theme }) =>
         theme === "dark" ? "translateY(-100px)" : "translateY(0)"};
-
-        
         
     }
 
     &:nth-child(3) {
-      transform: ${({ currentTheme }) =>
-        currentTheme === true ? "translateY(0)" : "translateY(-100px)"};
+      
       transform: ${({ theme }) =>
         theme === "dark" ? "translateY(0)" : "translateY(-100px)"};
     }
@@ -65,18 +66,21 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
-  const [currentTheme, setCurrentTheme] = useState("dark")
-  const [once, setOnce] = useState(true)
-  useEffect(() => {
-    setCurrentTheme(window.localStorage.getItem("theme"))
-  }, [])
-  const handleClick = () => {
-    setOnce(false)
-  }
+  // const [currentTheme, setCurrentTheme] = useState("dark")
+  // const [once, setOnce] = useState(true)
+  // useEffect(() => {
+  //   togg(window.localStorage.getItem("theme"))
+  // }, [])
+  // const handleClick = () => {
+  //   setOnce(false)
+  // }
   // console.log(currentTheme)
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
+        // <button onClick={toggleTheme()}>
+
+        // </button>
         <StyledLabel for="chk" theme={theme}>
           <StyledInput
             id="chk"
@@ -84,8 +88,8 @@ export default function MyComponent() {
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
             checked={theme === "dark"}
           />
-          <Moon currentTheme={currentTheme} onClick={handleClick} />
-          <Sun currentTheme={currentTheme} onClick={handleClick} />
+          <Moon />
+          <Sun />
         </StyledLabel>
       )}
     </ThemeToggler>
