@@ -5,6 +5,7 @@ import Container from "./Container"
 import SocialLinks from "./icons/SocialLinks"
 import { Link } from "gatsby"
 import Button from "./Button"
+import Particles from "react-tsparticles"
 
 const ContainerWrapper = styled.div`
   width: 100%;
@@ -31,8 +32,9 @@ const TextWrapper = styled(Container)`
   position: relative;
   padding: 0;
   text-align: left;
-  margin: 0 1rem;
+  margin: 0 2.5rem;
   margin-top: 10rem;
+  margin-right: 10rem;
   h1 {
     margin: 0;
     font-size: 2.5rem;
@@ -41,6 +43,7 @@ const TextWrapper = styled(Container)`
 
   @media (max-width: 768px) {
     margin-top: 4rem;
+    margin-right: 1rem;
   }
 
   @media (max-width: 425px) {
@@ -50,7 +53,7 @@ const TextWrapper = styled(Container)`
   }
 `
 
-const StyledImg = styled(Img)`
+const StyledImg = styled.div`
   border-radius: 3%;
   left: 0;
   width: 100%;
@@ -68,9 +71,9 @@ const StyledImg = styled(Img)`
     max-width: 700px;
     height: 600px;
   }
-  @media (max-width: 425px) {
-    display: none;
-  }
+  // @media (max-width: 425px) {
+  //   display: none;
+  // }
 `
 
 const ImgCaption = styled.p`
@@ -169,8 +172,415 @@ export default function Hero({ desktop, mobile }) {
             </a>
           </ButtonWrapper>
         </TextWrapper>
-        <ImageWrapper>
-          <StyledImg fluid={desktop} />
+        <Particles
+          style={{ position: `relative` }}
+          id="tsparticles"
+          options={{
+            autoPlay: true,
+            background: {
+              color: {
+                value: "",
+              },
+              image: "",
+              position: "",
+              repeat: "",
+              size: "",
+              opacity: 1,
+            },
+            backgroundMask: {
+              composite: "destination-out",
+              cover: {
+                color: {
+                  value: "#808080",
+                },
+                opacity: 1,
+              },
+              enable: false,
+            },
+            backgroundMode: {
+              enable: false,
+              zIndex: -1,
+            },
+            detectRetina: false,
+            fpsLimit: 30,
+            infection: {
+              cure: false,
+              delay: 0,
+              enable: false,
+              infections: 0,
+              stages: [],
+            },
+            interactivity: {
+              detectsOn: "canvas",
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onDiv: {
+                  selectors: "#repulse-div",
+                  enable: false,
+                  mode: "repulse",
+                  type: "circle",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "bubble",
+                  parallax: {
+                    enable: false,
+                    force: 2,
+                    smooth: 10,
+                  },
+                },
+                resize: true,
+              },
+              modes: {
+                attract: {
+                  distance: 200,
+                  duration: 0.4,
+                  speed: 1,
+                },
+                bounce: {
+                  distance: 200,
+                },
+                bubble: {
+                  distance: 40,
+                  duration: 2,
+                  opacity: 8,
+                  size: 6,
+                },
+                connect: {
+                  distance: 80,
+                  links: {
+                    opacity: 0.5,
+                  },
+                  radius: 60,
+                },
+                grab: {
+                  distance: 400,
+                  links: {
+                    blink: false,
+                    consent: false,
+                    opacity: 1,
+                  },
+                },
+                light: {
+                  area: {
+                    gradient: {
+                      start: {
+                        value: "#808080",
+                      },
+                      stop: {
+                        value: "#000000",
+                      },
+                    },
+                    radius: 1000,
+                  },
+                  shadow: {
+                    color: {
+                      value: "#000000",
+                    },
+                    length: 2000,
+                  },
+                },
+                push: {
+                  quantity: 4,
+                },
+                remove: {
+                  quantity: 2,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
+                  speed: 1,
+                },
+                slow: {
+                  factor: 1,
+                  radius: 0,
+                },
+                trail: {
+                  delay: 1,
+                  quantity: 1,
+                },
+              },
+            },
+            manualParticles: [],
+            motion: {
+              disable: false,
+              reduce: {
+                factor: 4,
+                value: false,
+              },
+            },
+            particles: {
+              bounce: {
+                horizontal: {
+                  random: {
+                    enable: false,
+                    minimumValue: 0.1,
+                  },
+                  value: 1,
+                },
+                vertical: {
+                  random: {
+                    enable: false,
+                    minimumValue: 0.1,
+                  },
+                  value: 1,
+                },
+              },
+              collisions: {
+                bounce: {
+                  horizontal: {
+                    random: {
+                      enable: false,
+                      minimumValue: 0.1,
+                    },
+                    value: 1,
+                  },
+                  vertical: {
+                    random: {
+                      enable: false,
+                      minimumValue: 0.1,
+                    },
+                    value: 1,
+                  },
+                },
+                enable: false,
+                mode: "bounce",
+              },
+              color: {
+                value: "#808080",
+                animation: {
+                  enable: false,
+                  speed: 1,
+                  sync: true,
+                },
+              },
+              life: {
+                count: 0,
+                delay: {
+                  random: {
+                    enable: false,
+                    minimumValue: 0,
+                  },
+                  value: 0,
+                  sync: false,
+                },
+                duration: {
+                  random: {
+                    enable: false,
+                    minimumValue: 0.0001,
+                  },
+                  value: 0,
+                  sync: false,
+                },
+              },
+              links: {
+                blink: false,
+                color: {
+                  value: "#808080",
+                },
+                consent: false,
+                distance: 30,
+                enable: true,
+                frequency: 1,
+                opacity: 0.4,
+                shadow: {
+                  blur: 5,
+                  color: {
+                    value: "#00ff00",
+                  },
+                  enable: false,
+                },
+                triangles: {
+                  enable: false,
+                  frequency: 1,
+                },
+                width: 1,
+                warp: false,
+              },
+              move: {
+                angle: {
+                  offset: 45,
+                  value: 90,
+                },
+                attract: {
+                  enable: false,
+                  rotate: {
+                    x: 600,
+                    y: 1200,
+                  },
+                },
+                direction: "none",
+                distance: 0,
+                enable: true,
+                gravity: {
+                  acceleration: 9.81,
+                  enable: false,
+                  maxSpeed: 50,
+                },
+                noise: {
+                  delay: {
+                    random: {
+                      enable: false,
+                      minimumValue: 0,
+                    },
+                    value: 0,
+                  },
+                  enable: false,
+                },
+                outModes: {
+                  default: "bounce",
+                  bottom: "bounce",
+                  left: "bounce",
+                  right: "bounce",
+                  top: "bounce",
+                },
+                random: false,
+                size: false,
+                speed: 1,
+                straight: false,
+                trail: {
+                  enable: false,
+                  length: 10,
+                  fillColor: {
+                    value: "#000000",
+                  },
+                },
+                vibrate: false,
+                warp: false,
+              },
+              number: {
+                density: {
+                  enable: false,
+                  area: 2000,
+                  factor: 1000,
+                },
+                limit: 0,
+                value: 200,
+              },
+              opacity: {
+                random: {
+                  enable: false,
+                  minimumValue: 0.1,
+                },
+                value: 0.4,
+                animation: {
+                  enable: true,
+                  minimumValue: 0.05,
+                  speed: 2,
+                  sync: false,
+                },
+              },
+              reduceDuplicates: false,
+              rotate: {
+                random: {
+                  enable: false,
+                  minimumValue: 0,
+                },
+                value: 0,
+                animation: {
+                  enable: false,
+                  speed: 0,
+                  sync: false,
+                },
+                direction: "clockwise",
+                path: false,
+              },
+              shadow: {
+                blur: 0,
+                color: {
+                  value: "#000000",
+                },
+                enable: false,
+                offset: {
+                  x: 0,
+                  y: 0,
+                },
+              },
+              shape: {
+                options: {
+                  character: {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
+                    value: "*",
+                    weight: "400",
+                  },
+                  char: {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
+                    value: "*",
+                    weight: "400",
+                  },
+                  polygon: {
+                    sides: 5,
+                  },
+                  star: {
+                    sides: 5,
+                  },
+                },
+                type: "circle",
+              },
+              size: {
+                random: {
+                  enable: true,
+                  minimumValue: 1,
+                },
+                value: 1,
+                animation: {
+                  destroy: "none",
+                  enable: false,
+                  minimumValue: 0.1,
+                  speed: 40,
+                  startValue: "max",
+                  sync: false,
+                },
+              },
+              stroke: {
+                width: 0,
+                color: {
+                  value: "#000000",
+                  animation: {
+                    enable: false,
+                    speed: 1,
+                    sync: true,
+                  },
+                },
+              },
+            },
+            pauseOnBlur: true,
+            pauseOnOutsideViewport: false,
+            themes: [],
+            polygon: {
+              draw: {
+                enable: true,
+                stroke: {
+                  color: {
+                    value: "rgba(255,255,255,0.2)",
+                  },
+                  width: 0.5,
+                  opacity: 0.2,
+                },
+              },
+              enable: true,
+              inline: {
+                arrangement: "equidistant",
+              },
+              move: {
+                radius: 10,
+                type: "path",
+              },
+              scale: 0.5,
+              type: "inline",
+              url: "https://cdn.matteobruni.it/images/particles/smalldeer.svg",
+            },
+          }}
+        />
+
+        {/* <StyledImg fluid={desktop} />
           <MobileImg fluid={mobile} />
           <ImgCaption>
             Picture taken in{" "}
@@ -182,8 +592,7 @@ export default function Hero({ desktop, mobile }) {
             >
               Sibelius Monument
             </a>{" "}
-          </ImgCaption>
-        </ImageWrapper>
+          </ImgCaption> */}
       </ContainerWrapper>
     </Wrapper>
   )

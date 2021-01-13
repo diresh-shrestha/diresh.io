@@ -12,18 +12,28 @@ import Hero from "../components/Hero"
 import Experience from "../components/sections/Experience"
 import Me from "../components/sections/Me"
 import Particles from "react-tsparticles"
+import { Helmet } from "react-helmet"
 
 const IndexPage = ({ data }) => (
   <Layout>
+    <Helmet>
+      <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
+    </Helmet>
+
     <SEO
       title="Home"
       image={data.mainImg.childImageSharp.resize}
       pathname="/"
     />
+
     <Particles
       style={{ position: `fixed` }}
       id="tsparticles"
       options={{
+        backgroundMode: {
+          enable: true,
+          zIndex: -1,
+        },
         interactivity: {
           events: {
             onClick: {
