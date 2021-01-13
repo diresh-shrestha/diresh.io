@@ -44,31 +44,33 @@ const IndexPage = ({ data }) => (
             },
 
             repulse: {
-              distance: 400,
+              distance: 200,
               duration: 4,
             },
           },
         },
         particles: {
           color: {
-            value: "#C0C0C0",
+            value: "#808080",
           },
-
+          opacity: {
+            value: 0.5,
+          },
           collisions: {
             enable: false,
           },
-          line_linked: {
+          links: {
             enable: false,
           },
           move: {
-            direction: "none",
+            direction: "top",
             enable: true,
             outMode: "out",
             random: true,
-            speed: 1,
+            speed: 0.5,
           },
           number: {
-            value: 160,
+            value: 80,
             density: {
               enable: false,
             },

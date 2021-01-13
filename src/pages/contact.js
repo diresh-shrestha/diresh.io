@@ -101,16 +101,16 @@ const ContactPage = ({ data }) => {
               },
               onHover: {
                 enable: true,
-                mode: "repulse",
+                mode: "bubble",
               },
               resize: true,
             },
             modes: {
               bubble: {
-                distance: 400,
+                distance: 200,
                 duration: 2,
                 opacity: 0.8,
-                size: 40,
+                size: 10,
               },
               push: {
                 quantity: 4,
@@ -123,7 +123,7 @@ const ContactPage = ({ data }) => {
           },
           particles: {
             color: {
-              value: "#C0C0C0",
+              value: "#808080",
             },
             links: {
               color: "#C0C0C0",
@@ -140,7 +140,7 @@ const ContactPage = ({ data }) => {
               enable: true,
               outMode: "bounce",
               random: false,
-              speed: 6,
+              speed: 2,
               straight: false,
             },
             number: {

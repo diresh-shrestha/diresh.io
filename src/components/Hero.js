@@ -117,6 +117,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   line-height: 2;
+  z-index: 1;
 `
 
 export default function Hero({ desktop, mobile }) {
