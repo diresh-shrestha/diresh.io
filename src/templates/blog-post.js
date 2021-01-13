@@ -20,7 +20,7 @@ const Content = styled.div`
   img {
     display: block;
     margin: 2rem auto;
-    border-radius: 3%;
+    border-radius: 10px;
   }
   p {
     margin-bottom: 2rem;
