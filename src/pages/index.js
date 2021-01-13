@@ -81,7 +81,7 @@ const IndexPage = ({ data }) => (
           },
           size: {
             random: true,
-            value: 3,
+            value: 2,
             anim: {
               speed: 4,
               size_min: 0.3,

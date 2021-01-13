@@ -2,7 +2,7 @@ body {
   --bg: #f6f6f6;
   --containerBackground: none;
   --textNormal: #222;
-  --textTitle: #2098d1;
+  --textTitle: #1b1b2f;
   --textLink: #2098d1;
   --toggler: #121212;
   --pOpacity: 1;
@@ -22,11 +22,11 @@ body.dark {
   --bg: #121212;
   --containerBackground: #212121;
   --textNormal: rgba(255, 255, 255, 0.88);
-  --textTitle: #bc6ff1;
-  --textLink: #bc6ff1;
+  --textTitle: hsl(53deg 100% 50%);
+  --textLink: #e43f5a;
   --toggler: #f6f6f6;
   --pOpacity: 0.87;
-  --linkHover: #bc6ff1;
+  --linkHover: #e43f5a;
   --hoverCenter: rgba(247, 244, 244, 0.692);
   --hoverEllipse: rgba(0, 0, 0, 0);
   --blog: #272626;
