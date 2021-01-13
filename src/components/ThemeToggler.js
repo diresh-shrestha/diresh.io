@@ -26,11 +26,19 @@ const StyledLabel = styled.label`
     right: 0px;
     left: 0px;
     &:nth-child(2) {
+      transform: ${({ currentTheme }) =>
+        currentTheme === true ? "translateY(-100px)" : "translateY(0)"};
+
       transform: ${({ theme }) =>
         theme === "dark" ? "translateY(-100px)" : "translateY(0)"};
+
+        
+        
     }
 
     &:nth-child(3) {
+      transform: ${({ currentTheme }) =>
+        currentTheme === true ? "translateY(0)" : "translateY(-100px)"};
       transform: ${({ theme }) =>
         theme === "dark" ? "translateY(0)" : "translateY(-100px)"};
     }
@@ -57,11 +65,14 @@ const StyledInput = styled.input`
 `
 
 export default function MyComponent() {
-  // const [currentTheme, setCurrentTheme] = useState("light")
-  // useEffect(() => {
-  //   const localTheme = window.localStorage.getItem("theme")
-  //   setCurrentTheme(localTheme)
-  // }, [])
+  const [currentTheme, setCurrentTheme] = useState("dark")
+  const [once, setOnce] = useState(true)
+  useEffect(() => {
+    setCurrentTheme(window.localStorage.getItem("theme"))
+  }, [])
+  const handleClick = () => {
+    setOnce(false)
+  }
   // console.log(currentTheme)
   return (
     <ThemeToggler>
@@ -73,8 +84,8 @@ export default function MyComponent() {
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
             checked={theme === "dark"}
           />
-          <Moon />
-          <Sun />
+          <Moon currentTheme={currentTheme} onClick={handleClick} />
+          <Sun currentTheme={currentTheme} onClick={handleClick} />
         </StyledLabel>
       )}
     </ThemeToggler>
