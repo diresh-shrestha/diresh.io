@@ -15,7 +15,7 @@ const Mail = () => {
         height="32"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
-        color="grey"
+        color="var(--textNormal)"
       >
         <path
           fill="currentColor"

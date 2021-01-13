@@ -8,7 +8,7 @@ const Html = () => {
         viewBox="0 0 384 512"
         width="80"
         height="80"
-        color="grey"
+        color="var(--textNormal)"
       >
         <path
           fill="currentColor"

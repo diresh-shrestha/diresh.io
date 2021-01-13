@@ -4,7 +4,7 @@ const Mongodb = () => {
   return (
     <div>
       <svg
-        color="grey"
+        color="var(--textNormal)"
         viewBox="0 0 32 32"
         height="80"
         width="80"

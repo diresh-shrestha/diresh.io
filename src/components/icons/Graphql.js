@@ -13,7 +13,7 @@ const Graphql = () => {
         enable-background="new 0 0 400 400"
         width="80"
         height="80"
-        color="grey"
+        color="var(--textNormal)"
       >
         <g>
           <g>

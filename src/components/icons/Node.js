@@ -6,7 +6,7 @@ const Node = () => {
       <svg
         width="80"
         height="80"
-        color="grey"
+        color="var(--textNormal)"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
