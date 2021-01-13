@@ -388,7 +388,7 @@ export default function Hero({ desktop, mobile }) {
                 distance: 35,
                 enable: true,
                 frequency: 1,
-                opacity: 0.5,
+                opacity: 0.8,
                 shadow: {
                   blur: 5,
                   color: {
@@ -565,7 +565,7 @@ export default function Hero({ desktop, mobile }) {
                     value: "#808080",
                   },
                   width: 0.8,
-                  opacity: 0.2,
+                  opacity: 0.4,
                 },
               },
               enable: true,
