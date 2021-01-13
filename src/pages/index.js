@@ -11,6 +11,7 @@ import RecentPosts from "../components/sections/RecentPosts"
 import Hero from "../components/Hero"
 import Experience from "../components/sections/Experience"
 import Me from "../components/sections/Me"
+import Particles from "react-tsparticles"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -19,10 +20,80 @@ const IndexPage = ({ data }) => (
       image={data.mainImg.childImageSharp.resize}
       pathname="/"
     />
+    <Particles
+      style={{ position: `fixed` }}
+      id="tsparticles"
+      options={{
+        interactivity: {
+          events: {
+            onClick: {
+              enable: true,
+              mode: "repulse",
+            },
+            onHover: {
+              enable: true,
+              mode: "bubble",
+            },
+          },
+          modes: {
+            bubble: {
+              distance: 250,
+              duration: 2,
+              opacity: 0,
+              size: 0,
+            },
+
+            repulse: {
+              distance: 400,
+              duration: 4,
+            },
+          },
+        },
+        particles: {
+          color: {
+            value: "#C0C0C0",
+          },
+
+          collisions: {
+            enable: false,
+          },
+          line_linked: {
+            enable: false,
+          },
+          move: {
+            direction: "none",
+            enable: true,
+            outMode: "out",
+            random: true,
+            speed: 1,
+          },
+          number: {
+            value: 160,
+            density: {
+              enable: false,
+            },
+          },
+
+          shape: {
+            type: "circle",
+          },
+          size: {
+            random: true,
+            value: 3,
+            anim: {
+              speed: 4,
+              size_min: 0.3,
+            },
+          },
+        },
+        detectRetina: true,
+      }}
+    />
     <Hero
       desktop={data.desktopHeroImg.childImageSharp.fluid}
       mobile={data.mobileHeroImg.childImageSharp.fluid}
     />
+
     <About content={data.about.edges} />
     <Experience content={data.experience.edges} />
     <Projects content={data.projects.edges} />

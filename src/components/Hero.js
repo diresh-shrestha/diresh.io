@@ -54,7 +54,6 @@ const StyledImg = styled(Img)`
   border-radius: 3%;
   left: 0;
   width: 100%;
-  z-index: -1;
 
   border: 20px;
 
@@ -84,7 +83,7 @@ const MobileImg = styled(Img)`
   border-radius: 3%;
   left: 0;
   width: 100%;
-  z-index: -1;
+
   margin: auto 1rem;
   border: 20px;
   height: auto;
