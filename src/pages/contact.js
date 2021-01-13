@@ -39,6 +39,7 @@ const TextArea = styled.textarea`
 
 const ContactPage = ({ data }) => {
   const image = data.file.childImageSharp.fluid
+  const [submitted, setSubmitted] = useState(false)
   const [serverState, setServerState] = useState({
     submitting: false,
     status: null,
@@ -61,6 +62,7 @@ const ContactPage = ({ data }) => {
 
   const handleOnSubmit = e => {
     e.preventDefault()
+    setSubmitted(true)
     const form = e.target
     setServerState({ submitting: true })
     axios({
@@ -88,7 +90,138 @@ const ContactPage = ({ data }) => {
         image={image}
       />
       <Particles
-        style={{ position: `fixed` }}
+        style={{
+          position: `fixed`,
+          display: submitted ? `block` : `none`,
+        }}
+        id="tsparticles"
+        options={{
+          fpsLimit: 60,
+          particles: {
+            color: {
+              value: ["#5bc0eb", "#fde74c", "#9bc53d", "#e55934", "#fa7921"],
+            },
+            number: {
+              value: 0,
+            },
+            collisions: {
+              enable: false,
+            },
+            shape: {
+              type: "circle",
+            },
+            opacity: {
+              value: 0.5,
+              random: false,
+              animation: {
+                enable: true,
+                speed: 1,
+                minimumValue: 0.1,
+                sync: true,
+              },
+            },
+            size: {
+              value: 5,
+              random: {
+                enable: true,
+                minimumValue: 3,
+              },
+              animation: {
+                enable: false,
+                speed: 10,
+                minimumValue: 0.1,
+                sync: true,
+              },
+            },
+            links: {
+              enable: false,
+            },
+            life: {
+              duration: {
+                sync: true,
+                value: 0.5,
+              },
+              count: 1,
+            },
+            move: {
+              enable: true,
+              gravity: {
+                enable: false,
+              },
+              speed: 25,
+              direction: "none",
+              random: false,
+              straight: false,
+              outMode: "destroy",
+            },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onHover: {
+                enable: false,
+                mode: "repulse",
+                parallax: {
+                  enable: false,
+                  force: 60,
+                  smooth: 10,
+                },
+              },
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1,
+                },
+              },
+              bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 0.8,
+              },
+              repulse: {
+                distance: 200,
+              },
+              push: {
+                particles_nb: 4,
+              },
+              remove: {
+                particles_nb: 2,
+              },
+            },
+          },
+          detectRetina: true,
+
+          emitters: {
+            direction: "none",
+            life: {
+              count: 0,
+              duration: 0.3,
+              delay: 0.1,
+            },
+            rate: {
+              delay: 0.1,
+              quantity: 50,
+            },
+            size: {
+              width: 0,
+              height: 0,
+            },
+          },
+        }}
+      />
+      <Particles
+        style={{
+          position: `fixed`,
+          display: submitted ? `none` : `block`,
+        }}
         id="tsparticles"
         options={{
           fpsLimit: 60,
