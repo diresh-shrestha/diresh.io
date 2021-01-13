@@ -33,7 +33,7 @@ const TextWrapper = styled(Container)`
   padding: 0;
   text-align: left;
   margin: 0 2.5rem;
-  margin-top: 10rem;
+  margin-top: 8rem;
   margin-right: 10rem;
   h1 {
     margin: 0;
@@ -173,7 +173,9 @@ export default function Hero({ desktop, mobile }) {
           </ButtonWrapper>
         </TextWrapper>
         <Particles
-          style={{ position: `relative` }}
+          height={500}
+          width={400}
+          style={{ position: `relative`, marginTop: `5rem` }}
           id="tsparticles"
           options={{
             autoPlay: true,
@@ -248,6 +250,7 @@ export default function Hero({ desktop, mobile }) {
                   duration: 2,
                   opacity: 8,
                   size: 6,
+                  color: "#e43f5a",
                 },
                 connect: {
                   distance: 80,
@@ -271,14 +274,14 @@ export default function Hero({ desktop, mobile }) {
                         value: "#808080",
                       },
                       stop: {
-                        value: "#000000",
+                        value: "#808080",
                       },
                     },
                     radius: 1000,
                   },
                   shadow: {
                     color: {
-                      value: "#000000",
+                      value: "#808080",
                     },
                     length: 2000,
                   },
@@ -382,10 +385,10 @@ export default function Hero({ desktop, mobile }) {
                   value: "#808080",
                 },
                 consent: false,
-                distance: 30,
+                distance: 35,
                 enable: true,
                 frequency: 1,
-                opacity: 0.4,
+                opacity: 0.5,
                 shadow: {
                   blur: 5,
                   color: {
@@ -542,7 +545,7 @@ export default function Hero({ desktop, mobile }) {
               stroke: {
                 width: 0,
                 color: {
-                  value: "#000000",
+                  value: "#808080",
                   animation: {
                     enable: false,
                     speed: 1,
@@ -559,9 +562,9 @@ export default function Hero({ desktop, mobile }) {
                 enable: true,
                 stroke: {
                   color: {
-                    value: "rgba(255,255,255,0.2)",
+                    value: "#808080",
                   },
-                  width: 0.5,
+                  width: 0.8,
                   opacity: 0.2,
                 },
               },
@@ -573,7 +576,7 @@ export default function Hero({ desktop, mobile }) {
                 radius: 10,
                 type: "path",
               },
-              scale: 0.5,
+              scale: 0.6,
               type: "inline",
               url: "https://cdn.matteobruni.it/images/particles/smalldeer.svg",
             },
