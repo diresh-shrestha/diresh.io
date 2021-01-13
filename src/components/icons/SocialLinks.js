@@ -18,7 +18,6 @@ export default function SocialLinks() {
       </a>
       <Linkedin />
       <Mail />
-      <SourceCode />
     </div>
   )
 }
