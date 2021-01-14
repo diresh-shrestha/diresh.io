@@ -38,6 +38,11 @@ const Title = styled.h3`
   font-size: 1.3rem;
 `
 
+const InnerHeading = styled.p`
+  margin-top: 5rem;
+  text-align: center;
+`
+
 export default function RecentPosts() {
   const data = useStaticQuery(graphql`
     query {
@@ -124,14 +129,14 @@ export default function RecentPosts() {
     <Container>
       <ContentWrapper>
         <Link to={"/blog"}>
-          <h2
+          <InnerHeading
             style={{ marginBottom: `2rem` }}
             data-sal="slide-up"
             data-sal-delay="100"
             data-sal-easing="ease"
           >
-            RECENT POSTS
-          </h2>
+            Recent <strong>Blog</strong> posts
+          </InnerHeading>
         </Link>
 
         <Wrapper>{posts}</Wrapper>

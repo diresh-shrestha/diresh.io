@@ -2,6 +2,7 @@ import React from "react"
 import Container from "../Container"
 import styled from "styled-components"
 import Goodreads from "../Goodreads"
+import RecentPosts from "./RecentPosts"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -42,18 +43,20 @@ const Book = styled.div`
   }
 `
 
+const TitleContainer = styled.div`
+  margin: auto 2rem;
+`
+
 export default function Etc() {
   return (
-    <Container id="me">
-      <ContentWrapper>
+    <Container id="recents">
+      <TitleContainer>
         <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          ME
+          RECENTS
         </h1>
-        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          I spend my free time hiking, playing the guitar, reading books,
-          meditating, working out, listening to podcasts, geeking out to scifi
-          stuffs, cooking, playing video games and traveling.{" "}
-        </p>
+      </TitleContainer>
+      <RecentPosts />
+      <ContentWrapper>
         <InnerHeading
           data-sal="slide-up"
           data-sal-delay="100"
@@ -82,6 +85,23 @@ export default function Etc() {
             Goodreads API
           </a>
         </Note>
+        <InnerHeading
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-easing="ease"
+        >
+          <strong>Podcasts</strong> I've been listening to recently
+        </InnerHeading>
+        <iframe
+          style={{ marginTop: `1rem` }}
+          title="podcast"
+          src="https://open.spotify.com/embed-podcast/episode/0SOWJINQ4SDbWsQjncgBz6"
+          width="100%"
+          height="232"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        ></iframe>
       </ContentWrapper>
     </Container>
   )

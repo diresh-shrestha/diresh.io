@@ -12,8 +12,8 @@ const MenuItems = [
     url: "/#projects",
   },
   {
-    title: "ME",
-    url: "/#me",
+    title: "RECENTS",
+    url: "/#recents",
   },
 ]
 
