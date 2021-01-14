@@ -3,6 +3,7 @@ import Container from "../Container"
 import styled from "styled-components"
 import Goodreads from "../Goodreads"
 import RecentPosts from "./RecentPosts"
+import SpotifyPlayer from "react-spotify-web-playback"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -64,7 +65,6 @@ export default function Etc() {
         >
           <strong>Books</strong> I've been reading recently{" "}
         </InnerHeading>
-
         <BookContainer>
           <Book>
             <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
@@ -102,6 +102,33 @@ export default function Etc() {
           allowtransparency="true"
           allow="encrypted-media"
         ></iframe>
+        <InnerHeading
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-easing="ease"
+        >
+          <strong>Songs</strong> I've been listening recently
+        </InnerHeading>
+        <SpotifyPlayer
+          styles={{
+            height: "100px",
+            sliderHeight: 10,
+            activeColor: "#e43f5a",
+            bgColor: "#737777",
+            color: "#fff",
+            loaderColor: "#fff",
+            sliderColor: "#1cb954",
+            trackArtistColor: "#ccc",
+            trackNameColor: "#fff",
+          }}
+          autoPlay={true}
+          magnifySliderOnHover={true}
+          initialVolume={0.2}
+          token="BQAcob8YYkUrhrREHIctyI7czxLAzrozT9ykyJu2BWK8gIesySkIR8SIIIYC6WepgIynwunEB-wmlNGHk5AavN8iqtY6M_sh2Krw0Q_r8KlYm47IHCDzGo8aOdZT06YmGDYVTRqvcQeEmbT-PSVXUdWP6T2PKfN9yM2nPvV0L8i9aW4RgNJkLwttJhzBLQWllG6UKI2SX8Wz
+  "
+          uris={["spotify:playlist:4GXG9wicHVfQEDJFFYaUft"]}
+        />
+        ;
       </ContentWrapper>
     </Container>
   )
