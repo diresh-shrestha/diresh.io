@@ -48,13 +48,9 @@ export default function About({ content }) {
             <MDXRenderer>{body}</MDXRenderer>
           </p>
         </Content>
-        <InnerHeading>
-          <strong>Technologies</strong> I've been using recently
-        </InnerHeading>
+        <h3 style={{ textAlign: `center` }}>SKILLS</h3>
         <Skills />
-        <InnerHeading>
-          <strong>Days</strong> I've been coding recently
-        </InnerHeading>
+        <h3 style={{ textAlign: `center`, marginBottom: `2rem` }}>COMMITS</h3>
         <GitHubCalendar
           style={{
             textAlign: `center`,

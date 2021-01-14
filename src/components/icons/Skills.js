@@ -83,7 +83,6 @@ export default function Skills() {
         <SkillList>
           <Graphql />
         </SkillList>
-
         <SkillList>
           <Node />
         </SkillList>
@@ -93,29 +92,11 @@ export default function Skills() {
         <SkillList>
           <Mongodb />
         </SkillList>
-      </StyledUl>
-      <StyledUl style={{ animationPlayState: enter && "paused" }}>
         <SkillList>
-          <Html />
+          <Java />
         </SkillList>
         <SkillList>
-          <Css />
-        </SkillList>
-        <SkillList>
-          <Javascript />
-        </SkillList>
-        <SkillList>
-          <ReactIcon />
-        </SkillList>
-        <SkillList>
-          <Graphql />
-        </SkillList>
-
-        <SkillList>
-          <Node />
-        </SkillList>
-        <SkillList>
-          <Gatsby />
+          <Python />
         </SkillList>
       </StyledUl>
       <StyledUl style={{ animationPlayState: enter && "paused" }}>
@@ -140,6 +121,42 @@ export default function Skills() {
         </SkillList>
         <SkillList>
           <Gatsby />
+        </SkillList>
+      </StyledUl>
+      <SkillList>
+        <Java />
+      </SkillList>
+      <SkillList>
+        <Python />
+      </SkillList>
+      <StyledUl style={{ animationPlayState: enter && "paused" }}>
+        <SkillList>
+          <Html />
+        </SkillList>
+        <SkillList>
+          <Css />
+        </SkillList>
+        <SkillList>
+          <Javascript />
+        </SkillList>
+        <SkillList>
+          <ReactIcon />
+        </SkillList>
+        <SkillList>
+          <Graphql />
+        </SkillList>
+
+        <SkillList>
+          <Node />
+        </SkillList>
+        <SkillList>
+          <Gatsby />
+        </SkillList>
+        <SkillList>
+          <Java />
+        </SkillList>
+        <SkillList>
+          <Python />
         </SkillList>
       </StyledUl>
     </SkillWrapper>

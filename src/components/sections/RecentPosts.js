@@ -129,14 +129,7 @@ export default function RecentPosts() {
     <Container>
       <ContentWrapper>
         <Link to={"/blog"}>
-          <InnerHeading
-            style={{ marginBottom: `2rem` }}
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-          >
-            Recent <strong>Blog</strong> posts
-          </InnerHeading>
+          <h3 style={{ textAlign: `center` }}>BLOG POSTS</h3>
         </Link>
 
         <Wrapper>{posts}</Wrapper>

@@ -64,13 +64,7 @@ export default function Etc() {
       </TitleContainer>
       <RecentPosts />
       <ContentWrapper>
-        <InnerHeading
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-easing="ease"
-        >
-          <strong>Books</strong> I've been reading recently{" "}
-        </InnerHeading>
+        <h3 style={{ textAlign: `center` }}>BOOKS</h3>
         <BookContainer>
           <Book>
             <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
@@ -91,13 +85,7 @@ export default function Etc() {
             Goodreads API
           </a>
         </Note>
-        <InnerHeading
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-easing="ease"
-        >
-          <strong>Podcasts</strong> I've been listening to recently
-        </InnerHeading>
+        <h3 style={{ textAlign: `center` }}>PODCASTS</h3>
         <iframe
           style={{ marginTop: `1rem` }}
           title="podcast"
@@ -108,13 +96,7 @@ export default function Etc() {
           allowtransparency="true"
           allow="encrypted-media"
         ></iframe>
-        <InnerHeading
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-easing="ease"
-        >
-          <strong>Songs</strong> I've been listening to recently
-        </InnerHeading>
+        <h3 style={{ textAlign: `center` }}>PLAYLISTS</h3>
         <SpotifyPlayer
           title="topPlaylist"
           src="https://open.spotify.com/embed/playlist/4GXG9wicHVfQEDJFFYaUft"

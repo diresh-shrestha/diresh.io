@@ -6,8 +6,8 @@ const Mongodb = () => {
       <svg
         color="var(--textNormal)"
         viewBox="0 0 32 32"
-        height="80"
-        width="80"
+        height="60"
+        width="60"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

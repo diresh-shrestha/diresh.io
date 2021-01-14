@@ -4,8 +4,8 @@ const Javascript = () => {
   return (
     <div>
       <svg
-        height="80"
-        width="80"
+        height="60"
+        width="60"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
         color="var(--textNormal)"
