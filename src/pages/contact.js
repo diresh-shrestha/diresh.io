@@ -8,6 +8,7 @@ import Button from "../components/Button"
 import axios from "axios"
 import ReCAPTCHA from "react-google-recaptcha"
 import Particles from "react-tsparticles"
+import "normalize.css"
 
 const Content = styled(Container)`
   display: flex;

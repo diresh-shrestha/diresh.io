@@ -35,6 +35,7 @@
     "gatsby-theme-elements": "^1.0.7",
     "gatsby-transformer-remark": "^2.10.0",
     "gatsby-transformer-sharp": "^2.5.21",
+    "normalize.css": "^8.0.1",
     "prismjs": "^1.22.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

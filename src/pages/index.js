@@ -12,6 +12,7 @@ import Experience from "../components/sections/Experience"
 import Recents from "../components/sections/Recents"
 import Particles from "react-tsparticles"
 import { Helmet } from "react-helmet"
+import "normalize.css"
 
 const IndexPage = ({ data }) => (
   <Layout>

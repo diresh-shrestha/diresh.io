@@ -8,6 +8,7 @@ import SEO from "../components/Seo"
 import Clock from "../components/icons/clock"
 import ScrollToTop from "../components/scroll-to-top"
 import Particles from "react-tsparticles"
+import "normalize.css"
 
 const ContentWrapper = styled.div`
   margin: auto 1.5rem;

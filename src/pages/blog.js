@@ -7,6 +7,7 @@ import styled from "styled-components"
 import Clock from "../components/icons/clock"
 import Img from "gatsby-image"
 import Particles from "react-tsparticles"
+import "normalize.css"
 
 const StyledContainer = styled(Container)`
   margin: 6rem auto;
