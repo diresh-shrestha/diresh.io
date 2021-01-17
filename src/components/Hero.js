@@ -156,9 +156,8 @@ export default function Hero({ desktop, mobile }) {
               <Button text="CONTACT" />
             </Link>
             <a
-              href="https://drive.google.com/file/d/1mWu_KdZF-Dk6dVpaBS2XF-nRZz1yPw-B/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
+              href={`CV.pdf`}
+              download
             >
               <Button text="RESUME" />
             </a>
