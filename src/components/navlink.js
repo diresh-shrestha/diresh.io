@@ -16,7 +16,7 @@ const List = styled.li`
     margin-right: 2.5rem;
   }
 
-  @media (max-width: 945px) {
+  @media (max-width: 950px) {
     margin-right: 2rem;
   }
 
@@ -94,7 +94,7 @@ const PageLinks = styled(Link)`
     margin-right: 2.5rem;
   }
 
-  @media (max-width: 945px) {
+  @media (max-width: 950px) {
     margin-right: 2rem;
   }
   @media (max-width: 890px) {
