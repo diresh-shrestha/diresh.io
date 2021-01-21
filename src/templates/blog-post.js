@@ -245,6 +245,7 @@ export const query = graphql`
         title
         excerpt
         description
+        tags
         image {
           childImageSharp {
             resize(width: 1200) {

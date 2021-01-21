@@ -5,6 +5,8 @@ date: "2021-01-05"
 image: "tweet.png"
 description: "I have planned to read 25 books this year. This is an overview of my year ahead in books."
 excerpt: "One of my resolutions this year is to read at least 25 books and to really solidify the plan, I decided to plan out all the books I am going to read...."
+tags: ["Books"]
+
 ---
 
 ![enter image description here](https://i.imgur.com/DSYLjZl.png)

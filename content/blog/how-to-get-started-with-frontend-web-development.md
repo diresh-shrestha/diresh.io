@@ -5,6 +5,7 @@ date: "2020-12-25"
 image: "frontend.png"
 description: "In this blog post, I lay out some tips and resources to get you started on your Front-end Web Development journey"
 excerpt: "Learning web development can be very daunting because of the sheer number of technologies/libraries/frameworks you need to learn and keep up with...."
+tags: ["Web Development", "React"]
 ---
 
 ![Frontend Web Development](https://fabiopacifici.com/wp-content/uploads/2019/11/frontend_dev.png)

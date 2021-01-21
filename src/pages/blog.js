@@ -8,6 +8,10 @@ import Clock from "../components/icons/clock"
 import Img from "gatsby-image"
 import Particles from "react-tsparticles"
 import "normalize.css"
+import kebabCase from "lodash/kebabCase"
+import BookTag from "../components/icons/BookTag"
+import ReactTag from "../components/icons/ReactTag"
+import WebDevTag from "../components/icons/WebDevTag"
 
 const StyledContainer = styled(Container)`
   margin: 6rem auto;
@@ -57,6 +61,17 @@ const Date = styled.p`
 
 const Title = styled.h3`
   font-size: 1.3rem;
+`
+
+const Tags = styled.div`
+  display: inline-block;
+  margin: 1rem auto;
+`
+const TagLink = styled(Link)`
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem;
+  background: var(--blog);
+  border-radius: 5px;
 `
 
 const BlogPage = ({ data }) => (
@@ -406,8 +421,47 @@ const BlogPage = ({ data }) => (
           and anything that interests me.
         </p>
         <h4 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          {data.allMarkdownRemark.totalCount} Posts
+          Total {data.allMarkdownRemark.totalCount} Posts
         </h4>{" "}
+        <h4>
+          Tags:{" "}
+          <Tags>
+            <TagLink
+              className="hvr-float-shadow"
+              to={`/tags/${kebabCase(data.tags.group[0].fieldValue)}/`}
+            >
+              <BookTag />
+              {data.tags.group[0].fieldValue} ({data.tags.group[0].totalCount})
+            </TagLink>
+            <TagLink
+              className="hvr-float-shadow"
+              to={`/tags/${kebabCase(data.tags.group[1].fieldValue)}/`}
+            >
+              <ReactTag />
+              {data.tags.group[1].fieldValue} ({data.tags.group[1].totalCount})
+            </TagLink>
+            <TagLink
+              className="hvr-float-shadow"
+              to={`/tags/${kebabCase(data.tags.group[2].fieldValue)}/`}
+            >
+              <WebDevTag />
+              {data.tags.group[2].fieldValue} ({data.tags.group[2].totalCount})
+            </TagLink>
+            {/* <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </TagLink>
+            <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </TagLink> */}
+            {/* {data.tags.group.map(tag => (
+          
+            <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </TagLink>
+          
+        ))} */}
+          </Tags>
+        </h4>
         <Wrapper>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <Content className="hvr-float-shadow" key={node.id}>
@@ -486,6 +540,12 @@ export const query = graphql`
           excerpt
           timeToRead
         }
+      }
+    }
+    tags: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }
