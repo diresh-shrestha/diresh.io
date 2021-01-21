@@ -67,7 +67,7 @@ export default function BlogPost({ data }) {
         TransitionClassName="scroll-top-button-transition"
         ShowAtPosition={300}
         AnimationDuration={200}
-        style={{ zIndex: `2`, bottom: `5rem` }}
+        style={{ zIndex: `2`, bottom: `7rem` }}
       ></ScrollUpButton>
       <SEO
         title={post.frontmatter.title}
