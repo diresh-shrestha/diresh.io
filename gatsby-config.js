@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Diresh Shrestha | Software Developer`,
@@ -36,7 +40,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-X1YD0WVKDS", // Google Analytics / GA
+          process.env.GTAG_ID, // Google Analytics / GA
           "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
@@ -45,7 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-social9-socialshare`,
       options: {
-        content: `544b38011e0341079b145fe70389582c`,
+        content: process.env.SOCIAL9,
         async: true,
         defer: true,
       },
@@ -132,12 +136,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-crisp-chat',
+      resolve: "gatsby-plugin-hubspot",
       options: {
-        websiteId: 'bcae09d9-b049-420c-af78-3fb80cdcd4ed',
-        enableDuringDevelop: false, // Optional. Disables Crisp Chat during gatsby develop. Defaults to true.
-        defer: true, // Optional. Sets the Crisp loading script to defer instead of async. Defaults to false.
-        enableImprovedAccessibility: false // Optional. Sets aria-label attribute on pop-up icon for screen readers. Defaults to true.
+          trackingCode: process.env.HUBSPOT_TRACKING_CODE,
+          respectDNT: true,
+          productionOnly: false,
       },
     },
     `gatsby-plugin-scroll-reveal`,
