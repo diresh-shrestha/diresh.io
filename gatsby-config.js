@@ -138,9 +138,18 @@ module.exports = {
     {
       resolve: "gatsby-plugin-hubspot",
       options: {
-          trackingCode: process.env.HUBSPOT_TRACKING_CODE,
-          respectDNT: true,
-          productionOnly: false,
+        trackingCode: process.env.HUBSPOT_TRACKING_CODE,
+        respectDNT: true,
+        productionOnly: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+
+        // Disable the loading spinner.
+        showSpinner: true,
       },
     },
     `gatsby-plugin-scroll-reveal`,
