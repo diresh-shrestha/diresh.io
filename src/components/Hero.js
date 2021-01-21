@@ -105,7 +105,9 @@ const ButtonWrapper = styled.div`
 `
 
 const StyledParticles = styled(Particles)`
-  margin-left: 8rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 4rem;
   @media (max-width: 950px) {
     margin-left: 2rem;
   }
@@ -155,10 +157,7 @@ export default function Hero({ desktop, mobile }) {
             <Link to="/contact">
               <Button text="CONTACT" />
             </Link>
-            <a
-              href={`CV.pdf`}
-              download
-            >
+            <a href={`CV.pdf`} download>
               <Button text="RESUME" />
             </a>
           </ButtonWrapper>
@@ -167,6 +166,7 @@ export default function Hero({ desktop, mobile }) {
           height={500}
           style={{ position: `relative`, marginTop: `5rem` }}
           id="tsparticles"
+          width={400}
           options={{
             autoPlay: true,
             background: {
