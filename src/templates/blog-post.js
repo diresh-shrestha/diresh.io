@@ -6,9 +6,9 @@ import styled from "styled-components"
 import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 import SEO from "../components/Seo"
 import Clock from "../components/icons/clock"
-import ScrollToTop from "../components/scroll-to-top"
 import Particles from "react-tsparticles"
 import "normalize.css"
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button"
 
 const ContentWrapper = styled.div`
   margin: auto 1.5rem;
@@ -62,12 +62,20 @@ export default function BlogPost({ data }) {
   console.log(post.frontmatter.slug)
   return (
     <Layout>
+      <ScrollUpButton
+        ContainerClassName="scroll-top-button-container"
+        TransitionClassName="scroll-top-button-transition"
+        ShowAtPosition={300}
+        AnimationDuration={200}
+        style={{ zIndex: `2`, bottom: `5rem` }}
+      ></ScrollUpButton>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
         image={image}
         pathname={post.frontmatter.slug}
       />
+
       <Particles
         style={{ position: `fixed`, zIndex: `-1` }}
         id="tsparticles"
@@ -173,7 +181,6 @@ export default function BlogPost({ data }) {
       />
       <Container>
         <ContentWrapper>
-          <ScrollToTop styled={{ opacity: `0.5` }} />
           <TitleContainer>
             <h1
               style={{ margin: `0.5rem auto` }}
