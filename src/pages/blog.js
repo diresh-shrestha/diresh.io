@@ -12,6 +12,7 @@ import kebabCase from "lodash/kebabCase"
 import BookTag from "../components/icons/BookTag"
 import ReactTag from "../components/icons/ReactTag"
 import WebDevTag from "../components/icons/WebDevTag"
+import PhilosophyTag from "../components/icons/PhilosophyTag"
 
 const StyledContainer = styled(Container)`
   margin: 6rem auto;
@@ -422,9 +423,9 @@ const BlogPage = ({ data }) => (
         </p>
         <h4 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           Total {data.allMarkdownRemark.totalCount} Posts
-        </h4>{" "}
+        </h4>
         <h4>
-          Tags:{" "}
+          Tags:
           <Tags>
             <TagLink
               className="hvr-float-shadow"
@@ -437,15 +438,22 @@ const BlogPage = ({ data }) => (
               className="hvr-float-shadow"
               to={`/tags/${kebabCase(data.tags.group[1].fieldValue)}/`}
             >
-              <ReactTag />
+              <PhilosophyTag />
               {data.tags.group[1].fieldValue} ({data.tags.group[1].totalCount})
             </TagLink>
             <TagLink
               className="hvr-float-shadow"
               to={`/tags/${kebabCase(data.tags.group[2].fieldValue)}/`}
             >
-              <WebDevTag />
+              <ReactTag />
               {data.tags.group[2].fieldValue} ({data.tags.group[2].totalCount})
+            </TagLink>
+            <TagLink
+              className="hvr-float-shadow"
+              to={`/tags/${kebabCase(data.tags.group[3].fieldValue)}/`}
+            >
+              <WebDevTag />
+              {data.tags.group[3].fieldValue} ({data.tags.group[3].totalCount})
             </TagLink>
             {/* <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
