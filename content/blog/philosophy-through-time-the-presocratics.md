@@ -27,7 +27,7 @@ To embark on this philosophical journey through time, we must start first with t
 
 Homer was also a poet who wrote the famous poems _The Illiad_ and _The Odyssey_. In _The Illiad_, he writes about the [Trojan war](https://en.wikipedia.org/wiki/Trojan_War) in the context of the Greek gods. These texts were back in the day like the Bible or the Quran today and the Greeks looked to these tales for signs of divine intervention and to discover excellence in all manner of things including human life.
 
-![Genealogy of Greek Gods](https://lh3.googleusercontent.com/proxy/_7qQ3e-fnc-TGe8sUCdQ_EAs-A5cE9jTX8m4vkwiOiBKzJiWKspZRNO8LgjXsSY28NtZtglfDHbOQUOViKqJTnWAw65CQOiFEpwqyChqmZJY11U6DRgmKz1CZNh83SPD23eDtLKFMQ)
+![Genealogy of Greek Gods](https://i.imgur.com/qYg79Wi.jpg)
 _Credits: talesbeyondbelief.com_
 
 ## The Pre-Socratics
