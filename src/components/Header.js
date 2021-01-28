@@ -37,6 +37,8 @@ const HeaderContent = styled.div`
   margin: auto;
   max-width: 1200px;
   padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: space-between;
 `
 
 const Header = () => {
