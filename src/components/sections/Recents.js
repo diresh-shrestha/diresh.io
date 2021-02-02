@@ -87,8 +87,7 @@ export default function Etc() {
         </Note>
         <h3 style={{ textAlign: `center` }}>PODCASTS</h3>
         <iframe
-        title="podcast"
-          src="https://open.spotify.com/embed-podcast/episode/1b8vNobIJxCz50CHNLIKz0"
+          src="https://open.spotify.com/embed-podcast/episode/0aoKPsIf6yiROG5P1b2jtv"
           width="100%"
           height="232"
           frameborder="0"
