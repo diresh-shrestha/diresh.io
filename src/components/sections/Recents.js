@@ -70,7 +70,7 @@ export default function Etc() {
             <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
               Currently Reading
             </p>
-            <Goodreads index={0} />
+            {/* <Goodreads index={0} /> */}
             <Goodreads index={1} />
           </Book>
         </BookContainer>
