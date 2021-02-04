@@ -30,13 +30,10 @@ const Content = styled.div`
   ol {
     color: var(--textNormal);
   }
-  em {
-    font-size: 0.9rem;
-  }
 `
 
 const TitleContainer = styled.div`
-  text-align: center;
+  text-align: left;
   margin-top: 8rem;
   margin-bottom: 5rem;
 `
@@ -48,6 +45,10 @@ const SubTitle = styled.p`
 const ShareButton = styled.div`
   display: flex;
   float: right;
+`
+
+const Excerpt = styled.p`
+  text-align: left;
 `
 
 export default function BlogPost({ data }) {
@@ -216,7 +217,7 @@ export default function BlogPost({ data }) {
               class="s9-widget-wrapper"
             ></div>
           </TitleContainer>
-
+          <Excerpt>{post.frontmatter.excerpt}</Excerpt>
           <Content
             style={{ marginBottom: `10rem`, marginTop: `2rem` }}
             dangerouslySetInnerHTML={{ __html: post.html }}
