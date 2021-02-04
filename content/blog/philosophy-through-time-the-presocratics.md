@@ -4,7 +4,7 @@ title: "Philosophy Through Time: The Pre-Socratics"
 date: "2021-01-25"
 image: "the-thinker.jpg"
 description: "Pre-Socratic philosophers like Thales, Anaximander, Parmenides, Democritus and others pondered the nature of reality and tried to explain it outside of gods and divine intervention."
-excerpt: "Pre-Socratic philosophers like Thales, Anaximander, Parmenides, Democritus and others pondered the nature of reality and tried to explain it outside of gods and divine intervention."
+excerpt: "A brief history of pre-socratic philosophers from Thales to Democritus."
 tags: ["Philosophy"]
 ---
 

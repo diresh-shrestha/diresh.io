@@ -4,7 +4,8 @@ title: "Best Books I Read In 2020"
 date: "2020-12-31"
 image: "6-books.jpg"
 description: "I read 12 out of 20 books this year from my goodreads challenge. These are some of the best books I read in 2020"
-excerpt: "At the beginning of each year, I take part in the Goodreads challenge. This year I read 12 out of 20 books. These are some of the best books I read this year..."
+excerpt: "
+These are some of the best books I read in 2020."
 tags: ["Books"]
 ---
 
