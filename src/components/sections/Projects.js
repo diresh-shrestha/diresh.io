@@ -2,8 +2,9 @@ import React from "react"
 import Container from "../Container"
 import styled from "styled-components"
 import Github from "../icons/Github"
+import External from "../icons/External"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Linkedin from "../icons/Linkedin"
+import Img from "gatsby-image"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -11,21 +12,25 @@ const ContentWrapper = styled.div`
 
 const Content = styled.div`
   display: flex;
-  flex-direction: row;
-
+  justify-content: space-between;
+  margin: 2rem 0;
+  flex-direction: ${({ direction }) => direction};
   @media (max-width: 768px) {
     flex-direction: column;
   }
   .img {
-    width: 100%;
+    width: 80%;
     position: relative;
+    border-radius: 10px;
   }
   ul {
     display: inline-block;
   }
 `
 const TextWrapper = styled.p`
-  margin: 1rem;
+  padding: 0 2rem;
+  width: 100%;
+  min-height: 200px;
 `
 
 const Technologies = styled.span`
@@ -48,6 +53,17 @@ const Break = styled.hr`
   background-color: grey;
 `
 
+const LinkContainer = styled.div`
+  display: flex;
+  padding: 1rem 0;
+`
+
+const ExternalLink = styled.a`
+  margin-right: 1rem;
+`
+
+const ImgContainer = styled.div``
+
 export default function Projects({ content }) {
   const projects = content.map(proj => {
     const { body, frontmatter } = proj.node
@@ -64,7 +80,14 @@ export default function Projects({ content }) {
             {frontmatter.description}
           </p>
         </em>
-        <Content>
+        <Content direction={frontmatter.direction}>
+          <Img
+            style={{ margin: `0 auto` }}
+            className="img"
+            fluid={frontmatter.image.childImageSharp.fluid}
+            imgStyle={{ objectFit: `contain`, objectPosition: `top` }}
+          />
+
           <TextWrapper
             data-sal="slide-up"
             data-sal-delay="100"
@@ -75,14 +98,26 @@ export default function Projects({ content }) {
             <TechContainer>
               <div>{technologies}</div>
             </TechContainer>
-            <a
-              href={frontmatter.external}
-              className="hvr-float-shadow"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Github />
-            </a>
+            <LinkContainer>
+              <ExternalLink
+                href={frontmatter.github}
+                className="hvr-float-shadow"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Github />
+              </ExternalLink>
+              {frontmatter.external ? (
+                <ExternalLink
+                  href={frontmatter.external}
+                  className="hvr-float-shadow"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <External />
+                </ExternalLink>
+              ) : null}
+            </LinkContainer>
           </TextWrapper>
         </Content>
         <Break />

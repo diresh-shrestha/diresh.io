@@ -11,7 +11,7 @@ const ContentWrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: ${({ direction }) => direction};
-
+  margin: 2rem 0;
   @media (max-width: 768px) {
     flex-direction: column;
   }

@@ -154,17 +154,25 @@ export const query = graphql`
       }
     }
     projects: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "/sections/Projects/RaiderMatcher/" }
-      }
+      filter: { fileAbsolutePath: { regex: "/sections/Projects/" } }
+      sort: { fields: frontmatter___order }
     ) {
       edges {
         node {
           frontmatter {
             description
             external
+            github
             name
             technologies
+            direction
+            image {
+              childImageSharp {
+                fluid(fit: CONTAIN) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           body
         }
