@@ -28,9 +28,9 @@ const Content = styled.div`
   }
 `
 const TextWrapper = styled.p`
-  padding: 0 2rem;
   width: 100%;
   min-height: 200px;
+  margin: 1rem auto;
 `
 
 const Technologies = styled.span`
