@@ -37,6 +37,7 @@ const Technologies = styled.span`
   display: inline-block;
   border: solid;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 0.2rem;
   border-radius: 10px;
   font-size: 0.8rem;
