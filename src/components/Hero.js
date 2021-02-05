@@ -60,13 +60,12 @@ const TextWrapper = styled(Container)`
   }
 `
 
-const StyledImg = styled.div`
+const StyledImg = styled(Img)`
   border-radius: 3%;
   left: 0;
   width: 100%;
-
+  z-index: -1;
   border: 20px;
-
   height: 700px;
   width: 600px;
   margin: auto 1rem;
@@ -78,9 +77,32 @@ const StyledImg = styled.div`
     max-width: 700px;
     height: 600px;
   }
-  // @media (max-width: 425px) {
-  //   display: none;
-  // }
+  @media (max-width: 425px) {
+    display: none;
+  }
+`
+
+const MobileImg = styled(Img)`
+  border-radius: 3%;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  margin: auto 1rem;
+  border: 20px;
+  height: auto;
+  width: 380px;
+  @media (max-width: 375px) {
+    width: 350px;
+  }
+  @media (max-width: 375px) {
+    width: 350px;
+  }
+  @media (max-width: 320px) {
+    width: 280px;
+  }
+  @media (min-width: 426px) {
+    display: none;
+  }
 `
 
 const ImgCaption = styled.p`
@@ -162,7 +184,7 @@ export default function Hero({ desktop, mobile }) {
             </a>
           </ButtonWrapper>
         </TextWrapper>
-        <StyledParticles
+        {/* <StyledParticles
           height={500}
           style={{ position: `relative`, marginTop: `5rem` }}
           id="tsparticles"
@@ -571,9 +593,9 @@ export default function Hero({ desktop, mobile }) {
               url: "https://cdn.matteobruni.it/images/particles/smalldeer.svg",
             },
           }}
-        />
-
-        {/* <StyledImg fluid={desktop} />
+        /> */}
+        <ImageWrapper>
+          <StyledImg fluid={desktop} />
           <MobileImg fluid={mobile} />
           <ImgCaption>
             Picture taken in{" "}
@@ -585,7 +607,8 @@ export default function Hero({ desktop, mobile }) {
             >
               Sibelius Monument
             </a>{" "}
-          </ImgCaption> */}
+          </ImgCaption>
+        </ImageWrapper>
       </ContainerWrapper>
     </Wrapper>
   )
