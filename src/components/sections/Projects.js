@@ -30,7 +30,7 @@ const Content = styled.div`
 const TextWrapper = styled.p`
   width: 100%;
   min-height: 200px;
-  margin: 1rem auto;
+  margin: 1rem;
 `
 
 const Technologies = styled.span`
