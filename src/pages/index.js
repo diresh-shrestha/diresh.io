@@ -178,10 +178,10 @@ export const query = graphql`
         }
       }
     }
-    desktopHeroImg: file(relativePath: { eq: "sections/Hero/hero.webp" }) {
+    desktopHeroImg: file(relativePath: { eq: "sections/Hero/hero.jpg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -197,10 +197,10 @@ export const query = graphql`
         }
       }
     }
-    mobileHeroImg: file(relativePath: { eq: "sections/Hero/hero_small.webp" }) {
+    mobileHeroImg: file(relativePath: { eq: "sections/Hero/hero_small.jpg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
