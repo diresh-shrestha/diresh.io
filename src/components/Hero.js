@@ -6,6 +6,7 @@ import SocialLinks from "./icons/SocialLinks"
 import { Link } from "gatsby"
 import Button from "./Button"
 import Particles from "react-tsparticles"
+import { useSpring, animated } from "react-spring"
 
 const ContainerWrapper = styled.div`
   width: 100%;
@@ -68,7 +69,7 @@ const StyledImg = styled(Img)`
   border: 20px;
   height: 700px;
   width: 600px;
-  margin: auto 1rem;
+
   @media (max-width: 1024px) {
     width: 500px;
     height: 600px;
@@ -87,7 +88,7 @@ const MobileImg = styled(Img)`
   left: 0;
   width: 100%;
   z-index: -1;
-  margin: auto 1rem;
+
   border: 20px;
   height: auto;
   width: 380px;
@@ -109,10 +110,20 @@ const ImgCaption = styled.p`
   font-size: 0.8rem;
   text-align: center;
   margin-top: 1rem;
+  z-index: 1;
 `
 
 const ImageWrapper = styled.div`
   margin: 2rem auto;
+
+  .card {
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s;
+    will-change: transform;
+    &:hover {
+      box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    }
+  }
 `
 
 const Links = styled.div`
@@ -138,8 +149,20 @@ const StyledParticles = styled(Particles)`
     margin-left: 0rem;
   }
 `
+const calc = (x, y) => [
+  -(y - window.innerHeight / 2) / 40,
+  (x - window.innerWidth / 2) / 40,
+  1.1,
+]
+const trans = (x, y, s) =>
+  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 export default function Hero({ desktop, mobile }) {
+  const [props, set] = useSpring(() => ({
+    xys: [0, 0, 1],
+    config: { mass: 5, tension: 350, friction: 40 },
+  }))
+
   return (
     <Wrapper>
       <ContainerWrapper>
@@ -595,8 +618,19 @@ export default function Hero({ desktop, mobile }) {
           }}
         /> */}
         <ImageWrapper>
-          <StyledImg fluid={desktop} />
-          <MobileImg fluid={mobile} />
+          <animated.div
+            className="card"
+            onMouseMove={({ clientX: x, clientY: y }) =>
+              set({ xys: calc(x, y) })
+            }
+            onMouseLeave={() => set({ xys: [0, 0, 1] })}
+            style={{
+              transform: props.xys.interpolate(trans),
+            }}
+          >
+            <StyledImg fluid={desktop} />
+            <MobileImg fluid={mobile} />
+          </animated.div>
           <ImgCaption>
             Picture taken in{" "}
             <a
