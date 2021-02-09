@@ -629,8 +629,8 @@ export default function Hero({ desktop, mobile }) {
             }}
           >
             <StyledImg fluid={desktop} />
-            <MobileImg fluid={mobile} />
           </animated.div>
+          <MobileImg fluid={mobile} />
           <ImgCaption>
             Picture taken in{" "}
             <a
