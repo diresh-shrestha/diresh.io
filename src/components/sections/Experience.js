@@ -45,6 +45,7 @@ const Technologies = styled.span`
   border-radius: 10px;
   font-size: 0.8rem;
   border-width: 1px;
+  color: var(--textNormal);
 `
 
 const Break = styled.hr`
@@ -85,6 +86,7 @@ export default function Experience({ content }) {
         <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
           {frontmatter.date}
         </p>
+        <TechContainer>{technologies}</TechContainer>
         <Content direction={frontmatter.direction}>
           <Img
             className="img"
@@ -97,7 +99,6 @@ export default function Experience({ content }) {
             data-sal-easing="ease"
           >
             <MDXRenderer>{body}</MDXRenderer>
-            <TechContainer>{technologies}</TechContainer>
           </TextWrapper>
         </Content>
         <Break />

@@ -42,6 +42,7 @@ const Technologies = styled.span`
   border-radius: 10px;
   font-size: 0.8rem;
   border-width: 1px;
+  color: var(--textNormal);
 `
 
 const TechContainer = styled.div`
@@ -81,6 +82,9 @@ export default function Projects({ content }) {
             {frontmatter.description}
           </p>
         </em>
+        <TechContainer>
+          <div>{technologies}</div>
+        </TechContainer>
         <Content direction={frontmatter.direction}>
           <Img
             style={{ margin: `0 auto` }}
@@ -96,9 +100,6 @@ export default function Projects({ content }) {
           >
             <MDXRenderer>{body}</MDXRenderer>
 
-            <TechContainer>
-              <div>{technologies}</div>
-            </TechContainer>
             <LinkContainer>
               <ExternalLink
                 href={frontmatter.github}
