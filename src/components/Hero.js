@@ -202,7 +202,7 @@ export default function Hero({ desktop, mobile }) {
             <Link to="/contact">
               <Button text="CONTACT" />
             </Link>
-            <a href={`CV.pdf`} download>
+            <a href={`Resume.pdf`} download>
               <Button text="RESUME" />
             </a>
           </ButtonWrapper>
