@@ -9,6 +9,7 @@ import Clock from "../components/icons/clock"
 import Particles from "react-tsparticles"
 import "normalize.css"
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button"
+import ProgressBar from "react-scroll-progress-bar"
 
 const ContentWrapper = styled.div`
   margin: auto 1.5rem;
@@ -63,6 +64,7 @@ export default function BlogPost({ data }) {
   console.log(post.frontmatter.slug)
   return (
     <Layout>
+      <ProgressBar style={{ zIndex: `100` }} />
       <ScrollUpButton
         ContainerClassName="scroll-top-button-container"
         TransitionClassName="scroll-top-button-transition"

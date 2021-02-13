@@ -19,7 +19,7 @@ const HeaderWrapper = styled.header`
   right: 0;
   width: 100%;
   margin-bottom: 1.45rem;
-  z-index: 100;
+  z-index: 50;
   box-shadow: 0px 2px 4px 0px #e1e1e1;
   // &:hover {
   //   height: 80px;
