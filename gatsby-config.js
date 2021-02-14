@@ -62,7 +62,12 @@ module.exports = {
         userShelf: "currently-reading",
       },
     },
-
+    // {
+    //   resolve: "gatsby-plugin-load-script",
+    //   options: {
+    //     src: "/bmc.js",
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

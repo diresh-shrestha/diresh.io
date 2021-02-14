@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
@@ -259,7 +259,16 @@ export default function BlogPost({ data }) {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 
-          <Disqus config={disqusConfig} />
+          <Content>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.buymeacoffee.com/diresh"
+            >
+              <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=diresh&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" />
+            </a>
+            <Disqus config={disqusConfig} />
+          </Content>
         </ContentWrapper>
       </Container>
     </Layout>
