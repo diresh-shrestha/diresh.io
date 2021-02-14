@@ -66,8 +66,8 @@ const TOC = styled.div`
   padding: 1rem;
   margin: 2rem;
   margin-top: 50rem;
-  border: solid;
-  scroll-behavior: smooth;
+  border: solid var(--textNormal);
+  border-width: 1px;
   width: 300px;
   @media (max-width: 1024px) {
     display: none;
