@@ -16,9 +16,9 @@ const ContentWrapper = styled.div`
 `
 
 const Content = styled.div`
-  h2 {
-    margin: 3rem auto;
-  }
+  display: flex;
+  flex-direction: column;
+
   img {
     display: block;
     margin: 2rem auto;
@@ -52,6 +52,35 @@ const Excerpt = styled.p`
   text-align: left;
 `
 
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  float: left;
+  padding: 1rem;
+`
+
+const TOC = styled.div`
+  position: sticky;
+  float: left;
+  top: 100px;
+  padding: 1rem;
+  margin: 2rem;
+  margin-top: 50rem;
+  border: solid;
+  scroll-behavior: smooth;
+  width: 300px;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  ul {
+    list-style: none;
+  }
+  font-size: 0.9rem;
+  h3 {
+    margin-top: 0;
+  }
+`
+
 export default function BlogPost({ data }) {
   const image = data.markdownRemark.frontmatter.image.childImageSharp.resize
   const siteUrl = "https://www.diresh.io/"
@@ -63,7 +92,7 @@ export default function BlogPost({ data }) {
   }
   console.log(post.frontmatter.slug)
   return (
-    <Layout>
+    <Layout style={{ display: `flex`, flexDirection: `column` }}>
       <ProgressBar style={{ zIndex: `100` }} />
       <ScrollUpButton
         ContainerClassName="scroll-top-button-container"
@@ -182,6 +211,10 @@ export default function BlogPost({ data }) {
           retina_detect: true,
         }}
       />
+      <TOC>
+        <h3>In this article: </h3>
+        <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
+      </TOC>
       <Container>
         <ContentWrapper>
           <TitleContainer>
@@ -220,6 +253,7 @@ export default function BlogPost({ data }) {
             ></div>
           </TitleContainer>
           <Excerpt>{post.frontmatter.excerpt}</Excerpt>
+
           <Content
             style={{ marginBottom: `10rem`, marginTop: `2rem` }}
             dangerouslySetInnerHTML={{ __html: post.html }}
@@ -249,6 +283,7 @@ export const query = graphql`
         excerpt
         description
         tags
+
         image {
           childImageSharp {
             resize(width: 1200) {
@@ -259,6 +294,7 @@ export const query = graphql`
           }
         }
       }
+      tableOfContents
       timeToRead
     }
   }
