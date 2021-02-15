@@ -59,6 +59,12 @@ Like I mentioned earlier, Node is built on top of Google's V8 JavaScript engine,
 
 Instead of thread-based servers, Node uses a single thread to handle requests using event loops. Async processing on a single thread handles thousands of concurrent connections better than thread-based and it also relieves of the burden of managing thread concurrency, but it also has it's downsides. A CPU intensive scenario with low number of concurrent connections will be better handled by a thread-based server that creates a new thread per request.
 
+![nodejs diagram](./images/nodejs-diagram.jpg)
+
+_Node.js System Diagram_
+
+_Photo credits: @BusyRich_
+
 ## Installing Node.js
 
 You can download and install Node.js for windows, linux, or mac from the official [website](https://nodejs.org/en/download/), or you can go to [this](https://nodejs.org/en/download/package-manager/) page for more options on downloading.
