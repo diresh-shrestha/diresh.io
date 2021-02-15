@@ -18,7 +18,9 @@ const ContentWrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-
+  h1 {
+    margin: 2rem 0;
+  }
   img {
     display: block;
     margin: 2rem auto;
