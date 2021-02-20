@@ -9,7 +9,7 @@ import Projects from "../components/sections/Projects"
 
 import Hero from "../components/Hero"
 import Experience from "../components/sections/Experience"
-import Recents from "../components/sections/Recents"
+import Latest from "../components/sections/Latest"
 import Particles from "react-tsparticles"
 import { Helmet } from "react-helmet"
 import "normalize.css"
@@ -109,7 +109,7 @@ const IndexPage = ({ data }) => (
     <About content={data.about.edges} />
     <Experience content={data.experience.edges} />
     <Projects content={data.projects.edges} />
-    <Recents />
+    <Latest />
   </Layout>
 )
 

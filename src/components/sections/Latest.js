@@ -54,12 +54,12 @@ const SpotifyPlayer = styled.iframe`
   border-radius: 10px;
 `
 
-export default function Etc() {
+export default function Latest() {
   return (
-    <Container id="recents">
+    <Container id="latest">
       <TitleContainer>
         <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          RECENTS
+          LATEST
         </h1>
       </TitleContainer>
       <RecentPosts />
