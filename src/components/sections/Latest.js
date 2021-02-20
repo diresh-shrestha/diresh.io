@@ -87,7 +87,7 @@ export default function Latest() {
         </Note>
         <h3 style={{ textAlign: `center` }}>PODCASTS</h3>
         <iframe
-          src="https://open.spotify.com/embed-podcast/episode/0aoKPsIf6yiROG5P1b2jtv"
+          src="https://open.spotify.com/embed-podcast/episode/5RcEGbZL7NLdxB9VjRXXVA"
           width="100%"
           height="232"
           frameborder="0"
