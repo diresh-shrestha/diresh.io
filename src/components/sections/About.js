@@ -35,6 +35,15 @@ const InnerHeading = styled.p`
 `
 
 export default function About({ content }) {
+  const exampleTheme = {
+    background: "transparent",
+    text: "grey",
+    grade4: "hsl(338, 78%, 30%)",
+    grade3: "hsl(338, 78%, 44%)",
+    grade2: "hsl(338, 78%, 58%)",
+    grade1: "hsl(338, 78%, 72%)",
+    grade0: "#eee",
+  }
   const { frontmatter, body } = content[0].node
   return (
     <Wrapper id="about">
@@ -52,10 +61,8 @@ export default function About({ content }) {
         <Skills />
         <h3 style={{ textAlign: `center`, marginBottom: `2rem` }}>COMMITS</h3>
         <GitHubCalendar
-          style={{
-            textAlign: `center`,
-            color: `var(--textNormal)`,
-          }}
+          style={{ textAlign: `center`, color: `grey` }}
+          theme={exampleTheme}
           username="diresh-shrestha"
           fullYear={false}
           blockSize={15}
