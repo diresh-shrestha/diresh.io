@@ -13,6 +13,7 @@ import BookTag from "../components/icons/BookTag"
 import ReactTag from "../components/icons/ReactTag"
 import WebDevTag from "../components/icons/WebDevTag"
 import PhilosophyTag from "../components/icons/PhilosophyTag"
+import Fade from "react-reveal/Fade"
 
 const StyledContainer = styled(Container)`
   margin: 6rem auto;
@@ -414,100 +415,88 @@ const BlogPage = ({ data }) => (
     />
     <StyledContainer>
       <ContentWrapper>
-        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          BLOG
-        </h1>
-        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          Welcome to my blog. I write about web development, philosophy, books
-          and anything that interests me.
-        </p>
-        <h4 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          Total {data.allMarkdownRemark.totalCount} Posts
-        </h4>
-        <h4>
-          Tags:
-          <Tags>
-            <TagLink
-              className="hvr-float-shadow"
-              to={`/tags/${kebabCase(data.tags.group[0].fieldValue)}/`}
-            >
-              <BookTag />
-              {data.tags.group[0].fieldValue} ({data.tags.group[0].totalCount})
-            </TagLink>
-            <TagLink
-              className="hvr-float-shadow"
-              to={`/tags/${kebabCase(data.tags.group[1].fieldValue)}/`}
-            >
-              <PhilosophyTag />
-              {data.tags.group[1].fieldValue} ({data.tags.group[1].totalCount})
-            </TagLink>
-            <TagLink
-              className="hvr-float-shadow"
-              to={`/tags/${kebabCase(data.tags.group[2].fieldValue)}/`}
-            >
-              <ReactTag />
-              {data.tags.group[2].fieldValue} ({data.tags.group[2].totalCount})
-            </TagLink>
-            <TagLink
-              className="hvr-float-shadow"
-              to={`/tags/${kebabCase(data.tags.group[3].fieldValue)}/`}
-            >
-              <WebDevTag />
-              {data.tags.group[3].fieldValue} ({data.tags.group[3].totalCount})
-            </TagLink>
-            {/* <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+        <Fade bottom>
+          <h1>BLOG</h1>
+
+          <p>
+            Welcome to my blog. I write about web development, philosophy, books
+            and anything that interests me.
+          </p>
+          <h4>Total {data.allMarkdownRemark.totalCount} Posts</h4>
+          <h4>
+            Tags:
+            <Tags>
+              <TagLink
+                className="hvr-float-shadow"
+                to={`/tags/${kebabCase(data.tags.group[0].fieldValue)}/`}
+              >
+                <BookTag />
+                {data.tags.group[0].fieldValue} ({data.tags.group[0].totalCount}
+                )
+              </TagLink>
+              <TagLink
+                className="hvr-float-shadow"
+                to={`/tags/${kebabCase(data.tags.group[1].fieldValue)}/`}
+              >
+                <PhilosophyTag />
+                {data.tags.group[1].fieldValue} ({data.tags.group[1].totalCount}
+                )
+              </TagLink>
+              <TagLink
+                className="hvr-float-shadow"
+                to={`/tags/${kebabCase(data.tags.group[2].fieldValue)}/`}
+              >
+                <ReactTag />
+                {data.tags.group[2].fieldValue} ({data.tags.group[2].totalCount}
+                )
+              </TagLink>
+              <TagLink
+                className="hvr-float-shadow"
+                to={`/tags/${kebabCase(data.tags.group[3].fieldValue)}/`}
+              >
+                <WebDevTag />
+                {data.tags.group[3].fieldValue} ({data.tags.group[3].totalCount}
+                )
+              </TagLink>
+              {/* <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </TagLink>
             <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </TagLink> */}
-            {/* {data.tags.group.map(tag => (
+              {/* {data.tags.group.map(tag => (
           
             <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </TagLink>
           
         ))} */}
-          </Tags>
-        </h4>
-        <Wrapper>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <Content className="hvr-float-shadow" key={node.id}>
-              <Link to={node.fields.slug}>
-                <Img
-                  style={{ borderRadius: `10px`, maxHeight: `250px` }}
-                  fluid={node.frontmatter.image.childImageSharp.fluid}
-                />
-                <Title
-                  data-sal="slide-up"
-                  data-sal-delay="100"
-                  data-sal-easing="ease"
-                >
-                  {node.frontmatter.title}
-                </Title>
-                <em>
-                  <Date
-                    data-sal="slide-up"
-                    data-sal-delay="100"
-                    data-sal-easing="ease"
-                  >
-                    {" "}
-                    {node.frontmatter.date}, <Clock /> {node.timeToRead} min
-                    read
-                  </Date>
-                </em>
-                <p
-                  style={{ fontSize: "1rem" }}
-                  data-sal="slide-up"
-                  data-sal-delay="100"
-                  data-sal-easing="ease"
-                >
-                  {node.frontmatter.excerpt}
-                </p>
-              </Link>
-            </Content>
-          ))}
-        </Wrapper>
+            </Tags>
+          </h4>
+        </Fade>
+        <Fade bottom>
+          <Wrapper>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <Content className="hvr-float-shadow" key={node.id}>
+                <Link to={node.fields.slug}>
+                  <Img
+                    style={{ borderRadius: `10px`, maxHeight: `250px` }}
+                    fluid={node.frontmatter.image.childImageSharp.fluid}
+                  />
+                  <Title>{node.frontmatter.title}</Title>
+                  <em>
+                    <Date>
+                      {" "}
+                      {node.frontmatter.date}, <Clock /> {node.timeToRead} min
+                      read
+                    </Date>
+                  </em>
+                  <p style={{ fontSize: "1rem" }}>{node.frontmatter.excerpt}</p>
+                </Link>
+              </Content>
+            ))}
+          </Wrapper>
+        </Fade>
       </ContentWrapper>
     </StyledContainer>
   </Layout>

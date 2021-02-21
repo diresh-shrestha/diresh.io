@@ -6,7 +6,8 @@ import SocialLinks from "./icons/SocialLinks"
 import { Link } from "gatsby"
 import Button from "./Button"
 import Particles from "react-tsparticles"
-import { useSpring, animated } from "react-spring"
+import { useSpring, animated as a } from "react-spring"
+import Fade from "react-reveal/Fade"
 
 const ContainerWrapper = styled.div`
   width: 100%;
@@ -149,15 +150,16 @@ const StyledParticles = styled(Particles)`
     margin-left: 0rem;
   }
 `
-const calc = (x, y) => [
-  -(y - window.innerHeight / 2) / 40,
-  (x - window.innerWidth / 2) / 40,
-  1,
-]
-const trans = (x, y, s) =>
-  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 export default function Hero({ desktop, mobile }) {
+  const calc = (x, y) => [
+    -(y - window.innerHeight / 2) / 40,
+    (x - window.innerWidth / 2) / 40,
+    1,
+  ]
+  const trans = (x, y, s) =>
+    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass: 5, tension: 350, friction: 40 },
@@ -166,47 +168,30 @@ export default function Hero({ desktop, mobile }) {
   return (
     <Wrapper>
       <ContainerWrapper>
-        <TextWrapper>
-          <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-            Hello!
-          </h1>
-          <p
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-            style={{ marginBottom: `0`, marginTop: `1rem` }}
-          >
-            My name is
-          </p>
-          <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-            Diresh Shrestha
-          </h1>
+        <Fade bottom>
+          <TextWrapper>
+            <h1>Hello!</h1>
 
-          <div style={{ marginTop: `1rem` }}>
-            <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-              Software Developer
-            </p>
-          </div>
-          <Links
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-          >
-            <SocialLinks />
-          </Links>
-          <ButtonWrapper
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-          >
-            <Link to="/contact">
-              <Button text="CONTACT" />
-            </Link>
-            <a href={`Resume.pdf`} download>
-              <Button text="RESUME" />
-            </a>
-          </ButtonWrapper>
-        </TextWrapper>
+            <p style={{ marginBottom: `0`, marginTop: `1rem` }}>My name is</p>
+
+            <h1>Diresh Shrestha</h1>
+
+            <div style={{ marginTop: `1rem` }}>
+              <p>Software Developer</p>
+            </div>
+            <Links>
+              <SocialLinks />
+            </Links>
+            <ButtonWrapper>
+              <Link to="/contact">
+                <Button text="CONTACT" />
+              </Link>
+              <a href={`Resume.pdf`} download>
+                <Button text="RESUME" />
+              </a>
+            </ButtonWrapper>
+          </TextWrapper>
+        </Fade>
         {/* <StyledParticles
           height={500}
           style={{ position: `relative`, marginTop: `5rem` }}
@@ -618,30 +603,33 @@ export default function Hero({ desktop, mobile }) {
           }}
         /> */}
         <ImageWrapper>
-          <animated.div
-            className="card"
-            onMouseMove={({ clientX: x, clientY: y }) =>
-              set({ xys: calc(x, y) })
-            }
-            onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{
-              transform: props.xys.interpolate(trans),
-            }}
-          >
-            <StyledImg fluid={desktop} />
-          </animated.div>
-          <MobileImg fluid={mobile} />
-          <ImgCaption>
-            Picture taken in{" "}
-            <a
-              className="hvr-underline-from-left"
-              target="_blank"
-              rel="noreferrer"
-              href="https://en.wikipedia.org/wiki/Sibelius_Monument_(Helsinki)"
+          <Fade bottom>
+            <a.div
+              className="card"
+              onMouseMove={({ clientX: x, clientY: y }) =>
+                set({ xys: calc(x, y) })
+              }
+              onMouseLeave={() => set({ xys: [0, 0, 1] })}
+              style={{
+                transform: props.xys.interpolate(trans),
+              }}
             >
-              Sibelius Monument
-            </a>{" "}
-          </ImgCaption>
+              <StyledImg fluid={desktop} />
+            </a.div>
+            <MobileImg fluid={mobile} />
+
+            <ImgCaption>
+              Picture taken in{" "}
+              <a
+                className="hvr-underline-from-left"
+                target="_blank"
+                rel="noreferrer"
+                href="https://en.wikipedia.org/wiki/Sibelius_Monument_(Helsinki)"
+              >
+                Sibelius Monument
+              </a>{" "}
+            </ImgCaption>
+          </Fade>
         </ImageWrapper>
       </ContainerWrapper>
     </Wrapper>

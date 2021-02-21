@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Container from "../Container"
 import Clock from "../icons/clock"
 import Img from "gatsby-image"
+import Fade from "react-reveal/Fade"
 
 const Wrapper = styled.div`
   display: flex;
@@ -92,32 +93,16 @@ export default function RecentPosts() {
             style={{ borderRadius: `10px`, maxHeight: `250px` }}
             fluid={post.node.frontmatter.image.childImageSharp.fluid}
           />
-          <Title
-            style={{ marginTop: `1rem` }}
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-          >
+          <Title style={{ marginTop: `1rem` }}>
             {post.node.frontmatter.title}
           </Title>
           <em>
-            <p
-              style={{ fontSize: `1rem` }}
-              data-sal="slide-up"
-              data-sal-delay="100"
-              data-sal-easing="ease"
-            >
+            <p style={{ fontSize: `1rem` }}>
               {post.node.frontmatter.date}, <Clock /> {post.node.timeToRead} min
               read
             </p>
           </em>
-          <p
-            style={{ fontSize: `1rem` }}
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-            className="text"
-          >
+          <p style={{ fontSize: `1rem` }} className="text">
             {post.node.frontmatter.excerpt}
           </p>
         </Link>
@@ -128,10 +113,11 @@ export default function RecentPosts() {
   return (
     <Container>
       <ContentWrapper>
-        <Link to={"/blog"}>
-          <h3 style={{ textAlign: `center` }}>BLOG POSTS</h3>
-        </Link>
-
+        <Fade bottom>
+          <Link to={"/blog"}>
+            <h3 style={{ textAlign: `center` }}>BLOG POSTS</h3>
+          </Link>
+        </Fade>
         <Wrapper>{posts}</Wrapper>
       </ContentWrapper>
     </Container>

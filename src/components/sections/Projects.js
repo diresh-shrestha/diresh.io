@@ -5,6 +5,7 @@ import Github from "../icons/Github"
 import External from "../icons/External"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
+import Fade from "react-reveal/Fade"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -19,9 +20,7 @@ const Content = styled.div`
     flex-direction: column;
   }
   .img {
-    width: 80%;
-    position: relative;
-    border-radius: 10px;
+    width: 100%;
   }
   ul {
     display: inline-block;
@@ -30,7 +29,8 @@ const Content = styled.div`
 const TextWrapper = styled.p`
   width: 100%;
   min-height: 200px;
-  margin: 1rem;
+  margin: 0.5rem;
+  text-align: justify;
 `
 
 const Technologies = styled.span`
@@ -73,64 +73,60 @@ export default function Projects({ content }) {
       return <Technologies>{item}</Technologies>
     })
     return (
-      <div>
-        <h4 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          {frontmatter.name}
-        </h4>
-        <em>
-          <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-            {frontmatter.description}
-          </p>
-        </em>
-        <TechContainer>
-          <div>{technologies}</div>
-        </TechContainer>
-        <Content direction={frontmatter.direction}>
-          <Img
-            style={{ margin: `0 auto` }}
-            className="img"
-            fluid={frontmatter.image.childImageSharp.fluid}
-            imgStyle={{ objectFit: `contain`, objectPosition: `top` }}
-          />
+      <Fade bottom>
+        <div>
+          <h4>{frontmatter.name}</h4>
+          <em>
+            <p>{frontmatter.description}</p>
+          </em>
+          <TechContainer>
+            <div>{technologies}</div>
+          </TechContainer>
+          <Content direction={frontmatter.direction}>
+            <Img
+              style={{ margin: `0 auto` }}
+              className="img"
+              fluid={frontmatter.image.childImageSharp.fluid}
+              imgStyle={{ objectFit: `contain`, objectPosition: `top` }}
+            />
 
-          <TextWrapper
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-          >
-            <MDXRenderer>{body}</MDXRenderer>
+            <TextWrapper>
+              <MDXRenderer>{body}</MDXRenderer>
 
-            <LinkContainer>
-              <ExternalLink
-                href={frontmatter.github}
-                className="hvr-float-shadow"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Github />
-              </ExternalLink>
-              {frontmatter.external ? (
+              <LinkContainer>
                 <ExternalLink
-                  href={frontmatter.external}
+                  href={frontmatter.github}
                   className="hvr-float-shadow"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <External />
+                  <Github />
                 </ExternalLink>
-              ) : null}
-            </LinkContainer>
-          </TextWrapper>
-        </Content>
-        <Break />
-      </div>
+                {frontmatter.external ? (
+                  <ExternalLink
+                    href={frontmatter.external}
+                    className="hvr-float-shadow"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <External />
+                  </ExternalLink>
+                ) : null}
+              </LinkContainer>
+            </TextWrapper>
+          </Content>
+          <Break />
+        </div>
+      </Fade>
     )
   })
 
   return (
     <Container id="projects">
       <ContentWrapper>
-        <h1>PROJECTS</h1>
+        <Fade bottom>
+          <h1>PROJECTS</h1>
+        </Fade>
         {projects}
       </ContentWrapper>
     </Container>

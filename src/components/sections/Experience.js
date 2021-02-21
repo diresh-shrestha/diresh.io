@@ -3,6 +3,7 @@ import Container from "../Container"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Fade from "react-reveal/Fade"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -28,8 +29,9 @@ const Content = styled.div`
   }
 `
 const TextWrapper = styled.p`
-  margin: 1rem;
+  margin: 0.5rem;
   width: fit-content;
+  text-align: justify;
 `
 
 const Location = styled.p`
@@ -66,51 +68,45 @@ export default function Experience({ content }) {
       return <Technologies>{item}</Technologies>
     })
     return (
-      <div style={{ marginBottom: `1rem` }}>
-        <a
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-easing="ease"
-          className="hvr-underline-from-left"
-          href={frontmatter.external}
-          target="_blank"
-        >
-          <h4>{frontmatter.name}</h4>
-        </a>
-        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          <em>{frontmatter.title}</em>
-        </p>
-        <Location>
-          <em>{frontmatter.location}</em>
-        </Location>
-        <p data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          {frontmatter.date}
-        </p>
-        <TechContainer>{technologies}</TechContainer>
-        <Content direction={frontmatter.direction}>
-          <Img
-            className="img"
-            fluid={frontmatter.image.childImageSharp.fluid}
-            imgStyle={{ objectFit: `contain` }}
-          />
-          <TextWrapper
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
+      <Fade bottom>
+        <div style={{ marginBottom: `1rem` }}>
+          <a
+            className="hvr-underline-from-left"
+            href={frontmatter.external}
+            target="_blank"
           >
-            <MDXRenderer>{body}</MDXRenderer>
-          </TextWrapper>
-        </Content>
-        <Break />
-      </div>
+            <h4>{frontmatter.name}</h4>
+          </a>
+          <p>
+            <em>{frontmatter.title}</em>
+          </p>
+          <Location>
+            <em>{frontmatter.location}</em>
+          </Location>
+          <p>{frontmatter.date}</p>
+          <TechContainer>{technologies}</TechContainer>
+          <Content direction={frontmatter.direction}>
+            <Img
+              className="img"
+              fluid={frontmatter.image.childImageSharp.fluid}
+              imgStyle={{ objectFit: `contain` }}
+            />
+            <TextWrapper>
+              <MDXRenderer>{body}</MDXRenderer>
+            </TextWrapper>
+          </Content>
+          <Break />
+        </div>
+      </Fade>
     )
   })
   return (
     <Container id="experience">
       <ContentWrapper>
-        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          EXPERIENCE
-        </h1>
+        <Fade bottom>
+          <h1>EXPERIENCE</h1>
+        </Fade>
+
         {experience}
       </ContentWrapper>
     </Container>

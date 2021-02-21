@@ -9,6 +9,9 @@ import axios from "axios"
 import ReCAPTCHA from "react-google-recaptcha"
 import Particles from "react-tsparticles"
 import "normalize.css"
+import Fade from "react-reveal/Fade"
+
+const Recaptcha_Site_Key = process.env.GATSBY_RECAPTCHA_SITE_KEY
 
 const Content = styled(Container)`
   display: flex;
@@ -299,89 +302,74 @@ const ContactPage = ({ data }) => {
         }}
       />
       <Content>
-        <h1 data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-          LET'S GET IN TOUCH!
-        </h1>
+        <Fade bottom>
+          <h1>LET'S GET IN TOUCH!</h1>
+        </Fade>
         <form onSubmit={handleOnSubmit}>
-          <InputWrapper>
-            <StyledInput
-              data-sal="slide-up"
-              data-sal-delay="100"
-              data-sal-easing="ease"
-              type="text"
-              name="name"
-              placeholder="*Full Name"
-              required
-            />
-          </InputWrapper>
-          <InputWrapper>
-            <StyledInput
-              data-sal="slide-up"
-              data-sal-delay="100"
-              data-sal-easing="ease"
-              type="email"
-              name="email"
-              placeholder="*Email"
-              required
-            />
-          </InputWrapper>
-          <InputWrapper>
-            <StyledInput
-              data-sal="slide-up"
-              data-sal-delay="100"
-              data-sal-easing="ease"
-              type="text"
-              name="subject"
-              placeholder="*Subject"
-              required
-            />
-          </InputWrapper>
-          <InputWrapper>
-            <StyledInput
-              data-sal="slide-up"
-              data-sal-delay="100"
-              data-sal-easing="ease"
-              type="tel"
-              name="telephone"
-              placeholder="Phone Number"
-            />
-          </InputWrapper>
-          <InputWrapper>
-            <TextArea
-              data-sal="slide-up"
-              data-sal-delay="100"
-              data-sal-easing="ease"
-              name="message"
-              rows="5"
-              required
-              placeholder="*Write a message.."
-            />
-          </InputWrapper>
-          <InputWrapper>
-            <ReCAPTCHA
-              sitekey="6Lf7KgAaAAAAAHob7aBBAPI8Y2RZD6Bq5-8eCZLH"
-              onChange={handleChange}
-            />
-          </InputWrapper>
+          <Fade bottom>
+            <InputWrapper>
+              <StyledInput
+                type="text"
+                name="name"
+                placeholder="*Full Name"
+                required
+              />
+            </InputWrapper>
 
-          <InputWrapper
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-          >
-            {serverState.status && (
-              <p className={!serverState.status.ok ? "errorMsg" : ""}>
-                {serverState.status.msg}
-              </p>
-            )}
-          </InputWrapper>
-          <InputWrapper
-            data-sal="slide-up"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-          >
-            <Button type="submit" text="SEND" disabled={disabled} />
-          </InputWrapper>
+            <InputWrapper>
+              <StyledInput
+                type="email"
+                name="email"
+                placeholder="*Email"
+                required
+              />
+            </InputWrapper>
+
+            <InputWrapper>
+              <StyledInput
+                type="text"
+                name="subject"
+                placeholder="*Subject"
+                required
+              />
+            </InputWrapper>
+
+            <InputWrapper>
+              <StyledInput
+                type="tel"
+                name="telephone"
+                placeholder="Phone Number"
+              />
+            </InputWrapper>
+
+            <InputWrapper>
+              <TextArea
+                name="message"
+                rows="5"
+                required
+                placeholder="*Write a message.."
+              />
+            </InputWrapper>
+
+            <InputWrapper>
+              <ReCAPTCHA
+                sitekey="6Lf7KgAaAAAAAHob7aBBAPI8Y2RZD6Bq5-8eCZLH"
+                onChange={handleChange}
+              />
+            </InputWrapper>
+
+            <InputWrapper>
+              {serverState.status && (
+                <p className={!serverState.status.ok ? "errorMsg" : ""}>
+                  {serverState.status.msg}
+                </p>
+              )}
+            </InputWrapper>
+
+            <InputWrapper>
+              <Button type="submit" text="SEND" disabled={disabled} />
+            </InputWrapper>
+          </Fade>
         </form>
       </Content>
     </Layout>

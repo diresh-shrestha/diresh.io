@@ -18,6 +18,7 @@ const ContentWrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: justify;
   h1 {
     margin: 2rem 0;
   }
@@ -220,28 +221,14 @@ export default function BlogPost({ data }) {
       <Container>
         <ContentWrapper>
           <TitleContainer>
-            <h1
-              style={{ margin: `0.5rem auto` }}
-              data-sal="slide-up"
-              data-sal-delay="300"
-              data-sal-easing="ease"
-            >
-              {post.frontmatter.title}
-            </h1>
+            <h1 style={{ margin: `0.5rem auto` }}>{post.frontmatter.title}</h1>
             <em>
-              <SubTitle
-                data-sal="slide-up"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-              >
+              <SubTitle>
                 Published: {post.frontmatter.date}, <Clock /> {post.timeToRead}{" "}
                 min read
               </SubTitle>
               <CommentCount
                 style={{ color: `var(--textNormal)` }}
-                data-sal="slide-up"
-                data-sal-delay="300"
-                data-sal-easing="ease"
                 config={disqusConfig}
               />
             </em>
