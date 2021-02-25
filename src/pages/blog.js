@@ -38,7 +38,6 @@ const Content = styled.div`
   margin: 2rem 0rem;
   box-shadow: var(--boxShadow);
   width: 46%;
-  padding: 1rem;
   background: var(--blog);
   border-radius: 3%;
   :nth-child(odd) {
@@ -57,12 +56,17 @@ const Content = styled.div`
   }
 `
 
+const TextWrapper = styled.div`
+  padding: 1rem;
+`
+
 const Date = styled.p`
   font-size: 1rem;
 `
 
 const Title = styled.h3`
   font-size: 1.3rem;
+  margin-top: 0.5rem;
 `
 
 const Tags = styled.div`
@@ -483,15 +487,19 @@ const BlogPage = ({ data }) => (
                     style={{ borderRadius: `10px`, maxHeight: `250px` }}
                     fluid={node.frontmatter.image.childImageSharp.fluid}
                   />
-                  <Title>{node.frontmatter.title}</Title>
-                  <em>
-                    <Date>
-                      {" "}
-                      {node.frontmatter.date}, <Clock /> {node.timeToRead} min
-                      read
-                    </Date>
-                  </em>
-                  <p style={{ fontSize: "1rem" }}>{node.frontmatter.excerpt}</p>
+                  <TextWrapper>
+                    <Title>{node.frontmatter.title}</Title>
+                    <em>
+                      <Date>
+                        {" "}
+                        {node.frontmatter.date}, <Clock /> {node.timeToRead} min
+                        read
+                      </Date>
+                    </em>
+                    <p style={{ fontSize: "1rem" }}>
+                      {node.frontmatter.excerpt}
+                    </p>
+                  </TextWrapper>
                 </Link>
               </Content>
             ))}

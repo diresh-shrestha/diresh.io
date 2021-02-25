@@ -32,7 +32,7 @@ const Content = styled.div`
   margin: 2rem 1rem;
   box-shadow: var(--boxShadow);
   width: 45%;
-  padding: 1rem;
+
   background: var(--blog);
   border-radius: 3%;
 
@@ -48,12 +48,17 @@ const Content = styled.div`
   }
 `
 
+const TextWrapper = styled.div`
+  padding: 1rem;
+`
+
 const Date = styled.p`
   font-size: 1rem;
 `
 
 const Title = styled.h3`
   font-size: 1.3rem;
+  margin-top: 0.5rem;
 `
 
 const Tags = ({ pageContext, data }) => {
@@ -76,32 +81,19 @@ const Tags = ({ pageContext, data }) => {
                     style={{ borderRadius: `10px`, maxHeight: `250px` }}
                     fluid={node.frontmatter.featured.childImageSharp.fluid}
                   />
-                  <Title
-                    data-sal="slide-up"
-                    data-sal-delay="100"
-                    data-sal-easing="ease"
-                  >
-                    {node.frontmatter.title}
-                  </Title>
-                  <em>
-                    <Date
-                      data-sal="slide-up"
-                      data-sal-delay="100"
-                      data-sal-easing="ease"
-                    >
-                      {" "}
-                      {node.frontmatter.date}, <Clock /> {node.timeToRead} min
-                      read
-                    </Date>
-                  </em>
-                  <p
-                    style={{ fontSize: "1rem" }}
-                    data-sal="slide-up"
-                    data-sal-delay="100"
-                    data-sal-easing="ease"
-                  >
-                    {node.frontmatter.excerpt}
-                  </p>
+                  <TextWrapper>
+                    <Title>{node.frontmatter.title}</Title>
+                    <em>
+                      <Date>
+                        {" "}
+                        {node.frontmatter.date}, <Clock /> {node.timeToRead} min
+                        read
+                      </Date>
+                    </em>
+                    <p style={{ fontSize: "1rem" }}>
+                      {node.frontmatter.excerpt}
+                    </p>
+                  </TextWrapper>
                 </Link>
               </Content>
             ))}

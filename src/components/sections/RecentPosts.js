@@ -21,7 +21,6 @@ const Content = styled.div`
   box-shadow: var(--boxShadow);
   margin: 1rem 0rem;
   width: 50%;
-  padding: 1rem;
   background: var(--blog);
   border-radius: 3%;
   :nth-child(odd) {
@@ -35,8 +34,13 @@ const Content = styled.div`
   }
 `
 
+const TextWrapper = styled.div`
+  padding: 1rem;
+`
+
 const Title = styled.h3`
   font-size: 1.3rem;
+  margin-top: 0.5rem;
 `
 
 const InnerHeading = styled.p`
@@ -93,18 +97,18 @@ export default function RecentPosts() {
             style={{ borderRadius: `10px`, maxHeight: `250px` }}
             fluid={post.node.frontmatter.image.childImageSharp.fluid}
           />
-          <Title style={{ marginTop: `1rem` }}>
-            {post.node.frontmatter.title}
-          </Title>
-          <em>
-            <p style={{ fontSize: `1rem` }}>
-              {post.node.frontmatter.date}, <Clock /> {post.node.timeToRead} min
-              read
+          <TextWrapper>
+            <Title>{post.node.frontmatter.title}</Title>
+            <em>
+              <p style={{ fontSize: `1rem` }}>
+                {post.node.frontmatter.date}, <Clock /> {post.node.timeToRead}{" "}
+                min read
+              </p>
+            </em>
+            <p style={{ fontSize: `1rem` }} className="text">
+              {post.node.frontmatter.excerpt}
             </p>
-          </em>
-          <p style={{ fontSize: `1rem` }} className="text">
-            {post.node.frontmatter.excerpt}
-          </p>
+          </TextWrapper>
         </Link>
       </Content>
     )
