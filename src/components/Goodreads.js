@@ -33,7 +33,7 @@ export default function Goodreads({ index }) {
       rel="noreferrer"
       target="_blank"
     >
-      <div className="hvr-float-shadow">
+      <div className="hvr-grow-shadow">
         <Img
           style={{ marginBottom: `0` }}
           src="https://images-na.ssl-images-amazon.com/images/I/81hMjlT14ML.jpg"

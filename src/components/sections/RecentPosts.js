@@ -91,7 +91,7 @@ export default function RecentPosts() {
       title: post.node.frontmatter.title,
     }
     return (
-      <Content className="hvr-float-shadow">
+      <Content className="hvr-grow-shadow">
         <Link to={post.node.fields.slug}>
           <Img
             style={{ borderRadius: `10px`, maxHeight: `250px` }}

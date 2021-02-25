@@ -481,7 +481,7 @@ const BlogPage = ({ data }) => (
         <Fade bottom>
           <Wrapper>
             {data.allMdx.edges.map(({ node }) => (
-              <Content className="hvr-float-shadow" key={node.id}>
+              <Content className="hvr-grow-shadow" key={node.id}>
                 <Link to={node.fields.slug}>
                   <Img
                     style={{ borderRadius: `10px`, maxHeight: `250px` }}
