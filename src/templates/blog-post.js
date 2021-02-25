@@ -94,7 +94,7 @@ export default function BlogPost({ data }) {
   const components = {
     pre: CodeBlock,
   }
-  const image = data.mdx.frontmatter.image.childImageSharp.resize
+  const image = data.markdownRemark.frontmatter.image.childImageSharp.resize
   const siteUrl = "https://www.diresh.io/"
   const post = data.mdx
   let disqusConfig = {
@@ -304,6 +304,19 @@ export const query = graphql`
       }
       tableOfContents
       timeToRead
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        image {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
+        }
+      }
     }
   }
 `
