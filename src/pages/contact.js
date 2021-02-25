@@ -305,8 +305,8 @@ const ContactPage = ({ data }) => {
         <Fade bottom>
           <h1>LET'S GET IN TOUCH!</h1>
         </Fade>
-        <form onSubmit={handleOnSubmit}>
-          <Fade bottom>
+        <Fade bottom>
+          <form onSubmit={handleOnSubmit}>
             <InputWrapper>
               <StyledInput
                 type="text"
@@ -369,8 +369,8 @@ const ContactPage = ({ data }) => {
             <InputWrapper>
               <Button type="submit" text="SEND" disabled={disabled} />
             </InputWrapper>
-          </Fade>
-        </form>
+          </form>
+        </Fade>
       </Content>
     </Layout>
   )
