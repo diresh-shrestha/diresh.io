@@ -94,9 +94,10 @@ export default function BlogPost({ data }) {
   const components = {
     pre: CodeBlock,
   }
-  const image = data.mdx.frontmatter.image.childImageSharp.resize
+
   const siteUrl = "https://www.diresh.io/"
   const post = data.mdx
+  const image = post.frontmatter.image.childImageSharp.resize
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
@@ -279,7 +280,10 @@ export const query = graphql`
         author
       }
     }
-    mdx(fields: { slug: { eq: $slug } }) {
+    mdx(
+      fileAbsolutePath: { regex: "/blog/" }
+      fields: { slug: { eq: $slug } }
+    ) {
       body
       frontmatter {
         date
