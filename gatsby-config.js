@@ -1,3 +1,5 @@
+const remarkSlug = require("remark-slug")
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -79,11 +81,11 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.md`, `.mdx`],
-        // remarkPlugins: [remarkSlug],
+        remarkPlugins: [remarkSlug],
         gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-          },
+          // {
+          //   resolve: `gatsby-remark-autolink-headers`,
+          // },
           {
             resolve: `gatsby-remark-images-medium-zoom`, // Important!
             options: {

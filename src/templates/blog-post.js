@@ -34,6 +34,7 @@ const Content = styled.div`
   }
   p {
     margin-bottom: 2rem;
+    margin-top: 2rem;
   }
   ul,
   ol {
@@ -257,13 +258,6 @@ export default function BlogPost({ data }) {
           </Content>
 
           <Content>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.buymeacoffee.com/diresh"
-            >
-              <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=diresh&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" />
-            </a>
             <Disqus config={disqusConfig} />
           </Content>
         </ContentWrapper>
