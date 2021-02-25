@@ -97,9 +97,9 @@ export default function BlogPost({ data }) {
 
   const siteUrl = "https://www.diresh.io/"
   const post = data.post
-  const image = post.frontmatter.featured
-    ? post.frontmatter.featured.childImageSharp.resize
-    : null
+  // const image = post.frontmatter.featured
+  //   ? post.frontmatter.featured.childImageSharp.resize
+  //   : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
@@ -114,7 +114,7 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
-        image={image}
+        // image={image}
         pathname={post.frontmatter.slug}
       />
 
