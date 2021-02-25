@@ -8,7 +8,6 @@ import SEO from "../components/Seo"
 import Clock from "../components/icons/clock"
 import Particles from "react-tsparticles"
 import "normalize.css"
-
 import ProgressBar from "react-scroll-progress-bar"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
@@ -94,7 +93,7 @@ export default function BlogPost({ data }) {
   const components = {
     pre: CodeBlock,
   }
-  const image = data.markdownRemark.frontmatter.image.childImageSharp.resize
+  const image = data.mdx.frontmatter.image.relativePath
   const siteUrl = "https://www.diresh.io/"
   const post = data.mdx
   let disqusConfig = {
@@ -279,6 +278,7 @@ export const query = graphql`
         author
       }
     }
+
     mdx(
       fileAbsolutePath: { regex: "/blog/" }
       fields: { slug: { eq: $slug } }
@@ -293,30 +293,11 @@ export const query = graphql`
         tags
 
         image {
-          childImageSharp {
-            resize(width: 1200) {
-              src
-              height
-              width
-            }
-          }
+          relativePath
         }
       }
       tableOfContents
       timeToRead
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        image {
-          childImageSharp {
-            resize(width: 1200) {
-              src
-              height
-              width
-            }
-          }
-        }
-      }
     }
   }
 `
