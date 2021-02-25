@@ -91,21 +91,19 @@ const TOC = styled.div`
 `
 
 export default function BlogPost({ data }) {
-  const components = {
-    pre: CodeBlock,
-  }
-
   const siteUrl = "https://www.diresh.io/"
   const post = data.post
-  // const image = post.frontmatter.featured
-  //   ? post.frontmatter.featured.childImageSharp.resize
-  //   : null
+  const image = post.frontmatter.featured
+    ? post.frontmatter.featured.childImageSharp.resize
+    : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
     title: post.frontmatter.title,
   }
-  console.log(post.frontmatter.slug)
+  const components = {
+    pre: CodeBlock,
+  }
   return (
     <Layout style={{ display: `flex`, flexDirection: `column` }}>
       <ProgressBar style={{ zIndex: `100` }} />
@@ -114,7 +112,7 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
-        // image={image}
+        image={image}
         pathname={post.frontmatter.slug}
       />
 
@@ -251,7 +249,7 @@ export default function BlogPost({ data }) {
             ></div>
           </TitleContainer>
           <Excerpt>{post.frontmatter.excerpt}</Excerpt>
-          {/* <Img fixed={image} /> */}
+          <Img fixed={image} />
           <Content>
             <MDXProvider components={components}>
               <MDXRenderer>{post.body}</MDXRenderer>
@@ -283,10 +281,7 @@ export const query = graphql`
       }
     }
 
-    post: mdx(
-      fileAbsolutePath: { regex: "/blog/" }
-      fields: { slug: { eq: $slug } }
-    ) {
+    post: mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
         date
