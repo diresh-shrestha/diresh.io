@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 
-const InnerScroll = styled.div`
-  overflow: hidden;
-  overflow-y: scroll;
+const Header = styled.h3`
+  margin-bottom: 1rem;
+  margin-left: 1.45rem;
 `
 
 function getIds(items) {
@@ -69,7 +69,7 @@ function TableOfContents(props) {
   const activeId = useActiveId(idList)
   return (
     <div>
-      <h3>Table of Contents</h3>
+      <Header>Table of Contents</Header>
       {renderItems(props.items, activeId)}
     </div>
   )
