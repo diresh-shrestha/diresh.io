@@ -2,7 +2,7 @@
 slug: "/blog/an-introduction-to-react-hooks/"
 title: "An Introduction to React Hooks"
 date: "2021-01-09"
-image: "react-hooks.jpg"
+featured: react-hooks.jpg
 description: "A brief and gentle introduction to React Hooks. Hooks are functions that allow the user to 'hook into' different React features from function components."
 excerpt: "A brief and gentle introduction to React Hooks. "
 tags: ["Web Development", "React"]

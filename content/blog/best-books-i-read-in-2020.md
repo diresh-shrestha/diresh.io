@@ -2,7 +2,7 @@
 slug: "/blog/best-books-i-read-in-2020/"
 title: "Best Books I Read In 2020"
 date: "2020-12-31"
-image: "6-books.jpg"
+featured: 6-books.jpg
 description: "I read 12 out of 20 books this year from my goodreads challenge. These are some of the best books I read in 2020"
 excerpt: "
 These are some of the best books I read in 2020."

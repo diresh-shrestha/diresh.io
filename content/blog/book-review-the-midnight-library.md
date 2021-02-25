@@ -2,7 +2,7 @@
 slug: "/blog/book-review-the-midnight-library/"
 title: "Book Review: The Midnight Library by Matt Haig"
 date: "2021-02-03"
-image: "the-midnight-library.png"
+featured: the-midnight-library.png
 description: "Book Review of The Midnight Library by Matt Haig"
 excerpt: "The Midnight Library is about regrets, failures, and ultimately about living life."
 tags: ["Books"]

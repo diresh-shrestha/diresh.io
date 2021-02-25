@@ -56,7 +56,7 @@ export default function RecentPosts() {
               title
               date
               excerpt
-              image {
+              image: featured {
                 childImageSharp {
                   fluid {
                     ...GatsbyImageSharpFluid

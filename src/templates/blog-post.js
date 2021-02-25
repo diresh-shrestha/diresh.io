@@ -14,6 +14,7 @@ import { MDXProvider } from "@mdx-js/react"
 import CodeBlock from "../components/CodeBlock"
 import TableOfContents from "../components/TableOfContents"
 import Scroll from "../components/Scroll"
+import Img from "gatsby-image"
 const ContentWrapper = styled.div`
   margin: auto 1.5rem;
 `
@@ -93,9 +94,12 @@ export default function BlogPost({ data }) {
   const components = {
     pre: CodeBlock,
   }
-  const image = data.mdx.frontmatter.image.relativePath
+
   const siteUrl = "https://www.diresh.io/"
   const post = data.mdx
+  const image = post.frontmatter.image
+    ? post.frontmatter.image.childImageSharp.resize
+    : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
@@ -292,8 +296,14 @@ export const query = graphql`
         description
         tags
 
-        image {
-          relativePath
+        image: featured {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
         }
       }
       tableOfContents

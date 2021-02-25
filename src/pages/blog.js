@@ -523,7 +523,7 @@ export const query = graphql`
             title
             date
             excerpt
-            image {
+            image: featured {
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid

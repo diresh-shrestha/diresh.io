@@ -2,7 +2,7 @@
 slug: "/blog/nodejs-for-beginners/"
 title: "Node.js For Beginners"
 date: "2021-02-14"
-image: "./images/nodejs.png"
+featured: images/nodejs.png
 description: "An introduction and example based guide to Node.js for beginners."
 excerpt: "An introduction and example based guide to Node.js for beginners."
 tags: ["Web Development"]

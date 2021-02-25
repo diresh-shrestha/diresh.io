@@ -2,7 +2,7 @@
 slug: "/blog/how-to-get-started-with-frontend-web-development/"
 title: "How To Get Started With Frontend Web Development"
 date: "2020-12-25"
-image: "frontend.png"
+featured: frontend.png
 description: "In this blog post, I lay out some tips and resources to get you started on your Front-end Web Development journey"
 excerpt: "Some resources to get you started on your Front-End Web Development journey."
 tags: ["Web Development", "React"]

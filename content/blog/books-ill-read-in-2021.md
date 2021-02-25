@@ -2,7 +2,7 @@
 slug: "/blog/books-ill-be-reading-in-2021/"
 title: "Books I'll Be Reading In 2021"
 date: "2021-01-05"
-image: "tweet.png"
+featured: tweet.png
 description: "I have planned to read 25 books this year. This is an overview of my year ahead in books."
 excerpt: "I planned out all the books I am going to read in 2021."
 tags: ["Books"]
