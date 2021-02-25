@@ -94,12 +94,12 @@ export default function BlogPost({ data }) {
   const components = {
     pre: CodeBlock,
   }
-  const image = data.mdx.frontmatter.image
-    ? data.mdx.frontmatter.image.childImageSharp.resize
-    : null
-  const siteUrl = "https://www.diresh.io/"
-  const post = data.mdx
 
+  const siteUrl = "https://www.diresh.io/"
+  const post = data.post
+  const image = post.frontmatter.featured
+    ? post.frontmatter.featured.childImageSharp.resize
+    : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
@@ -251,7 +251,7 @@ export default function BlogPost({ data }) {
             ></div>
           </TitleContainer>
           <Excerpt>{post.frontmatter.excerpt}</Excerpt>
-
+          {/* <Img fixed={image} /> */}
           <Content>
             <MDXProvider components={components}>
               <MDXRenderer>{post.body}</MDXRenderer>
@@ -283,7 +283,7 @@ export const query = graphql`
       }
     }
 
-    mdx(
+    post: mdx(
       fileAbsolutePath: { regex: "/blog/" }
       fields: { slug: { eq: $slug } }
     ) {
@@ -295,8 +295,7 @@ export const query = graphql`
         excerpt
         description
         tags
-
-        image: featured {
+        featured {
           childImageSharp {
             resize(width: 1200) {
               src
