@@ -249,7 +249,7 @@ export default function BlogPost({ data }) {
             ></div>
           </TitleContainer>
           <Excerpt>{post.frontmatter.excerpt}</Excerpt>
-          <Img fixed={image} />
+          {/* <Img fixed={image} /> */}
           <Content>
             <MDXProvider components={components}>
               <MDXRenderer>{post.body}</MDXRenderer>

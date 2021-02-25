@@ -74,7 +74,7 @@ const Tags = ({ pageContext, data }) => {
                 <Link to={node.fields.slug}>
                   <Img
                     style={{ borderRadius: `10px`, maxHeight: `250px` }}
-                    fluid={node.frontmatter.image.childImageSharp.fluid}
+                    fluid={node.frontmatter.featured.childImageSharp.fluid}
                   />
                   <Title
                     data-sal="slide-up"
@@ -158,7 +158,7 @@ export const pageQuery = graphql`
             title
             date
             excerpt
-            image {
+            featured {
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid
