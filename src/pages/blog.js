@@ -422,7 +422,7 @@ const BlogPage = ({ data }) => (
             Welcome to my blog. I write about web development, philosophy, books
             and anything that interests me.
           </p>
-          <h4>Total {data.allMarkdownRemark.totalCount} Posts</h4>
+          <h4>Total {data.allMdx.totalCount} Posts</h4>
           <h4>
             Tags:
             <Tags>
@@ -476,7 +476,7 @@ const BlogPage = ({ data }) => (
         </Fade>
         <Fade bottom>
           <Wrapper>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
+            {data.allMdx.edges.map(({ node }) => (
               <Content className="hvr-float-shadow" key={node.id}>
                 <Link to={node.fields.slug}>
                   <Img
@@ -514,14 +514,14 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, skip: 5) {
       totalCount
       edges {
         node {
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date
             excerpt
             image {
               childImageSharp {
@@ -539,7 +539,7 @@ export const query = graphql`
         }
       }
     }
-    tags: allMarkdownRemark(limit: 2000) {
+    tags: allMdx(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

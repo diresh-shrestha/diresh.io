@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
@@ -46,7 +46,6 @@ const PageLinks = styled(Link)`
 export default function Menu({ open, setOpen }) {
   return (
     <StyledMenu
-      id="lock"
       open={open}
       onClick={() => {
         setOpen(!open)

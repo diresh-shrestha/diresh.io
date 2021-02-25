@@ -18,7 +18,7 @@ Before Hooks, if you were writing a function and realized you needed to utilize 
 
 Here's an example of a simple button that increases the count when clicked using class components:
 
-```JSX
+```jsx
 
 class Counter extends React.Component {
 	constructor(props) {
@@ -51,7 +51,7 @@ ReactDOM.render(
 
 Here's the same example using Hooks:
 
-```JSX
+```jsx
 import React, { useState } from 'react';
 
 export default function Counter() {
@@ -95,70 +95,72 @@ The three component lifecycle methods are:
 
 The `useState` Hook lets you declare and use React state. To declare a `state` variable, we call the `useState` hook inside our component.
 
-```JSX
-import React, { useState } from 'react'
+```jsx
+import React, { useState } from "react"
 
 function Component() {
-	const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 }
 ```
 
 Here, we're declaring a new variable `count` that will hold our value and we're also declaring `setCount` that is a function that will update the value. You can name these variables whatever you like but the convention is to set the name of the variable and prefix it with `set` for the update function. We call `useState` hook and the value we pass into it is the default value or the initial state. In the above example, we're passing the number 0 as the initial state but you can pass a `string`, `bool` or any primitives including an `object`. Basically, we give it whatever we want our variable's initial state to be. React will remember the value inside the variable between re-renders and pass the current value to the update function. The `useState` hook returns the current value and a function that updates the value, and you can declare as many state variables as you require.
 
-```JSX
+```jsx
 const [count, setCount] = useState(0)
 const [isToggled, setIstoggled] = useState(true) //highlight-line
 ```
 
 We can display the current value of our state inside a function
 
-```JSX
-import React, { useState } from 'react'
+```jsx
+import React, { useState } from "react"
 
 function Component() {
-	const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
-	return (
-		<p>The count is { count }. </p>// highlight-line
-		)
+  return (
+    <p>The count is {count}. </p> // highlight-line
+  )
 }
 ```
 
 If you want to update the value of count based on an event such as a user clicking a button, you can call the `setCount` function and update it.
 
-```JSX
-import React, { useState } from 'react'
+```jsx
+import React, { useState } from "react"
 
 function Component() {
-	const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
-	return (
-		<div>
-		// highlight-next-line
-			<button onClick={()=> setCount(count +1)}> Click Me!</button>
-			<p>The count is { count }. </p>
-		</div>
-		)
+  return (
+    <div>
+      // highlight-next-line
+      <button onClick={() => setCount(count + 1)}> Click Me!</button>
+      <p>The count is {count}. </p>
+    </div>
+  )
 }
 ```
 
 You can also create an arrow function that calls `setCount` and updates the value like so:
 
-```JSX
-import React, { useState } from 'react'
+```jsx
+import React, { useState } from "react"
 
 function Component() {
-	const [count, setCount] = useState(0)
-	{ /* highlight-range{1-3} */ }
-	const handleClick = () => {
-		setCount(count + 1)
-	}
-	return (
-		<div>
-			<button onClick={handleClick}> Click Me!</button>
-			<p>The count is { count }. </p>
-		</div>
-		)
+  const [count, setCount] = useState(0)
+  {
+    /* highlight-range{1-3} */
+  }
+  const handleClick = () => {
+    setCount(count + 1)
+  }
+  return (
+    <div>
+      <button onClick={handleClick}> Click Me!</button>
+      <p>The count is {count}. </p>
+    </div>
+  )
 }
 ```
 
@@ -173,22 +175,24 @@ Here is the result of the above functional component:
 
 Here's another example using a `bool` as a default value instead of a number:
 
-```JSX
-import  React, { useState } from  "react";
+```jsx
+import React, { useState } from "react"
 
-export  default  function  DadJoke()  {
-	const  [show, setShow] =  useState(false);
+export default function DadJoke() {
+  const [show, setShow] = useState(false)
 
-	return (
-		<div>
-			<p>Chinese take out: 8 dollars. Tip: 2 dollars.
-			Getting home to find out they forgot part of your order...
-			{show  &&  "riceless"}{" "}</p>
-			<button  onClick={()=> setShow(true)}>Reveal psunchline</button>
-			<button  onClick={()=> setShow(false)}>Hide punchline</button>
-			<p>Credits: u/Degtyrev</p>
-		</div>
-		)
+  return (
+    <div>
+      <p>
+        Chinese take out: 8 dollars. Tip: 2 dollars. Getting home to find out
+        they forgot part of your order...
+        {show && "riceless"}{" "}
+      </p>
+      <button onClick={() => setShow(true)}>Reveal psunchline</button>
+      <button onClick={() => setShow(false)}>Hide punchline</button>
+      <p>Credits: u/Degtyrev</p>
+    </div>
+  )
 }
 ```
 
@@ -205,27 +209,27 @@ We could also have a single button that toggles the visibility of the punchline 
 
 Here's another example of a digital clock:
 
-```JSX
-import  React, { useState } from  "react";
+```jsx
+import React, { useState } from "react"
 
-export  default  function  Clock()  {
-	// get current time
-	let  time  =  new  Date().toLocaleTimeString();
-	// set the state to current time
-	const  [currentTime, setCurrentTime] =  useState(time);
-	// update current time using setCurrentTime
-	const  updateTime  =  ()  =>  {
-		let  time  =  new  Date().toLocaleTimeString();
-		setCurrentTime(time);
-	};
-	// calling the updateTime function every 1 second
-	setInterval(updateTime,  1000);
+export default function Clock() {
+  // get current time
+  let time = new Date().toLocaleTimeString()
+  // set the state to current time
+  const [currentTime, setCurrentTime] = useState(time)
+  // update current time using setCurrentTime
+  const updateTime = () => {
+    let time = new Date().toLocaleTimeString()
+    setCurrentTime(time)
+  }
+  // calling the updateTime function every 1 second
+  setInterval(updateTime, 1000)
 
-	return (
-		<div>
-			<h1>{currentTime}</h1>
-		</div>
-		)
+  return (
+    <div>
+      <h1>{currentTime}</h1>
+    </div>
+  )
 }
 ```
 
@@ -242,33 +246,35 @@ In this example, we are creating a digital clock that shows the current time inc
 
 The `useEffect` Hook lets you perform "side effects" in functional components. Side effects are actions that change the DOM such as changes in `props` or `state`, data fetching, setting up a subscription, etc,. Unlike `useState`, you declare `useEffect` as an arrow function.
 
-```JSX
-import React, { useState, useEffect} from 'react'
+```jsx
+import React, { useState, useEffect } from "react"
 
 function Component() {
-	useEffect(() => {
-		// perform some action
-	});
+  useEffect(() => {
+    // perform some action
+  })
 }
 ```
 
 To use our previous counter example, we can use the effect Hook to update the document title using a browser API to whatever's inside the state variable.
 
-```JSX
-import React, { useState } from 'react'
+```jsx
+import React, { useState } from "react"
 
 function Component() {
-	const [count, setCount] = useState(0)
-	{ /* highlight-range{1-3} */ }
-	useEffect(() => {
-		document.title = `You clicked ${count} times`;
-	});
-	return (
-		<div>
-			<button onClick={()=> setCount(count +1)}> Click Me!</button>
-			<p>The count is { count }. </p>
-		</div>
-		)
+  const [count, setCount] = useState(0)
+  {
+    /* highlight-range{1-3} */
+  }
+  useEffect(() => {
+    document.title = `You clicked ${count} times`
+  })
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}> Click Me!</button>
+      <p>The count is {count}. </p>
+    </div>
+  )
 }
 ```
 
@@ -276,16 +282,16 @@ Now everytime you click on the button, the title of the webpage also updates. Wh
 
 Here's a more complex example putting everything together that we've learned so far:
 
-```JSX
-import  React, { useState, useEffect } from  "react"
+```jsx
+import React, { useState, useEffect } from "react"
 
-export  default  function  Typer({ data, styleObj }) {
-	/** These constants control the speed of the typing and deleting effect */
-	const  CONSTANTS  = {
-		DELETING_SPEED:  80,
-		TYPING_SPEED:  150,
-		}
-	const [state, setState] = useState({
+export default function Typer({ data, styleObj }) {
+  /** These constants control the speed of the typing and deleting effect */
+  const CONSTANTS = {
+    DELETING_SPEED: 80,
+    TYPING_SPEED: 150,
+  }
+  const [state, setState] = useState({
     text: "",
     message: "",
     isDeleting: false,
@@ -346,7 +352,6 @@ export  default  function  Typer({ data, styleObj }) {
 
   return <span style={styleObj}>{state.text}</span>
 }
-
 ```
 
 Here, we're calling `useEffect` twice. The first time to get the typing speed and invoke a function that updates the `text` field inside the state object, and the second time to check the `isDeleting` field and see if the complete text is outputted and also to see if all the text is deleted. This is also an example of effects with cleanup because in the first effect Hook, we are clearing the timer. The result of this component is a typing effect as you can see below
@@ -362,7 +367,7 @@ Here, we're calling `useEffect` twice. The first time to get the typing speed an
 
 The `useContext` Hook allows us to accept a context object and return the current context value for that context. If you don't know what React Context is, this [article](https://www.robinwieruch.de/react-context) should be helpful. The Hook takes a context object as a parameter.
 
-```JSX
+```jsx
 import React, { createContext, useContext } from 'react'
 
 const themes = {

@@ -14,7 +14,7 @@ fairyGateTheme.overrideThemeStyles = () => ({
     color: "var(--textNormal)",
     fontSize: "1.1rem",
     marginBottom: "0.5rem",
-    lineHeight: `1.6`,
+    lineHeight: `1.5`,
   },
   a: {
     color: "var(--textLink)",

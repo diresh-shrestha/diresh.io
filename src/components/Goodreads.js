@@ -2,6 +2,10 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
+const Img = styled.img`
+  max-width: 300px;
+`
+
 export default function Goodreads({ index }) {
   const data = useStaticQuery(
     graphql`
@@ -30,9 +34,9 @@ export default function Goodreads({ index }) {
       target="_blank"
     >
       <div className="hvr-float-shadow">
-        <img
+        <Img
           style={{ marginBottom: `0` }}
-          src={imgUrl}
+          src="https://images-na.ssl-images-amazon.com/images/I/81hMjlT14ML.jpg"
           alt={data.goodreadsShelf.reviews[index].book.title}
         />
       </div>

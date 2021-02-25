@@ -1,8 +1,9 @@
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import NavLink from "./navlink"
 import { Link } from "gatsby"
+import { window, document, exists } from "browser-monads"
 
 import Hamburger from "./Navbar/Hamburger"
 import Menu from "./Navbar/Menu"
@@ -75,7 +76,7 @@ const Header = () => {
         <NavLink />
 
         <ClickAwayListener onClickAway={handleClickAway}>
-          <div>
+          <div data-scroll-lock-scrollable>
             <Hamburger open={open} setOpen={setOpen} />
             <Menu open={open} setOpen={setOpen} />
           </div>

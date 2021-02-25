@@ -47,14 +47,14 @@ const InnerHeading = styled.p`
 export default function RecentPosts() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }, skip: 5) {
         totalCount
         edges {
           node {
             id
             frontmatter {
               title
-              date(formatString: "DD MMMM, YYYY")
+              date
               excerpt
               image {
                 childImageSharp {
@@ -75,7 +75,7 @@ export default function RecentPosts() {
     }
   `)
 
-  const edges = data.allMarkdownRemark.edges
+  const edges = data.allMdx.edges
   const node = edges.slice(0, 2)
 
   const posts = node.map(post => {

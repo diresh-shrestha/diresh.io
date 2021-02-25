@@ -8,9 +8,13 @@ import SEO from "../components/Seo"
 import Clock from "../components/icons/clock"
 import Particles from "react-tsparticles"
 import "normalize.css"
-import { CircleArrow as ScrollUpButton } from "react-scroll-up-button"
-import ProgressBar from "react-scroll-progress-bar"
 
+import ProgressBar from "react-scroll-progress-bar"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXProvider } from "@mdx-js/react"
+import CodeBlock from "../components/CodeBlock"
+import TableOfContents from "../components/TableOfContents"
+import Scroll from "../components/Scroll"
 const ContentWrapper = styled.div`
   margin: auto 1.5rem;
 `
@@ -19,6 +23,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   text-align: justify;
+
   h1 {
     margin: 2rem 0;
   }
@@ -69,25 +74,29 @@ const TOC = styled.div`
   padding: 1rem;
   margin: 2rem;
   margin-top: 50rem;
-  border: solid var(--textNormal);
-  border-width: 1px;
-  width: 300px;
+  max-height: calc(100vh - 148px);
+  overflow: auto;
+  max-width: 300px;
+
   @media (max-width: 1024px) {
     display: none;
   }
   ul {
     list-style: none;
   }
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   h3 {
     margin-top: 0;
   }
 `
 
 export default function BlogPost({ data }) {
-  const image = data.markdownRemark.frontmatter.image.childImageSharp.resize
+  const components = {
+    pre: CodeBlock,
+  }
+  const image = data.mdx.frontmatter.image.childImageSharp.resize
   const siteUrl = "https://www.diresh.io/"
-  const post = data.markdownRemark
+  const post = data.mdx
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
@@ -97,13 +106,8 @@ export default function BlogPost({ data }) {
   return (
     <Layout style={{ display: `flex`, flexDirection: `column` }}>
       <ProgressBar style={{ zIndex: `100` }} />
-      <ScrollUpButton
-        ContainerClassName="scroll-top-button-container"
-        TransitionClassName="scroll-top-button-transition"
-        ShowAtPosition={300}
-        AnimationDuration={200}
-        style={{ zIndex: `2`, bottom: `7rem` }}
-      ></ScrollUpButton>
+      <Scroll />
+
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
@@ -215,9 +219,11 @@ export default function BlogPost({ data }) {
         }}
       />
       <TOC>
-        <h3>In this article: </h3>
-        <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
+        {post.tableOfContents?.items && (
+          <TableOfContents items={post.tableOfContents.items} />
+        )}
       </TOC>
+
       <Container>
         <ContentWrapper>
           <TitleContainer>
@@ -243,10 +249,11 @@ export default function BlogPost({ data }) {
           </TitleContainer>
           <Excerpt>{post.frontmatter.excerpt}</Excerpt>
 
-          <Content
-            style={{ marginBottom: `10rem`, marginTop: `2rem` }}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <Content>
+            <MDXProvider components={components}>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </MDXProvider>
+          </Content>
 
           <Content>
             <a
@@ -272,10 +279,10 @@ export const query = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
         slug
         title
         excerpt
