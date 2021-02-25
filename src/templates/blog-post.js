@@ -240,14 +240,14 @@ export default function BlogPost({ data }) {
                 config={disqusConfig}
               />
             </em>
-            <div
+            {/* <div
               style={{
                 display: `flex`,
                 justifyContent: `center`,
                 margin: `1rem`,
               }}
               class="s9-widget-wrapper"
-            ></div>
+            ></div> */}
           </TitleContainer>
           <Excerpt>{post.frontmatter.excerpt}</Excerpt>
           {/* <Img fixed={image} /> */}
