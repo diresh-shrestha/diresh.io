@@ -226,7 +226,7 @@ export default function BlogPost({ data }) {
         )}
       </TOC>
 
-      <Container>
+      <Container style={{ maxWidth: `800px` }}>
         <ContentWrapper>
           <TitleContainer>
             <h1 style={{ margin: `0.5rem auto` }}>{post.frontmatter.title}</h1>
