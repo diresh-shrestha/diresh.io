@@ -22,7 +22,6 @@ const ContentWrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: justify;
 
   h1 {
     margin: 2rem 0;
