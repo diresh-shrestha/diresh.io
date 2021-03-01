@@ -15,9 +15,6 @@ body {
   background-color: var(--bg);
   transition: background-color 0.5s ease-out;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 body.dark {
   -webkit-font-smoothing: antialiased;
