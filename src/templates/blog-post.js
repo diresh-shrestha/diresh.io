@@ -56,6 +56,7 @@ const Content = styled.div`
     color: rgb(248, 248, 242);
     background-color: rgb(39, 40, 34);
     padding: 4px;
+    border-radius: 5px;
   }
 `
 
