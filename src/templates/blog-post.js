@@ -39,6 +39,18 @@ const Content = styled.div`
   ol {
     color: var(--textNormal);
   }
+
+  blockquote {
+    font-size: 1.375rem;
+    border-radius: 10px;
+    line-height: 1.55;
+    margin-bottom: 55px !important;
+    background: 0 0;
+    border: none;
+    border: 2px solid #696969;
+    -webkit-box-shadow: 6px 6px 0 0 #696969;
+    box-shadow: 6px 6px 0 0 #696969;
+  }
 `
 
 const TitleContainer = styled.div`
