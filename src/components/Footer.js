@@ -49,20 +49,18 @@ export default function Footer() {
   `)
   return (
     <StyledFooter>
-      <Fade bottom>
-        <Wrapper>
-          <AboutImg
-            className="hvr-float-shadow"
-            fluid={data.file.childImageSharp.fluid}
-          />
-          <div style={{ margin: `1rem 1rem` }}>
-            <Links>
-              <SocialLinks />
-            </Links>
-            <p>© {new Date().getFullYear()} - Diresh Shrestha</p>
-          </div>
-        </Wrapper>
-      </Fade>
+      <Wrapper>
+        <AboutImg
+          className="hvr-float-shadow"
+          fluid={data.file.childImageSharp.fluid}
+        />
+        <div style={{ margin: `1rem 1rem` }}>
+          <Links>
+            <SocialLinks />
+          </Links>
+          <p>© {new Date().getFullYear()} - Diresh Shrestha</p>
+        </div>
+      </Wrapper>
     </StyledFooter>
   )
 }
