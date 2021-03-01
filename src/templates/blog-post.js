@@ -51,6 +51,12 @@ const Content = styled.div`
     -webkit-box-shadow: 6px 6px 0 0 #696969;
     box-shadow: 6px 6px 0 0 #696969;
   }
+
+  code {
+    color: rgb(248, 248, 242);
+    background-color: rgb(39, 40, 34);
+    padding: 4px;
+  }
 `
 
 const TitleContainer = styled.div`
