@@ -8,7 +8,7 @@ excerpt: "An introduction and example based guide to Node.js for beginners."
 tags: ["Web Development"]
 ---
 
-![Node.js](./images/nodejs.png)
+<!-- ![Node.js](./images/nodejs.png) -->
 
 Node.js isn't a new programming language but it is a runtime environment. Up until now, your javascript code has been locked inside the browser. We couldn't use javascript to access the filesystem in your computer, and the reason for that is because you don't want malicious code written by someone to access your private information. Node.js allows you to run javascript code outside of the browser on hardware or the server-side.
 

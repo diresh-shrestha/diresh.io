@@ -113,7 +113,7 @@ export default function BlogPost({ data }) {
   const siteUrl = "https://www.diresh.io/"
   const post = data.post
   const image = post.frontmatter.featured
-    ? post.frontmatter.featured.childImageSharp.resize
+    ? post.frontmatter.featured.childImageSharp.fluid
     : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
@@ -268,7 +268,7 @@ export default function BlogPost({ data }) {
             ></div> */}
           </TitleContainer>
           <Excerpt>{post.frontmatter.excerpt}</Excerpt>
-          {/* <Img fixed={image} /> */}
+          <Img fluid={image} />
           <Content>
             <MDXProvider components={components}>
               <MDXRenderer>{post.body}</MDXRenderer>
@@ -304,10 +304,8 @@ export const query = graphql`
         tags
         featured {
           childImageSharp {
-            resize(width: 1200) {
-              src
-              height
-              width
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }

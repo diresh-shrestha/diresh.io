@@ -8,7 +8,7 @@ excerpt: "I planned out all the books I am going to read in 2021."
 tags: ["Books"]
 ---
 
-![enter image description here](https://i.imgur.com/DSYLjZl.png)
+<!-- ![enter image description here](https://i.imgur.com/DSYLjZl.png) -->
 
 The above tweet is from my favorite Twitter account [Orange Book](https://twitter.com/orangebook_) and even though I am writing a blog post about reading books, I believe it's an important thought to keep in mind.
 

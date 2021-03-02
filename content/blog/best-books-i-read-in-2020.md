@@ -9,7 +9,7 @@ These are some of the best books I read in 2020."
 tags: ["Books"]
 ---
 
-![Books](https://i.imgur.com/GyZd0E6.jpg)
+<!-- ![Books](https://i.imgur.com/GyZd0E6.jpg) -->
 
 At the beginning of each year, I take part in the Goodreads challenge. You specify the number of books you want to read that year and you try to reach that goal. Last year, my goal was 50 books, which in hindsight I was just setting myself up for failure. I figured I could read 1 book a week and I would have 50 books by the end of the year. I ended the year with 25 books read, which is not bad. This year, I adjusted my expectations and set a goal for 20 books. I ended up reading 12 books this year, which seems like I did worse than last year, and in a way I did but most of the books I read this year were massive 500+ pages books. This year I am planning on sticking with 20 books again but I will try very hard to reach that goal. I also want to try something different. After every book I read, I will reflect upon it by writing about it. Stuff like what I liked about it, what I learned from it, etc.
 

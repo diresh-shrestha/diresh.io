@@ -8,7 +8,7 @@ excerpt: "A brief and gentle introduction to React Hooks. "
 tags: ["Web Development", "React"]
 ---
 
-![React Hooks](https://i.imgur.com/DorT4NU.jpg)
+<!-- ![React Hooks](https://i.imgur.com/DorT4NU.jpg) -->
 
 _Photo credits: Eric Pamphu Limbu_
 

@@ -8,8 +8,8 @@ excerpt: "A brief history of pre-socratic philosophers from Thales to Democritus
 tags: ["Philosophy"]
 ---
 
-![The Thinker](https://cdn.pixabay.com/photo/2014/10/15/15/20/the-thinker-489753_960_720.jpg)
-_Credits: pixabay.com_
+<!-- ![The Thinker](https://cdn.pixabay.com/photo/2014/10/15/15/20/the-thinker-489753_960_720.jpg)
+_Credits: pixabay.com_ -->
 
 What is the nature of reality? How did things come into existence? What is our place in the universe? What are morality and virtue? How to live a good life? These are some of the questions ancient Greeks found themselves pondering. These thinkers were called philosophers derived from Greek Philo (to love) and Sophia (wisdom) meaning to love wisdom.
 

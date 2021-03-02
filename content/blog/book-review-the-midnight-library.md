@@ -8,7 +8,7 @@ excerpt: "The Midnight Library is about regrets, failures, and ultimately about 
 tags: ["Books"]
 ---
 
-![The Midnight Library](./images/the-midnight-library.png)
+<!-- ![The Midnight Library](./images/the-midnight-library.png) -->
 
 _Photo credits: https://penguinrandomhouselibrary.com/_
 
