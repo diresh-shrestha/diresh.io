@@ -15,6 +15,15 @@ import CodeBlock from "../components/CodeBlock"
 import TableOfContents from "../components/TableOfContents"
 import Scroll from "../components/Scroll"
 import Img from "gatsby-image"
+
+const BlogContainer = styled.div`
+  max-width: 1200px;
+  margin: 5rem auto;
+  @media (max-width: 1024px) {
+    max-width: 800px;
+  }
+`
+
 const ContentWrapper = styled.div`
   margin: auto 1.5rem;
 `
@@ -63,7 +72,7 @@ const Content = styled.div`
 const TitleContainer = styled.div`
   text-align: left;
   margin-top: 8rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 `
 
 const SubTitle = styled.p`
@@ -76,7 +85,7 @@ const ShareButton = styled.div`
 `
 
 const Excerpt = styled.p`
-  text-align: left;
+  margin: 0.5rem 0;
 `
 
 const Column = styled.div`
@@ -88,10 +97,10 @@ const Column = styled.div`
 
 const TOC = styled.div`
   position: sticky;
-  float: left;
+  float: right;
   top: 100px;
-  padding: 1rem;
-  margin: 2rem;
+  padding: 0.5rem;
+  margin: 1rem;
   margin-top: 50rem;
   max-height: calc(100vh - 148px);
   overflow: auto;
@@ -238,13 +247,13 @@ export default function BlogPost({ data }) {
           retina_detect: true,
         }}
       />
-      <TOC>
-        {post.tableOfContents?.items && (
-          <TableOfContents items={post.tableOfContents.items} />
-        )}
-      </TOC>
 
-      <Container style={{ maxWidth: `800px` }}>
+      <BlogContainer>
+        <TOC>
+          {post.tableOfContents?.items && (
+            <TableOfContents items={post.tableOfContents.items} />
+          )}
+        </TOC>
         <ContentWrapper>
           <TitleContainer>
             <h1 style={{ margin: `0.5rem auto` }}>{post.frontmatter.title}</h1>
@@ -258,6 +267,7 @@ export default function BlogPost({ data }) {
                 config={disqusConfig}
               />
             </em>
+            <Excerpt>{post.frontmatter.excerpt}</Excerpt>
             {/* <div
               style={{
                 display: `flex`,
@@ -267,19 +277,16 @@ export default function BlogPost({ data }) {
               class="s9-widget-wrapper"
             ></div> */}
           </TitleContainer>
-          <Excerpt>{post.frontmatter.excerpt}</Excerpt>
+
           <Img fluid={image} />
           <Content>
             <MDXProvider components={components}>
               <MDXRenderer>{post.body}</MDXRenderer>
             </MDXProvider>
-          </Content>
-
-          <Content>
             <Disqus config={disqusConfig} />
           </Content>
         </ContentWrapper>
-      </Container>
+      </BlogContainer>
     </Layout>
   )
 }
