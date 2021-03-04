@@ -107,7 +107,7 @@ console.log("Hello World!)
 
 like in the previous example and you should see "Hello World!" in the console.
 
-### Accepting Command-Line Arguments
+## Accepting Command-Line Arguments
 
 You can also pass any number of command-line arguments to a node program by adding those arguments while invoking the program.
 
@@ -135,7 +135,7 @@ node sum.js 3 4 5
 
 you will get `12` as output.
 
-### The Filesystem(fs) Module
+## The Filesystem(fs) Module
 
 The `fs` module let's you acces the files in your system and read, modify, copy them, among lots other. The `fs` module is part of the Node.js core library meaning you don't have to install it. It comes pre-installed and you can simply `require` it in your program like so:
 
@@ -264,7 +264,7 @@ ls(folder, fileExt, (err, list) => {
 
 As you can see, we're simply looping over the list and logging it in the main file while the logic is hidden "under the hood", in a seperate file that we imported. The './' in front of the filename is to indicate that the file is in the current directory. If we want to go the parent directory, we would include '../'. You can think of one dot as "here" and two dots as "go back".
 
-### HTTP Module
+## HTTP Module
 
 Node.js also has a built-in http module which you can use to create a server, make simple GET requests, and much more. The full list of methods can be found in the [documentation](https://nodejs.org/dist/latest-v14.x/docs/api/http.html).
 
