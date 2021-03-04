@@ -11,6 +11,7 @@ body {
   --hoverEllipse: rgba(0, 0, 0, 0);
   --blog: #ffffff;
   --boxShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --quizBg: #fff;
 
   background-color: var(--bg);
   transition: background-color 0.5s ease-out;
@@ -31,6 +32,7 @@ body.dark {
   --hoverEllipse: rgba(0, 0, 0, 0);
   --blog: #272626;
   --boxShadow: none;
+  --quizBg: #000;
 }
 
 .gatsby-highlight {

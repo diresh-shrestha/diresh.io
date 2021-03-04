@@ -1,0 +1,539 @@
+---
+slug: "/blog/scopes-and-closures-in-javascript"
+title: "Scopes & Closures in JavaScript"
+date: "2021-03-01"
+featured: images/scopes.png
+description: "An in-depth look at scopes and closures in JavaScript"
+excerpt: "An in-depth look at scopes and closures in JavaScript"
+tags: ["JavaScript"]
+---
+
+import MultipleChoice from "../blogComponents/MultipleChoice"
+
+<!-- ![Web Technologies](./images/scopes.png) -->
+
+Being able to declare a variable and store some value into it,
+which we can later retrieve or mutate is an amazing capability
+of programming languages without which a lot of functionality
+would be impossible. But where do these variables live and when
+we call those variables, how does the compiler know where to look
+for them? That's where scope comes in and that's what we will
+be taking an in-depth look at.
+
+## What is Scope?
+
+Scope is a set of rules that defines where your variable is located
+and how to retrieve them. There are different levels of scope each
+with its own scope collection. At the top of the hierarchy, we have
+global scope. This is where all the variables and functions you have declared globally,
+meaning not within any functions, reside. Next, we have the scope of
+each individual function. Let's look at an example.
+
+```js
+// global scope
+var a = 2
+
+//global scope
+function foo(a) {
+  // function scope
+  var b = 2
+  console.log(a * b)
+}
+
+foo(3) // 6
+```
+
+The variable `a` and function declaration `foo()` live in the global
+scope whereas, variable `a` (the one that is passed as a parameter to
+`foo()`) and `b` live inside the function scope of `foo()`.
+
+### Nested Scopes
+
+You can also have nested scopes when there are nested functions.
+
+```js
+// global scope
+function foo(a) {
+  // function scope
+  var b = 2
+  function bar() {
+    // nested function scope
+    var c = 3
+    console.log(b + c)
+  }
+  console.log(a + b)
+}
+```
+
+In this example, `a` and `b` are in the function `foo()`'s scope
+whereas `c` is inside `bar()`'s scope.
+
+### Quiz
+
+```js
+function foo() {
+  var a = 2
+
+  function bar() {
+    var b = 3
+
+    function baz() {
+      var c = a + b
+
+      function ace() {
+        var d = a + b + c
+        console.log(d)
+      }
+    }
+  }
+}
+```
+
+<MultipleChoice
+  quizNum={1}
+  question="In the above code, how many scopes are there?"
+  options={[2, 3, 4, 5]}
+  correctAnswer={5}
+  name="quiz1"
+/>
+
+## Engine & Compiler
+
+In order to understand scope well, we need to look at how the JavaScript
+Engine (executes the code), the Compiler (parses and generates code
+for the engine to execute), and the Scope (collects and maintains a
+list of declared identifiers) interact with each other.
+
+When you're declaring a new variable such as `var a = 1`, what is
+happening behind the scenes is that the compiler sees the variable `a`
+and asks the scope if it already exists. If it does, it simply moves
+on but if it doesn't, the compiler asks the scope to declare it in
+whatever scope it finds it. The compiler will then generate code for the
+engine to execute the assignment `a=1`. Afterwards, when the engine is
+about to execute the code it asks the scope if the variable exists
+in the current scope. If it does, the engine uses the variable. If it does not, it goes to the outer scope. If it's not there either,
+it keeps going one step out until it reaches the global scope. If it
+doesn't find it in the global scope either, then it throws a
+`ReferenceError` (thrown when a non-existent variable is referenced).
+Notice how the Engine goes outward but it doesn't go inward meaning a
+nested scope has access to all the scopes outside of its enclosing scope
+but vice versa is not true.
+
+```js
+function foo() {
+  // has access to a and d but doesn't have access to b or c
+  var a = 2
+  function bar() {
+    // has access to a and d but not c
+    var b = 3
+    function baz() {
+      // has access to a, b and d
+      var c = 4
+      console.log(a + b + c + d) // 14
+    }
+  }
+  baz()
+}
+
+var d = 5
+
+foo()
+```
+
+In this example, the innermost nested function `baz()` has "access" to all the outer function scope variables including `d` which is in the global scope but `foo()` doesn't have access to the variables in its child functions `bar()` and `baz()` nor does `bar()` have access to `baz()`'s variables.
+
+## LHS & RHS Look-up
+
+Whenever there's an assignment such as `var a = 1`, the Engine "consults" the Scope to see if the variable `a` exists. This is called a Left-hand Side (LHS) look-up because it occurs when a variable appears on the left side of the `=` operator. Right-hand Side (RHS) look-up happens not necessarily when a variable appears on the right-hand side but whenever there's a need to retrieve the value of a variable.
+
+```js
+var b = 1 // LHS lookup of b
+console.log(b) // RHS lookup of b
+```
+
+In the first line, we're assigning the value of `1` to `b` and since `b`
+is on the left side of the assignment, it is an LHS lookup. In the second
+line, since no assignment is being made and we're simply looking up the
+value of `b` and logging it, this is an RHS reference.
+
+It's important to note that the Engine goes up through a nested scope checking if the variable exists in that Scope until it gets to the global scope, and if it doesn't exist and it's an LHS reference, then the variable gets created in the global scope (unless you're using [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)). In contrast, if it's an RHS reference, the Engine will throw a `ReferenceError` as we saw earlier. Also, the Engine stops "looking" for the variable soon as it finds it, meaning if there's a variable `a` in the global scope and another variable `a` inside a function and it's being referenced in a nested scope, it starts looking for it in the innermost scope, then it goes outwards stopping at the outer function scope without ever going to the global scope.
+
+```js
+function foo(a) {
+  var b = a * 2
+  function bar(a) {
+    console.log(a + b)
+  }
+  bar(a)
+}
+
+var a = 2
+var b = 3
+
+foo(2)
+```
+
+In the above code, `a` and `b` are being assigned outside the global scope. However, `a` and `b` are also being declared inside the nested functions. This is called shadowing (the inner variable shadows the outer variable). When the Engine is about to execute the `console.log(a + b)`, it does an RHS lookup for variables `a` and `b`. It finds `a` (passed as a parameter in `bar(a)`) but does not find `b` so it goes up a level to the outer function. It finds `b` there so it stops without going to the global scope so the final output is `6`.
+
+### Quiz
+
+```js
+function foo(a) {
+  console.log(a)
+}
+
+foo(1)
+```
+
+<MultipleChoice
+  quizNum={2}
+  question="How many LHS lookup are there in the above code?"
+  options={[0, 1, 2, 3]}
+  correctAnswer={1}
+  name="quiz2"
+/>
+
+<MultipleChoice
+  quizNum={3}
+  question="How many RHS lookup are there in the above code?"
+  options={[0, 1, 2, 3]}
+  correctAnswer={2}
+  name="quiz3"
+/>
+
+When the Engine gets to the line `foo(1)` it
+asks the Scope if the function `foo()` exists. Since it was just
+declared earlier by the compiler, and since we're just looking up
+the function, this is an RHS reference. However, the inside parameter
+`(1)` is a LHS reference because we're passing `1` as a parameter and
+it gets assigned to `a` in the function signature similar to `a = 1`.
+The second RHS is inside the `log` method when the Engine asks the Scope
+if `a` exists, which it does in this case.
+
+## Lexical Scope
+
+Lexing (or tokenizing) is the process of converting strings of code characters to tokens that have semantic meaning in a particular language. This is usually the first step that a compiler takes after which it parses those tokens. Lexical scope is defined when you write a block of code and declare a bunch of variables in write time. These variables are mostly unchangeable when the lexer processes your code. However, there are two ways to "cheat" lexical scope at run-time, both of which are considered bad JavaScript practices and are to be avoided. The first method is `eval` and the second is the keyword `with`, which is now deprecated. `eval` "evaluates" a string as code so if you have something like this:
+
+```js
+function foo(str, a) {
+  // "evaluates" the string as code
+  eval(str)
+  console.log(a + b) // 4 instead of 3
+}
+
+var b = 2
+
+foo("var b= 3", 1)
+```
+
+The string `"var b = 3"` that gets passed into `foo()` is evaluated in run-time as code that was there all along so the `log()` method gets `3` as the value of `b` instead of `2` as assigned in the global scope. The result is `4` (because `b` is now `3` instead of `2`). What we're doing here is essentially modifying the lexical scope.
+
+If you want to read more about them, you can learn more [here](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#eval). The important thing you need to know is that it is considered bad practice and it affects the performance of your code.
+
+## Function Scopes
+
+So far we've seen how functions enclose everything inside it in its own scope "bubble". This is the outside-in view but we can also look at it from the inside-out perspective. We can look at it as a block of code being wrapped around by a function effectively "hiding" it. Why would we want to hide it? The idea behind hiding the code is based on a software design principle called "Principle of Least Privelege/Exposure", which means to only "expose" what is necessary and keep implementation details private.
+
+For example, imagine you are working at a company and it requires employees to enter sensitive information such as SSN and date of birth on a database. Each employee is allowed to access/modify his/her info only and not other employee's info. In this scenario, the company is giving minimum privileges and not exposing sensitive information to employees. If an employee was given privileges to read and modify everyone's information, that could be problematic. Furthermore, if the employee's computer gets affected by malicious code and the perpetrator gets access to their computer, they now have access to sensitive information of all the employees, which is undoubtedly a huge security risk. The same principle applies to programming and function scopes.
+
+There are a few problems with function declarations. We have to explicitly define the identifier `foo()` and it "pollutes" the scope. Also, we have to invoke the function later in order to execute it.
+
+```js
+var a = 2
+
+function foo(a) {
+  console.log(a)
+}
+
+foo(a)
+```
+
+If we want to solve these two problems, we can use function expressions or Immediately Invoked Function Expressions (IIFE). Function declarations begin with `function` but if it begins with something else, it's a function expression. Let's take a look at an example.
+
+```js
+function foo(a) {
+  console.log(a)
+}
+
+;(function bar() {
+  var a = 2
+  console.log(a) //2
+})()
+
+var a = 1
+foo(a) //1
+```
+
+Here, the first function `foo()` is a function declaration because it starts with `function` whereas the second function `bar()` is a function expression because it begins with `;(`. When we wrap a function around with parentheses and add `()` to the end, it tells the Engine to automatically execute it without it being invoked later. This way, we are not polluting the scope and we don't need to call the function later in our code.
+
+## Block Scopes
+
+Functions are not the only way to establish a scope.
+
+```js
+for (var i = 0; i < 10; i++) {
+  console.log(i)
+}
+```
+
+This is a very common way of writing a `for` loop. We declare `i` directly in the for loop because we intend to not use the variable elsewhere. But that doesn't mean we can't accidentally use it because `var` declares the variable in whatever scope it's in (function or global). There are ways to have a block scope where the variable only lives inside that block. One way, which was introduced in ES6 is the `let` keyword. `let`, like `var`, is used to declare a new variable but its scope is inside the block.
+
+```js
+for (let i = 0; i < 10; i++) {
+  console.log(i)
+}
+```
+
+This is an arguably better way of writing a `for` loop because `let` is completely local to the `for` loop block, and it re-binds `i` to the loop body after each iteration. Another way to have block scopes is the `const` keyword. It is exactly like `let` but the value inside it is constant meaning the variable cannot be changed later. It is a great way to declare constants such as pi or the speed of light.
+
+```js
+let a = 2
+const pi = 3.14
+
+a = 3 // works
+pi = 5 // error
+```
+
+The error parameter in a `catch` block of a `try/catch` statement is also block scoped.
+
+```js
+try {
+  undefined()
+} catch (err) {
+  console.log(err) // works
+}
+console.log(err) // ReferenceError
+```
+
+## Hoisting
+
+Hoisting means raising something up and in the case of JavaScript, the thing that is being hoisted up is a declaration, both variable and function. JavaScript is an interpreted language meaning code is interpreted or processed one line at a time. However, as we just talked about, that is not entirely true. Let's take a look at an example.
+
+```js
+a = 1
+
+console.log(a)
+
+var a
+```
+
+<MultipleChoice
+  quizNum={4}
+  question="What's the ouput of the above code?"
+  options={[1, "Undefined"]}
+  correctAnswer={1}
+  name="quiz4"
+/>
+
+Like I mentioned earlier, variable and function declarations get hoisted
+up meaning even though the declaration `var a` comes after the `log`
+function, it gets raised up and is interpreted before everything else.
+This is the same as
+
+```js
+var a
+
+a = 1
+
+console.log(a)
+```
+
+What about this code?
+
+```js
+console.log(a)
+
+var a = 2
+```
+
+<MultipleChoice
+  quizNum={5}
+  question="What's the ouput of the above code?"
+  options={[1, "Undefined"]}
+  correctAnswer={"Undefined"}
+  name="quiz5"
+/>
+
+The result is `undefined` because the compiler sees `var a = 2` in two
+separate parts. The first part is `var a` that gets processed during
+the compilation phase and the second part is the assignment `a = 2`,
+which gets left in-place for the Engine to execute later. The above code
+can be rewritten as
+
+```js
+var a
+
+console.log(a)
+
+a = 2
+```
+
+Since the assignment `a = 2` comes after the `log` function, we get undefined as output.
+
+Similarly, function declarations also get hoisted up. However, the inner logic of the functions only gets hoisted to the top of their respective scopes.
+
+```js
+a = 1
+foo(a)
+
+// foo() gets hoisted up
+function foo(a) {
+  b = a * 2
+  console.log(b)
+  // gets hoisted to top of foo()
+  var b
+}
+
+// gets hoisted up
+var a
+```
+
+Since the function declaration `foo(a)` is hoisted up, we can invoke it
+before the actual function. The code inside the function gets
+hoisted up too but not to the global scope because hoisting happens on a per-scope basis
+meaning `var b` gets hoisted to the top of `foo()`. Function expressions, on the other hand, do not get hoisted.
+
+Consider the following code
+
+```js
+var foo
+foo()
+
+foo = function () {
+  console.log("World")
+}
+
+function foo() {
+  console.log("Hello")
+}
+```
+
+<MultipleChoice
+  quizNum={6}
+  question="What's the ouput of the above code?"
+  options={["Hello", "World"]}
+  correctAnswer={"Hello"}
+  name="quiz6"
+/>
+
+Even though `var foo` is being declared before `function foo()`, function declarations are hoisted before variable declarations.
+
+## Closure
+
+Now that we know what scope is and we've seen lexical scope, we are ready to understand closure.
+
+```js
+function foo() {
+  var a = 2
+
+  function bar() {
+    console.log(a)
+  }
+  bar()
+}
+
+foo()
+```
+
+We know that `bar` has lexical scope access to `foo`'s scope, which is why we can log `a` from `bar`. We say that `bar` has closure over the scope of `foo()` and indeed closure over all the scopes it has access to, including the global scope. Let's take a look at another example.
+
+```js
+function foo() {
+  var a = 2
+
+  function bar() {
+    console.log(a)
+  }
+  return bar
+}
+
+var ace = foo()
+ace() // 2
+```
+
+Instead of calling `bar` inside `foo`, we're now returning the function
+object. We're invoking `foo` inside another variable called
+`ace` that gets the inner `bar` function, and when we invoke `ace` the
+output is `2`. What we're seeing here is that even though `bar` is
+executed outside of its lexical scope, it still has closure over `foo`
+meaning it has access to `foo`'s scope and we get the output `2` which
+was assigned to `a`.
+
+This way, we can pass around functions as values
+outside of their lexical scope when we return them, and not worry about
+the scopes of those functions or their outer functions being collected
+by the garbage collector.
+
+### Module
+
+One place we experience closures frequently is in a JavaScript module.
+
+```js
+function myModule() {
+  var a = "Hello"
+  var b = "World"
+
+  function printHello() {
+    console.log(a)
+  }
+
+  function printWorld() {
+    console.log(b)
+  }
+  return {
+    printHello: printHello,
+    printWorld: printWorld,
+  }
+}
+
+var foo = myModule()
+foo.printHello() // Hello
+foo.printWorld() // World
+```
+
+The function `printHello` and `printWorld` have closure over the scope of `myModule` and we return them as an object. We invoke `myModule` and assign it to `foo`. Now, we can access the functions inside `foo` and since they have closures, it will print `Hello` and `World` when we call those functions. Two important things to note are that the outer function must be invoked at least once, and the inner function must be returned for it to have closure over the outer enclosing function.
+
+### ES6 Modules
+
+Modern way of writing modules is to have each module in their own separate file, `export` them and subsequently `import` them when we need them. The modern way of writing modules is to have each module in their own separate file, `export` them and subsequently `import` them when we need them. Let's look at an example where we have three separate files `foo.js`, `bar.js`, and `index.js`.
+
+`foo.js`
+
+```js
+function Name(name) {
+	return "Hi " + name;
+}
+
+export Name;
+
+```
+
+`bar.js`
+
+```js
+// import only 'Name()' from foo
+import Name from 'foo';
+
+var name = "Plato";
+
+function Philosopher() {
+	cosole.log(Name(name));
+}
+
+export Philosopher;
+```
+
+`index.js`
+
+```js
+import Name from "foo"
+import Philosopher from "bar"
+
+console.log(Name("Rene")) // Hi Rene
+
+Philosopher() // Hi Plato
+```
+
+## Further Learning
+
+[You Don't Know JS Book 2](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20&%20closures/README.md#you-dont-know-js-scope--closures)
