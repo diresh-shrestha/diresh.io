@@ -1,7 +1,7 @@
 ---
 slug: "/blog/scopes-and-closures-in-javascript"
 title: "Scopes & Closures in JavaScript"
-date: "2021-03-01"
+date: "2021-03-03"
 featured: images/scopes.png
 description: "A brief look at scopes and closures in JavaScript"
 excerpt: "A brief look at scopes and closures in JavaScript"
@@ -517,7 +517,7 @@ import Name from 'foo';
 var name = "Plato";
 
 function Philosopher() {
-	cosole.log(Name(name));
+	console.log(Name(name));
 }
 
 export Philosopher;
@@ -533,6 +533,13 @@ console.log(Name("Rene")) // Hi Rene
 
 Philosopher() // Hi Plato
 ```
+
+`foo` and `bar` are modules and we're simply importing them in our main file `index.js`.
+We can import all or some of the APIs inside a module
+
+ES6 Module APIs are static meaning the compiler checks beforehand during compilation if
+the reference of an imported module API exists. If it doesn't, it will throw an error at compile-time instead of runtime.
+To learn more about ES6 modules, you can check out [this](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) article
 
 ## Further Learning
 
