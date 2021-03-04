@@ -14,7 +14,7 @@ import ReactTag from "../components/icons/ReactTag"
 import WebDevTag from "../components/icons/WebDevTag"
 import PhilosophyTag from "../components/icons/PhilosophyTag"
 import Fade from "react-reveal/Fade"
-
+import JSTag from "../components/icons/JSTag"
 const StyledContainer = styled(Container)`
   margin: 6rem auto;
 `
@@ -442,7 +442,7 @@ const BlogPage = ({ data }) => (
                 className="hvr-float-shadow"
                 to={`/tags/${kebabCase(data.tags.group[1].fieldValue)}/`}
               >
-                <PhilosophyTag />
+                <JSTag />
                 {data.tags.group[1].fieldValue} ({data.tags.group[1].totalCount}
                 )
               </TagLink>
@@ -450,7 +450,7 @@ const BlogPage = ({ data }) => (
                 className="hvr-float-shadow"
                 to={`/tags/${kebabCase(data.tags.group[2].fieldValue)}/`}
               >
-                <ReactTag />
+                <PhilosophyTag />
                 {data.tags.group[2].fieldValue} ({data.tags.group[2].totalCount}
                 )
               </TagLink>
@@ -458,8 +458,16 @@ const BlogPage = ({ data }) => (
                 className="hvr-float-shadow"
                 to={`/tags/${kebabCase(data.tags.group[3].fieldValue)}/`}
               >
-                <WebDevTag />
+                <ReactTag />
                 {data.tags.group[3].fieldValue} ({data.tags.group[3].totalCount}
+                )
+              </TagLink>
+              <TagLink
+                className="hvr-float-shadow"
+                to={`/tags/${kebabCase(data.tags.group[3].fieldValue)}/`}
+              >
+                <WebDevTag />
+                {data.tags.group[4].fieldValue} ({data.tags.group[4].totalCount}
                 )
               </TagLink>
               {/* <TagLink className="hvr-float-shadow" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
