@@ -72,7 +72,7 @@ const Content = styled.div`
 const TitleContainer = styled.div`
   text-align: left;
   margin-top: 8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 `
 
 const SubTitle = styled.p`
