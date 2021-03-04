@@ -15,6 +15,7 @@ import CodeBlock from "../components/CodeBlock"
 import TableOfContents from "../components/TableOfContents"
 import Scroll from "../components/Scroll"
 import Img from "gatsby-image"
+import moment from "moment"
 
 const BlogContainer = styled.div`
   max-width: 1200px;
@@ -132,6 +133,9 @@ export default function BlogPost({ data }) {
   const components = {
     pre: CodeBlock,
   }
+  const Date = moment(post.frontmatter.date, "YYYY/MM/DD").format(
+    "MMMM Do YYYY"
+  )
   return (
     <Layout style={{ display: `flex`, flexDirection: `column` }}>
       <ProgressBar style={{ zIndex: `100` }} />
@@ -259,8 +263,7 @@ export default function BlogPost({ data }) {
             <h1 style={{ margin: `0.5rem auto` }}>{post.frontmatter.title}</h1>
             <em>
               <SubTitle>
-                Published: {post.frontmatter.date}, <Clock /> {post.timeToRead}{" "}
-                min read
+                Published: {Date}, <Clock /> {post.timeToRead} min read
               </SubTitle>
               <CommentCount
                 style={{ color: `var(--textNormal)` }}
