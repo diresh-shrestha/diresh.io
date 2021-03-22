@@ -10,6 +10,7 @@ import ReCAPTCHA from "react-google-recaptcha"
 import Particles from "react-tsparticles"
 import "normalize.css"
 import Fade from "react-reveal/Fade"
+import Confetti from "react-dom-confetti"
 
 const Recaptcha_Site_Key = process.env.GATSBY_RECAPTCHA_SITE_KEY
 
@@ -93,7 +94,7 @@ const ContactPage = ({ data }) => {
         description="Contact Diresh Shrestha"
         image={image}
       />
-      <Particles
+      {/* <Particles
         style={{
           position: `fixed`,
           display: submitted ? `block` : `none`,
@@ -300,7 +301,7 @@ const ContactPage = ({ data }) => {
           },
           detectRetina: true,
         }}
-      />
+      /> */}
       <Content>
         <Fade bottom>
           <h1>LET'S GET IN TOUCH!</h1>
@@ -367,6 +368,7 @@ const ContactPage = ({ data }) => {
             </InputWrapper>
 
             <InputWrapper>
+              <Confetti active={submitted} />
               <Button type="submit" text="SEND" disabled={disabled} />
             </InputWrapper>
           </form>

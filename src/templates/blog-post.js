@@ -42,8 +42,8 @@ const Content = styled.div`
     border-radius: 10px;
   }
   p {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   ul,
   ol {
@@ -148,7 +148,7 @@ export default function BlogPost({ data }) {
         pathname={post.frontmatter.slug}
       />
 
-      <Particles
+      {/* <Particles
         style={{ position: `fixed`, zIndex: `-1` }}
         id="tsparticles"
         options={{
@@ -250,7 +250,7 @@ export default function BlogPost({ data }) {
           },
           retina_detect: true,
         }}
-      />
+      /> */}
 
       <BlogContainer>
         <TOC>

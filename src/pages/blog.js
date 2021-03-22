@@ -90,7 +90,7 @@ const BlogPage = ({ data }) => (
       image={data.mainImg.childImageSharp.fluid}
     />
 
-    <Particles
+    {/* <Particles
       style={{ position: `fixed` }}
       id="tsparticles"
       options={{
@@ -416,7 +416,7 @@ const BlogPage = ({ data }) => (
         pauseOnOutsideViewport: false,
         themes: [],
       }}
-    />
+    /> */}
     <StyledContainer>
       <ContentWrapper>
         <Fade bottom>
