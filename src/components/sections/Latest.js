@@ -97,7 +97,7 @@ export default function Latest() {
         </Fade>
         <Fade bottom>
           <iframe
-            src="https://open.spotify.com/embed-podcast/episode/5RcEGbZL7NLdxB9VjRXXVA"
+            src="https://open.spotify.com/embed-podcast/episode/5EVOlNCNj7THiClAkmTaMq"
             width="100%"
             height="232"
             frameborder="0"
