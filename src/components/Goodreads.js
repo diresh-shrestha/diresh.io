@@ -36,7 +36,7 @@ export default function Goodreads({ index }) {
       <div className="hvr-grow-shadow">
         <Img
           style={{ marginBottom: `0` }}
-          src="https://images-na.ssl-images-amazon.com/images/I/81hMjlT14ML.jpg"
+          src={imgUrl}
           alt={data.goodreadsShelf.reviews[index].book.title}
         />
       </div>
