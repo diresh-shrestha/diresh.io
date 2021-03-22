@@ -31,7 +31,6 @@ const Content = styled.div`
 const TextWrapper = styled.p`
   margin: 0.5rem;
   width: fit-content;
-  text-align: justify;
 `
 
 const Location = styled.p`

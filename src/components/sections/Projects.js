@@ -30,7 +30,6 @@ const TextWrapper = styled.p`
   width: 100%;
   min-height: 200px;
   margin: 0.5rem;
-  text-align: justify;
 `
 
 const Technologies = styled.span`
