@@ -75,23 +75,28 @@ export default function MyComponent() {
   //   setOnce(false)
   // }
   // console.log(currentTheme)
+
   return (
     <ThemeToggler>
-      {({ theme, toggleTheme }) => (
+      {({ theme, toggleTheme }) => {
         // <button onClick={toggleTheme()}>
-
+        if (theme == null) {
+          return null
+        }
         // </button>
-        <StyledLabel for="chk" theme={theme}>
-          <StyledInput
-            id="chk"
-            type="checkbox"
-            onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
-            checked={theme === "dark"}
-          />
-          <Moon />
-          <Sun />
-        </StyledLabel>
-      )}
+        return (
+          <StyledLabel for="chk" theme={theme}>
+            <StyledInput
+              id="chk"
+              type="checkbox"
+              onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
+              checked={theme === "dark"}
+            />
+            <Moon />
+            <Sun />
+          </StyledLabel>
+        )
+      }}
     </ThemeToggler>
   )
 }
