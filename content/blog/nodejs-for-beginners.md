@@ -5,7 +5,7 @@ date: "2021-02-14"
 featured: images/nodejs.png
 description: "An introduction and example based guide to Node.js for beginners."
 excerpt: "An introduction and example based guide to Node.js for beginners."
-tags: ["Web Development"]
+tags: ["Web"]
 ---
 
 <!-- ![Node.js](./images/nodejs.png) -->
