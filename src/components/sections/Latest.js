@@ -3,7 +3,7 @@ import Container from "../Container"
 import styled from "styled-components"
 import Goodreads from "../Goodreads"
 import RecentPosts from "./RecentPosts"
-import Fade from "react-reveal/Fade"
+import Newsletter from "../Newsletter"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -59,65 +59,49 @@ export default function Latest() {
   return (
     <Container id="latest">
       <TitleContainer>
-        <Fade bottom>
-          <h1>LATEST</h1>
-        </Fade>
+        <h1>LATEST</h1>
       </TitleContainer>
-      <Fade bottom>
-        <RecentPosts />
-      </Fade>
+
+      <RecentPosts />
+
       <ContentWrapper>
-        <Fade bottom>
-          <h3 style={{ textAlign: `center` }}>BOOKS</h3>
-        </Fade>
+        <h3 style={{ textAlign: `center` }}>BOOKS</h3>
         <BookContainer>
-          <Fade bottom>
-            <Book>
-              <p>Currently Reading</p>
-              <Goodreads index={0} />
-              {/* <Goodreads index={1} /> */}
-            </Book>
-          </Fade>
+          <Book>
+            <p>Currently Reading</p>
+            <Goodreads index={0} />
+            {/* <Goodreads index={1} /> */}
+          </Book>
         </BookContainer>
-        <Fade bottom>
-          <Note>
-            * Books pulled from my Goodreads library using the{" "}
-            <a
-              className="hvr-underline-from-left"
-              href="https://www.goodreads.com/api"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Goodreads API
-            </a>
-          </Note>
-        </Fade>
-        <Fade bottom>
-          <h3 style={{ textAlign: `center` }}>PODCASTS</h3>
-        </Fade>
-        <Fade bottom>
-          <iframe
-            src="https://open.spotify.com/embed-podcast/episode/5EVOlNCNj7THiClAkmTaMq"
-            width="100%"
-            height="232"
-            frameborder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
-          ></iframe>
-        </Fade>
-        <Fade bottom>
-          <h3 style={{ textAlign: `center` }}>PLAYLISTS</h3>
-        </Fade>
-        <Fade bottom>
-          <SpotifyPlayer
-            title="topPlaylist"
-            src="https://open.spotify.com/embed/playlist/4GXG9wicHVfQEDJFFYaUft"
-            frameborder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
-          ></SpotifyPlayer>
-        </Fade>
-        ;
+        <Note>
+          * Books pulled from my Goodreads library using the{" "}
+          <a
+            className="hvr-underline-from-left"
+            href="https://www.goodreads.com/api"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Goodreads API
+          </a>
+        </Note>
+        <h3 style={{ textAlign: `center` }}>PODCASTS</h3>
+        <iframe
+          src="https://open.spotify.com/embed-podcast/episode/5EVOlNCNj7THiClAkmTaMq"
+          width="100%"
+          height="232"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        ></iframe>
+        <h3 style={{ textAlign: `center` }}>PLAYLISTS</h3>
+        <SpotifyPlayer
+          title="topPlaylist"
+          src="https://open.spotify.com/embed/playlist/4GXG9wicHVfQEDJFFYaUft"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        ></SpotifyPlayer>
+        <Newsletter />
       </ContentWrapper>
     </Container>
   )
