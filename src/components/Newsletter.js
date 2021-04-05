@@ -50,6 +50,7 @@ export default function MailChimpForm() {
     e.preventDefault()
     const result = await addToMailChimp(state.email)
     setState({ result: result })
+    setState({ message: result.msg })
   }
 
   const handleChange = e => {
@@ -64,6 +65,8 @@ export default function MailChimpForm() {
           If you like my blog, you can get updates about new posts delivered to
           your inbox. No spam. Unsubscribe any time.
         </Paragraph>
+        <div dangerouslySetInnerHTML={{ __html: state.message }} />
+
         <StyledForm onSubmit={handleSubmit}>
           <StyledInput
             placeholder="Enter email address.."
