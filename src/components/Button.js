@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   background-color: transparent;
   text-align: center;
   position: relative;
-  border: solid;
+  border: 1px solid;
   padding: 1em 2em;
   border-radius: 3%;
   transition: color calc(0.5s * 0.75);
@@ -24,6 +24,10 @@ const StyledButton = styled.button`
   margin-right: 1rem;
   @media (max-width: 320px) {
     margin-right: 0.5rem;
+  }
+
+  &:hover {
+    border-color: var(--textLink);
   }
 `
 
