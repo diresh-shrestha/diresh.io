@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "./icons/SocialLinks"
 import Img from "gatsby-image"
-import Fade from "react-reveal/Fade"
 
 const StyledFooter = styled.footer`
   margin-top: 2rem;

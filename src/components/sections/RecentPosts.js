@@ -4,7 +4,6 @@ import styled from "styled-components"
 import Container from "../Container"
 import Clock from "../icons/clock"
 import Img from "gatsby-image"
-import Fade from "react-reveal/Fade"
 
 const Wrapper = styled.div`
   display: flex;
@@ -117,11 +116,10 @@ export default function RecentPosts() {
   return (
     <Container>
       <ContentWrapper>
-        <Fade bottom>
-          <Link to={"/blog"}>
-            <h3 style={{ textAlign: `center` }}>BLOG POSTS</h3>
-          </Link>
-        </Fade>
+        <Link to={"/blog"}>
+          <h3 style={{ textAlign: `center` }}>BLOG POSTS</h3>
+        </Link>
+
         <Wrapper>{posts}</Wrapper>
       </ContentWrapper>
     </Container>

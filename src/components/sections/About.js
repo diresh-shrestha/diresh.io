@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import GitHubCalendar from "react-github-calendar"
 import ReactTooltip from "react-tooltip"
-import Fade from "react-reveal/Fade"
 
 import Skills from "../icons/Skills"
 
@@ -49,33 +48,29 @@ export default function About({ content }) {
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <Fade bottom>
-          <h1>{frontmatter.title}</h1>
+        <h1>{frontmatter.title}</h1>
 
-          <Content>
-            <p>
-              <MDXRenderer>{body}</MDXRenderer>
-            </p>
-          </Content>
-        </Fade>
-        <Fade bottom>
-          <h3 style={{ textAlign: `center` }}>SKILLS</h3>
-          <Skills />
-        </Fade>
-        <Fade bottom>
-          <h3 style={{ textAlign: `center`, marginBottom: `2rem` }}>COMMITS</h3>
-          <GitHubCalendar
-            style={{ textAlign: `center`, color: `grey` }}
-            theme={exampleTheme}
-            username="diresh-shrestha"
-            fullYear={false}
-            blockSize={15}
-            blockMargin={4}
-            color="#2098d1"
-          >
-            <ReactTooltip delayShow={50} html />
-          </GitHubCalendar>
-        </Fade>
+        <Content>
+          <p>
+            <MDXRenderer>{body}</MDXRenderer>
+          </p>
+        </Content>
+
+        <h3 style={{ textAlign: `center` }}>SKILLS</h3>
+        <Skills />
+
+        <h3 style={{ textAlign: `center`, marginBottom: `2rem` }}>COMMITS</h3>
+        <GitHubCalendar
+          style={{ textAlign: `center`, color: `grey` }}
+          theme={exampleTheme}
+          username="diresh-shrestha"
+          fullYear={false}
+          blockSize={15}
+          blockMargin={4}
+          color="#2098d1"
+        >
+          <ReactTooltip delayShow={50} html />
+        </GitHubCalendar>
       </ContentWrapper>
     </Wrapper>
   )

@@ -3,7 +3,6 @@ import Container from "../Container"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Fade from "react-reveal/Fade"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -67,44 +66,40 @@ export default function Experience({ content }) {
       return <Technologies>{item}</Technologies>
     })
     return (
-      <Fade bottom>
-        <div style={{ marginBottom: `1rem` }}>
-          <a
-            className="hvr-underline-from-left"
-            href={frontmatter.external}
-            target="_blank"
-          >
-            <h4>{frontmatter.name}</h4>
-          </a>
-          <p>
-            <em>{frontmatter.title}</em>
-          </p>
-          <Location>
-            <em>{frontmatter.location}</em>
-          </Location>
-          <p>{frontmatter.date}</p>
-          <TechContainer>{technologies}</TechContainer>
-          <Content direction={frontmatter.direction}>
-            <Img
-              className="img"
-              fluid={frontmatter.image.childImageSharp.fluid}
-              imgStyle={{ objectFit: `contain` }}
-            />
-            <TextWrapper>
-              <MDXRenderer>{body}</MDXRenderer>
-            </TextWrapper>
-          </Content>
-          <Break />
-        </div>
-      </Fade>
+      <div style={{ marginBottom: `1rem` }}>
+        <a
+          className="hvr-underline-from-left"
+          href={frontmatter.external}
+          target="_blank"
+        >
+          <h4>{frontmatter.name}</h4>
+        </a>
+        <p>
+          <em>{frontmatter.title}</em>
+        </p>
+        <Location>
+          <em>{frontmatter.location}</em>
+        </Location>
+        <p>{frontmatter.date}</p>
+        <TechContainer>{technologies}</TechContainer>
+        <Content direction={frontmatter.direction}>
+          <Img
+            className="img"
+            fluid={frontmatter.image.childImageSharp.fluid}
+            imgStyle={{ objectFit: `contain` }}
+          />
+          <TextWrapper>
+            <MDXRenderer>{body}</MDXRenderer>
+          </TextWrapper>
+        </Content>
+        <Break />
+      </div>
     )
   })
   return (
     <Container id="experience">
       <ContentWrapper>
-        <Fade bottom>
-          <h1>EXPERIENCE</h1>
-        </Fade>
+        <h1>EXPERIENCE</h1>
 
         {experience}
       </ContentWrapper>

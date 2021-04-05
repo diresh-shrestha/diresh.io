@@ -5,7 +5,6 @@ import Github from "../icons/Github"
 import External from "../icons/External"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
-import Fade from "react-reveal/Fade"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -72,60 +71,57 @@ export default function Projects({ content }) {
       return <Technologies>{item}</Technologies>
     })
     return (
-      <Fade bottom>
-        <div>
-          <h4>{frontmatter.name}</h4>
-          <em>
-            <p>{frontmatter.description}</p>
-          </em>
-          <TechContainer>
-            <div>{technologies}</div>
-          </TechContainer>
-          <Content direction={frontmatter.direction}>
-            <Img
-              style={{ margin: `0 auto` }}
-              className="img"
-              fluid={frontmatter.image.childImageSharp.fluid}
-              imgStyle={{ objectFit: `contain`, objectPosition: `top` }}
-            />
+      <div>
+        <h4>{frontmatter.name}</h4>
+        <em>
+          <p>{frontmatter.description}</p>
+        </em>
+        <TechContainer>
+          <div>{technologies}</div>
+        </TechContainer>
+        <Content direction={frontmatter.direction}>
+          <Img
+            style={{ margin: `0 auto` }}
+            className="img"
+            fluid={frontmatter.image.childImageSharp.fluid}
+            imgStyle={{ objectFit: `contain`, objectPosition: `top` }}
+          />
 
-            <TextWrapper>
-              <MDXRenderer>{body}</MDXRenderer>
+          <TextWrapper>
+            <MDXRenderer>{body}</MDXRenderer>
 
-              <LinkContainer>
+            <LinkContainer>
+              <ExternalLink
+                href={frontmatter.github}
+                className="hvr-float-shadow"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Github />
+              </ExternalLink>
+              {frontmatter.external ? (
                 <ExternalLink
-                  href={frontmatter.github}
+                  href={frontmatter.external}
                   className="hvr-float-shadow"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <Github />
+                  <External />
                 </ExternalLink>
-                {frontmatter.external ? (
-                  <ExternalLink
-                    href={frontmatter.external}
-                    className="hvr-float-shadow"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <External />
-                  </ExternalLink>
-                ) : null}
-              </LinkContainer>
-            </TextWrapper>
-          </Content>
-          <Break />
-        </div>
-      </Fade>
+              ) : null}
+            </LinkContainer>
+          </TextWrapper>
+        </Content>
+        <Break />
+      </div>
     )
   })
 
   return (
     <Container id="projects">
       <ContentWrapper>
-        <Fade bottom>
-          <h1>PROJECTS</h1>
-        </Fade>
+        <h1>PROJECTS</h1>
+
         {projects}
       </ContentWrapper>
     </Container>

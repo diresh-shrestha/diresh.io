@@ -7,7 +7,6 @@ import { Link } from "gatsby"
 import Button from "./Button"
 import Particles from "react-tsparticles"
 import { useSpring, animated as a } from "react-spring"
-import Fade from "react-reveal/Fade"
 
 const ContainerWrapper = styled.div`
   width: 100%;
@@ -168,30 +167,29 @@ export default function Hero({ desktop, mobile }) {
   return (
     <Wrapper>
       <ContainerWrapper>
-        <Fade bottom>
-          <TextWrapper>
-            <h1>Hello!</h1>
+        <TextWrapper>
+          <h1>Hello!</h1>
 
-            <p style={{ marginBottom: `0`, marginTop: `1rem` }}>My name is</p>
+          <p style={{ marginBottom: `0`, marginTop: `1rem` }}>My name is</p>
 
-            <h1>Diresh Shrestha</h1>
+          <h1>Diresh Shrestha</h1>
 
-            <div style={{ marginTop: `1rem` }}>
-              <p>Software Developer</p>
-            </div>
-            <Links>
-              <SocialLinks />
-            </Links>
-            <ButtonWrapper>
-              <Link to="/contact">
-                <Button text="CONTACT" />
-              </Link>
-              <a href={`Resume.pdf`} download>
-                <Button text="RESUME" />
-              </a>
-            </ButtonWrapper>
-          </TextWrapper>
-        </Fade>
+          <div style={{ marginTop: `1rem` }}>
+            <p>Software Developer</p>
+          </div>
+          <Links>
+            <SocialLinks />
+          </Links>
+          <ButtonWrapper>
+            <Link to="/contact">
+              <Button text="CONTACT" />
+            </Link>
+            <a href={`Resume.pdf`} download>
+              <Button text="RESUME" />
+            </a>
+          </ButtonWrapper>
+        </TextWrapper>
+
         {/* <StyledParticles
           height={500}
           style={{ position: `relative`, marginTop: `5rem` }}
@@ -603,33 +601,31 @@ export default function Hero({ desktop, mobile }) {
           }}
         /> */}
         <ImageWrapper>
-          <Fade bottom>
-            <a.div
-              className="card"
-              onMouseMove={({ clientX: x, clientY: y }) =>
-                set({ xys: calc(x, y) })
-              }
-              onMouseLeave={() => set({ xys: [0, 0, 1] })}
-              style={{
-                transform: props.xys.interpolate(trans),
-              }}
-            >
-              <StyledImg fluid={desktop} />
-            </a.div>
-            <MobileImg fluid={mobile} />
+          <a.div
+            className="card"
+            onMouseMove={({ clientX: x, clientY: y }) =>
+              set({ xys: calc(x, y) })
+            }
+            onMouseLeave={() => set({ xys: [0, 0, 1] })}
+            style={{
+              transform: props.xys.interpolate(trans),
+            }}
+          >
+            <StyledImg fluid={desktop} />
+          </a.div>
+          <MobileImg fluid={mobile} />
 
-            <ImgCaption>
-              Picture taken in{" "}
-              <a
-                className="hvr-underline-from-left"
-                target="_blank"
-                rel="noreferrer"
-                href="https://en.wikipedia.org/wiki/Sibelius_Monument_(Helsinki)"
-              >
-                Sibelius Monument
-              </a>{" "}
-            </ImgCaption>
-          </Fade>
+          <ImgCaption>
+            Picture taken in{" "}
+            <a
+              className="hvr-underline-from-left"
+              target="_blank"
+              rel="noreferrer"
+              href="https://en.wikipedia.org/wiki/Sibelius_Monument_(Helsinki)"
+            >
+              Sibelius Monument
+            </a>{" "}
+          </ImgCaption>
         </ImageWrapper>
       </ContainerWrapper>
     </Wrapper>
