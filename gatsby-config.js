@@ -102,7 +102,27 @@ module.exports = {
         ],
       },
     },
-
+    // {
+    //   resolve: `gatsby-source-twitter`,
+    //   options: {
+    //     credentials: {
+    //       consumer_key: process.env.GATSBY_TWITTER_KEY,
+    //       consumer_secret: process.env.GATSBY_TWITTER_SECRET_KEY,
+    //       bearer_token: process.env.GATSBY_TWITTER_BEARER_TOKEN,
+    //     },
+    //     queries: {
+    //       MyTweets: {
+    //         endpoint: "statuses/user_timeline",
+    //         params: {
+    //           screen_name: "iamdiresh",
+    //           include_rts: true,
+    //           exclude_replies: true,
+    //           tweet_mode: "extended",
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-hubspot",
       options: {
@@ -125,7 +145,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     "gatsby-theme-elements",
     "gatsby-plugin-dark-mode",
-
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
+      },
+    },
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
