@@ -16,9 +16,9 @@ import "normalize.css"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <Helmet>
+    {/* <Helmet>
       <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
-    </Helmet>
+    </Helmet> */}
 
     <SEO
       title="Home"
