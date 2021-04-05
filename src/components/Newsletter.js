@@ -71,6 +71,7 @@ export default function MailChimpForm() {
             name="email"
             autoComplete="email"
             label="email"
+            onChange={handleChange}
           />
           <StyledButton className="pushable" type="submit" label="Submit">
             <span className="front">Subscribe</span>
