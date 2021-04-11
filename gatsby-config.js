@@ -38,6 +38,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
@@ -48,22 +62,14 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-social9-socialshare`,
-      options: {
-        content: process.env.SOCIAL9,
-        async: true,
-        defer: true,
-      },
-    },
-    {
-      resolve: "gatsby-source-goodreads",
-      options: {
-        developerKey: "n64tyIdRZf7Ymjj0rULGow",
-        goodReadsUserId: "57923769-diresh-shrestha",
-        userShelf: "currently-reading",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-goodreads",
+    //   options: {
+    //     developerKey: "n64tyIdRZf7Ymjj0rULGow",
+    //     goodReadsUserId: "57923769-diresh-shrestha",
+    //     userShelf: "currently-reading",
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -143,12 +149,13 @@ module.exports = {
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    "gatsby-theme-elements",
+
     "gatsby-plugin-dark-mode",
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
+        endpoint:
+          "https://diresh.us1.list-manage.com/subscribe/post?u=13cbf60ec202401b61350a932&amp;id=1033f5794a",
       },
     },
     {
@@ -164,19 +171,21 @@ module.exports = {
         duration: 500,
       },
     },
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Diresh.io`,
+        short_name: `Diresh`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+        icon: `src/images/hero.jpg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
