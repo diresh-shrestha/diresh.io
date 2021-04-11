@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "../Container"
 import styled from "styled-components"
-import Goodreads from "../Goodreads"
+import Book from "../Book"
 import RecentPosts from "./RecentPosts"
 import Newsletter from "../Newsletter"
 
@@ -30,7 +30,7 @@ const InnerHeading = styled.p`
   text-align: center;
 `
 
-const Book = styled.div`
+const BookDiv = styled.div`
   margin: 0rem auto;
   p {
     margin-top: 1rem;
@@ -67,23 +67,12 @@ export default function Latest() {
       <ContentWrapper>
         <h3 style={{ textAlign: `center` }}>BOOKS</h3>
         <BookContainer>
-          <Book>
+          <BookDiv>
             <p>Currently Reading</p>
-            <Goodreads index={0} />
-            {/* <Goodreads index={1} /> */}
-          </Book>
+            <Book />
+          </BookDiv>
         </BookContainer>
-        <Note>
-          * Books pulled from my Goodreads library using the{" "}
-          <a
-            className="hvr-underline-from-left"
-            href="https://www.goodreads.com/api"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Goodreads API
-          </a>
-        </Note>
+
         <h3 style={{ textAlign: `center` }}>PODCASTS</h3>
         <iframe
           src="https://open.spotify.com/embed-podcast/episode/5EVOlNCNj7THiClAkmTaMq"
