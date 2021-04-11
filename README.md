@@ -2,10 +2,6 @@
 
 My personal portfolio website with an integrated blog published on [diresh.io](https://www.diresh.io/). This is the first website I have ever built and it will be under constant development. If you have any suggestions or advice, I am open to all of them!
 
-# Motivation
-
-I have been learning web development for the past few months on my spare time, and I had just finished learning React. I wanted to build a static website using what I had learned but I didn't know what. So, I thought I'd build my own personal website using [Gatsby](https://www.gatsbyjs.com/). I learned more in the process of building this than I had in the past few months.
-
 ## Build Status
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01f70e68-28e3-4108-9455-9dd79d80fb75/deploy-status)](https://app.netlify.com/sites/direshio/deploys)
@@ -31,7 +27,6 @@ I have been learning web development for the past few months on my spare time, a
 - [Anchor-links](https://www.gatsbyjs.com/plugins/gatsby-plugin-anchor-links/)
 - [MDX](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/)
 - [Hover-css](https://ianlunn.github.io/Hover/)
-- [Scroll-reveal](https://www.gatsbyjs.com/plugins/gatsby-plugin-scroll-reveal/)
 - [Disqus](https://www.gatsbyjs.com/plugins/gatsby-plugin-disqus/)
 
 ## Acknowledgements
