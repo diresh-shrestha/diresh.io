@@ -171,7 +171,7 @@ module.exports = {
         duration: 500,
       },
     },
-    `gatsby-plugin-postcss`,
+    // `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
