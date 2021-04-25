@@ -16,7 +16,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const tagTemplate = path.resolve("src/templates/tags.js")
+  const tagTemplate = path.resolve("src/templates/tags.tsx")
 
   const result = await graphql(`
     query {
@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allMdx.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.js`),
+      component: path.resolve(`./src/templates/blog-post.tsx`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
