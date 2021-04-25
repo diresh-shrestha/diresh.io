@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
+import React from "react"
 import styled from "styled-components"
-import { check } from "prettier"
 import Moon from "./icons/Moon"
 import Sun from "./icons/Sun"
 
