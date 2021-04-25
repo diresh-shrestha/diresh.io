@@ -616,7 +616,12 @@ export default function Hero() {
             }}
           >
             <StyledImg>
-              <StaticImage className="wrapper" src="../images/hero.jpg" />
+              <StaticImage
+                height={700}
+                className="wrapper"
+                src="../images/hero.jpg"
+                alt="Picture of Diresh taken in Sibelius Monument, Helsinki."
+              />
             </StyledImg>
           </a.div>
           <MobileImg>
