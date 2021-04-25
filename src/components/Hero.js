@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import { animated as a, useSpring } from "react-spring"
 import Particles from "react-tsparticles"
@@ -61,50 +61,50 @@ const TextWrapper = styled(Container)`
   }
 `
 
-const StyledImg = styled(Img)`
-  border-radius: 3%;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  border: 20px;
-  height: 700px;
-  width: 600px;
+// const StyledImg = styled(StaticImage)`
+//   border-radius: 3%;
+//   left: 0;
+//   width: 100%;
+//   z-index: -1;
+//   border: 20px;
+//   height: 700px;
+//   width: 600px;
 
-  @media (max-width: 1024px) {
-    width: 500px;
-    height: 600px;
-  }
-  @media (max-width: 768px) {
-    max-width: 700px;
-    height: 600px;
-  }
-  @media (max-width: 425px) {
-    display: none;
-  }
-`
+//   @media (max-width: 1024px) {
+//     width: 500px;
+//     height: 600px;
+//   }
+//   @media (max-width: 768px) {
+//     max-width: 700px;
+//     height: 600px;
+//   }
+//   @media (max-width: 425px) {
+//     display: none;
+//   }
+// `
 
-const MobileImg = styled(Img)`
-  border-radius: 3%;
-  left: 0;
-  width: 100%;
-  z-index: -1;
+// const MobileImg = styled(StaticImage)`
+//   border-radius: 3%;
+//   left: 0;
+//   width: 100%;
+//   z-index: -1;
 
-  border: 20px;
-  height: auto;
-  width: 380px;
-  @media (max-width: 375px) {
-    width: 350px;
-  }
-  @media (max-width: 375px) {
-    width: 350px;
-  }
-  @media (max-width: 320px) {
-    width: 280px;
-  }
-  @media (min-width: 426px) {
-    display: none;
-  }
-`
+//   border: 20px;
+//   height: auto;
+//   width: 380px;
+//   @media (max-width: 375px) {
+//     width: 350px;
+//   }
+//   @media (max-width: 375px) {
+//     width: 350px;
+//   }
+//   @media (max-width: 320px) {
+//     width: 280px;
+//   }
+//   @media (min-width: 426px) {
+//     display: none;
+//   }
+// `
 
 const ImgCaption = styled.p`
   font-size: 0.8rem;
@@ -116,13 +116,17 @@ const ImgCaption = styled.p`
 const ImageWrapper = styled.div`
   margin: 2rem auto;
 
-  .card {
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
-    will-change: transform;
-    &:hover {
-      box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-    }
+  // .card {
+  //   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  //   transition: box-shadow 0.5s;
+  //   will-change: transform;
+  //   &:hover {
+  //     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+  //   }
+  // }
+
+  .wrapper {
+    border-radius: 10px;
   }
 `
 
@@ -150,7 +154,7 @@ const StyledParticles = styled(Particles)`
   }
 `
 
-export default function Hero({ desktop, mobile }) {
+export default function Hero() {
   const calc = (x, y) => [
     -(y - window.innerHeight / 2) / 40,
     (x - window.innerWidth / 2) / 40,
@@ -602,7 +606,6 @@ export default function Hero({ desktop, mobile }) {
         /> */}
         <ImageWrapper>
           <a.div
-            className="card"
             onMouseMove={({ clientX: x, clientY: y }) =>
               set({ xys: calc(x, y) })
             }
@@ -611,9 +614,8 @@ export default function Hero({ desktop, mobile }) {
               transform: props.xys.interpolate(trans),
             }}
           >
-            <StyledImg fluid={desktop} />
+            <StaticImage className="wrapper" src="../images/hero.jpg" />
           </a.div>
-          <MobileImg fluid={mobile} />
 
           <ImgCaption>
             Picture taken in{" "}

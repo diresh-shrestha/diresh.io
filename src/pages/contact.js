@@ -41,7 +41,7 @@ const TextArea = styled.textarea`
 `
 
 const ContactPage = ({ data }) => {
-  const image = data.file.childImageSharp.fluid
+  const image = data.file.childImageSharp.gatsbyImageData
   const [submitted, setSubmitted] = useState(false)
   const [serverState, setServerState] = useState({
     submitting: false,
@@ -376,12 +376,10 @@ const ContactPage = ({ data }) => {
 export default ContactPage
 
 export const data = graphql`
-  query {
+  {
     file(relativePath: { eq: "sections/Footer/About.jpg" }) {
       childImageSharp {
-        fluid(jpegQuality: 100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

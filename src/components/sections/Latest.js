@@ -31,17 +31,17 @@ const InnerHeading = styled.p`
 `
 
 const BookDiv = styled.div`
-  margin: 0rem auto;
-  p {
-    margin-top: 1rem;
-  }
-  @media (max-width: 425px) {
-    margin: 0;
-  }
-  img {
-    border-radius: 3%;
-    margin: 1rem;
-  }
+  // margin: 0rem auto;
+  // p {
+  //   margin-top: 1rem;
+  // }
+  // @media (max-width: 425px) {
+  //   margin: 0;
+  // }
+  // img {
+  //   border-radius: 3%;
+  //   margin: 1rem;
+  // }
 `
 
 const TitleContainer = styled.div`

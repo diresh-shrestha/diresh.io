@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "../Container"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const ContentWrapper = styled.div`
@@ -83,18 +83,17 @@ export default function Experience({ content }) {
         <p>{frontmatter.date}</p>
         <TechContainer>{technologies}</TechContainer>
         <Content direction={frontmatter.direction}>
-          <Img
+          <GatsbyImage
+            image={frontmatter.image.childImageSharp.gatsbyImageData}
             className="img"
-            fluid={frontmatter.image.childImageSharp.fluid}
-            imgStyle={{ objectFit: `contain` }}
-          />
+            imgStyle={{ objectFit: `contain` }} />
           <TextWrapper>
             <MDXRenderer>{body}</MDXRenderer>
           </TextWrapper>
         </Content>
         <Break />
       </div>
-    )
+    );
   })
   return (
     <Container id="experience">

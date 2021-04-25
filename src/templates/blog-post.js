@@ -1,21 +1,20 @@
-import React, { useEffect } from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import Container from "../components/Container"
-import styled from "styled-components"
-import { Disqus, CommentCount } from "gatsby-plugin-disqus"
-import SEO from "../components/Seo"
-import Clock from "../components/icons/clock"
-import "normalize.css"
-import ProgressBar from "react-scroll-progress-bar"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
-import CodeBlock from "../components/CodeBlock"
-import TableOfContents from "../components/TableOfContents"
-import Scroll from "../components/Scroll"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
+import { CommentCount, Disqus } from "gatsby-plugin-disqus"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import moment from "moment"
+import "normalize.css"
+import React from "react"
+import ProgressBar from "react-scroll-progress-bar"
+import styled from "styled-components"
+import CodeBlock from "../components/CodeBlock"
+import Clock from "../components/icons/clock"
+import Layout from "../components/Layout"
 import Newsletter from "../components/Newsletter"
+import Scroll from "../components/Scroll"
+import SEO from "../components/Seo"
+import TableOfContents from "../components/TableOfContents"
 
 const BlogContainer = styled.div`
   max-width: 1200px;
@@ -123,7 +122,7 @@ export default function BlogPost({ data }) {
   const siteUrl = "https://www.diresh.io/"
   const post = data.post
   const image = post.frontmatter.featured
-    ? post.frontmatter.featured.childImageSharp.fluid
+    ? post.frontmatter.featured.childImageSharp.gatsbyImageData
     : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
@@ -177,7 +176,7 @@ export default function BlogPost({ data }) {
             ></div> */}
           </TitleContainer>
 
-          <Img fluid={image} />
+          <GatsbyImage image={image} />
           <Content>
             <MDXProvider components={components}>
               <MDXRenderer>{post.body}</MDXRenderer>
@@ -199,7 +198,6 @@ export const query = graphql`
         author
       }
     }
-
     post: mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
@@ -211,9 +209,7 @@ export const query = graphql`
         tags
         featured {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

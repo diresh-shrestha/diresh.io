@@ -3,7 +3,7 @@ import Container from "./Container"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "./icons/SocialLinks"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 const StyledFooter = styled.footer`
   margin-top: 2rem;
@@ -24,7 +24,7 @@ const Links = styled.div`
   margin: 2rem auto;
 `
 
-const AboutImg = styled(Img)`
+const AboutImg = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -32,27 +32,19 @@ const AboutImg = styled(Img)`
   @media (max-width: 425px) {
     margin: 1rem auto;
   }
+
+  .img {
+    border-radius: 50%;
+  }
 `
 
 export default function Footer() {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "sections/Footer/About.webp" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
   return (
     <StyledFooter>
       <Wrapper>
-        <AboutImg
-          className="hvr-float-shadow"
-          fluid={data.file.childImageSharp.fluid}
-        />
+        <AboutImg className="hvr-float-shadow">
+          <StaticImage className="img" src="../images/About.jpg" />
+        </AboutImg>
         <div style={{ margin: `1rem 1rem` }}>
           <Links>
             <SocialLinks />

@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 
-const Img = styled.img`
+const Img = styled.div`
   max-width: 300px;
 `
 
@@ -27,10 +28,18 @@ export default function Book() {
     //     />
     //   </div>
     // </a>
-    <a href={bookUrl} rel="noreferrer" target="_blank">
-      <div className="hvr-grow-shadow">
-        <Img style={{ marginBottom: `0` }} src={imgUrl} alt={alt} />
-      </div>
+    <a
+      className="hvr-grow-shadow"
+      href={bookUrl}
+      rel="noreferrer"
+      target="_blank"
+    >
+      <Img>
+        <StaticImage
+          src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1613923087l/54970071._SY475_.jpg"
+          alt={alt}
+        />
+      </Img>
     </a>
   )
 }

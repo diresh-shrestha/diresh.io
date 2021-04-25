@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 import Container from "../Container"
 import Clock from "../icons/clock"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Wrapper = styled.div`
   display: flex;
@@ -48,35 +48,32 @@ const InnerHeading = styled.p`
 `
 
 export default function RecentPosts() {
-  const data = useStaticQuery(graphql`
-    query {
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }, skip: 5) {
-        totalCount
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              date
-              excerpt
-              image: featured {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
+  const data = useStaticQuery(graphql`{
+  allMdx(sort: {fields: [frontmatter___date], order: DESC}, skip: 5) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date
+          excerpt
+          image: featured {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
-            fields {
-              slug
-            }
-            excerpt
-            timeToRead
           }
         }
+        fields {
+          slug
+        }
+        excerpt
+        timeToRead
       }
     }
-  `)
+  }
+}
+`)
 
   const edges = data.allMdx.edges
   const node = edges.slice(0, 2)
@@ -92,10 +89,9 @@ export default function RecentPosts() {
     return (
       <Content className="hvr-grow-shadow">
         <Link to={post.node.fields.slug}>
-          <Img
-            style={{ borderRadius: `10px`, maxHeight: `250px` }}
-            fluid={post.node.frontmatter.image.childImageSharp.fluid}
-          />
+          <GatsbyImage
+            image={post.node.frontmatter.image.childImageSharp.gatsbyImageData}
+            style={{ borderRadius: `10px`, maxHeight: `250px` }} />
           <TextWrapper>
             <Title>{post.node.frontmatter.title}</Title>
             <em>
@@ -110,7 +106,7 @@ export default function RecentPosts() {
           </TextWrapper>
         </Link>
       </Content>
-    )
+    );
   })
 
   return (

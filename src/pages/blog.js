@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import kebabCase from "lodash/kebabCase"
 import "normalize.css"
 import React from "react"
@@ -88,7 +88,7 @@ const BlogPage = ({ data }) => (
       description="Welcome to my blog. I write about web development, philosophy, books
           and anything that interests me."
       pathname="blog/"
-      image={data.mainImg.childImageSharp.fluid}
+      image={data.mainImg.childImageSharp.gatsbyImageData}
     />
 
     <StyledContainer>
@@ -156,10 +156,9 @@ const BlogPage = ({ data }) => (
           {data.allMdx.edges.map(({ node }) => (
             <Content className="hvr-grow-shadow" key={node.id}>
               <Link to={node.fields.slug}>
-                <Img
-                  style={{ borderRadius: `10px`, maxHeight: `250px` }}
-                  fluid={node.frontmatter.image.childImageSharp.fluid}
-                />
+                <GatsbyImage
+                  image={node.frontmatter.image.childImageSharp.gatsbyImageData}
+                  style={{ borderRadius: `10px`, maxHeight: `250px` }} />
                 <TextWrapper>
                   <Title>{node.frontmatter.title}</Title>
                   <em>
@@ -182,46 +181,41 @@ const BlogPage = ({ data }) => (
 
 export default BlogPage
 
-export const query = graphql`
-  query {
-    mainImg: file(relativePath: { eq: "blog/frontend.png" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const query = graphql`{
+  mainImg: file(relativePath: {eq: "blog/frontend.png"}) {
+    id
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }, skip: 5) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-            excerpt
-            image: featured {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+  }
+  allMdx(sort: {fields: [frontmatter___date], order: DESC}, skip: 5) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date
+          excerpt
+          image: featured {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
-          fields {
-            slug
-          }
-          excerpt
-          timeToRead
         }
-      }
-    }
-    tags: allMdx(limit: 2000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+        fields {
+          slug
+        }
+        excerpt
+        timeToRead
       }
     }
   }
+  tags: allMdx(limit: 2000) {
+    group(field: frontmatter___tags) {
+      fieldValue
+      totalCount
+    }
+  }
+}
 `

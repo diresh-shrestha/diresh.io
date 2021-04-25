@@ -97,10 +97,7 @@ const IndexPage = ({ data }) => (
         detectRetina: true,
       }}
     />
-    <Hero
-      desktop={data.desktopHeroImg.childImageSharp.fluid}
-      mobile={data.mobileHeroImg.childImageSharp.fluid}
-    />
+    <Hero />
 
     <About content={data.about.edges} />
     <Experience content={data.experience.edges} />
@@ -140,9 +137,10 @@ export const query = graphql`
             location
             image {
               childImageSharp {
-                fluid(fit: CONTAIN) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(
+                  transformOptions: { fit: CONTAIN }
+                  layout: FULL_WIDTH
+                )
               }
             }
           }
@@ -164,9 +162,10 @@ export const query = graphql`
             direction
             image {
               childImageSharp {
-                fluid(fit: CONTAIN) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(
+                  transformOptions: { fit: CONTAIN }
+                  layout: FULL_WIDTH
+                )
               }
             }
           }
@@ -174,13 +173,7 @@ export const query = graphql`
         }
       }
     }
-    desktopHeroImg: file(relativePath: { eq: "sections/Hero/hero.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+
     mainImg: file(relativePath: { eq: "sections/Main/Main.jpg" }) {
       childImageSharp {
         resize(height: 500, width: 600) {
@@ -190,13 +183,6 @@ export const query = graphql`
           height
           aspectRatio
           originalName
-        }
-      }
-    }
-    mobileHeroImg: file(relativePath: { eq: "sections/Hero/hero_small.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
         }
       }
     }

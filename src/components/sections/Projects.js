@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Github from "../icons/Github"
 import External from "../icons/External"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -80,12 +80,11 @@ export default function Projects({ content }) {
           <div>{technologies}</div>
         </TechContainer>
         <Content direction={frontmatter.direction}>
-          <Img
+          <GatsbyImage
+            image={frontmatter.image.childImageSharp.gatsbyImageData}
             style={{ margin: `0 auto` }}
             className="img"
-            fluid={frontmatter.image.childImageSharp.fluid}
-            imgStyle={{ objectFit: `contain`, objectPosition: `top` }}
-          />
+            imgStyle={{ objectFit: `contain`, objectPosition: `top` }} />
 
           <TextWrapper>
             <MDXRenderer>{body}</MDXRenderer>
@@ -114,7 +113,7 @@ export default function Projects({ content }) {
         </Content>
         <Break />
       </div>
-    )
+    );
   })
 
   return (

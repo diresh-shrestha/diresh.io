@@ -7,7 +7,7 @@ import Clock from "../components/icons/clock"
 
 // Components
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const StyledContainer = styled(Container)`
   margin: 6rem auto;
@@ -77,10 +77,9 @@ const Tags = ({ pageContext, data }) => {
             {edges.map(({ node }) => (
               <Content className="hvr-grow-shadow" key={node.id}>
                 <Link to={node.fields.slug}>
-                  <Img
-                    style={{ borderRadius: `10px`, maxHeight: `250px` }}
-                    fluid={node.frontmatter.featured.childImageSharp.fluid}
-                  />
+                  <GatsbyImage
+                    image={node.frontmatter.featured.childImageSharp.gatsbyImageData}
+                    style={{ borderRadius: `10px`, maxHeight: `250px` }} />
                   <TextWrapper>
                     <Title>{node.frontmatter.title}</Title>
                     <em>
@@ -105,7 +104,7 @@ const Tags = ({ pageContext, data }) => {
         </ContentWrapper>
       </StyledContainer>
     </Layout>
-  )
+  );
 }
 
 Tags.propTypes = {
@@ -133,33 +132,30 @@ Tags.propTypes = {
 
 export default Tags
 
-export const pageQuery = graphql`
-  query($tag: String) {
-    allMdx(
-      limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date
-            excerpt
-            featured {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+export const pageQuery = graphql`query ($tag: String) {
+  allMdx(
+    limit: 2000
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {frontmatter: {tags: {in: [$tag]}}}
+  ) {
+    totalCount
+    edges {
+      node {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date
+          excerpt
+          featured {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
       }
     }
   }
+}
 `
