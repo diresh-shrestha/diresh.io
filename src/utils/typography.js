@@ -6,15 +6,13 @@ import fairyGateTheme from "typography-theme-fairy-gates"
 fairyGateTheme.overrideThemeStyles = () => ({
   "h1,h2,h3,h4,h5,h6": {
     color: "var(--textTitle)",
-    opacity: "var(--pOpacity)",
   },
 
   p: {
-    opacity: "var(--pOpacity)",
     color: "var(--textNormal)",
-    fontSize: "1.1rem",
+    fontSize: "1rem",
     marginBottom: "0.5rem",
-    lineHeight: `1.5`,
+    lineHeight: `1.6`,
   },
   a: {
     color: "var(--textLink)",

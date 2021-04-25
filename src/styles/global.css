@@ -27,7 +27,7 @@ body.dark {
   --textTitle: hsl(53deg 100% 50%);
   --textLink: #e43f5a;
   --toggler: #f6f6f6;
-  --pOpacity: 0.87;
+  --pOpacity: 1;
   --linkHover: #e43f5a;
   --hoverCenter: rgba(247, 244, 244, 0.692);
   --hoverEllipse: rgba(0, 0, 0, 0);
