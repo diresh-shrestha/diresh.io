@@ -1,14 +1,13 @@
-import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
-import styled from "styled-components"
-import NavLink from "./navlink"
+import { ClickAwayListener } from "@material-ui/core"
+import { window } from "browser-monads"
 import { Link } from "gatsby"
-import { window, document, exists } from "browser-monads"
-
+import PropTypes from "prop-types"
+import React, { useState } from "react"
+import styled from "styled-components"
+import Mountain from "./icons/Mountain"
 import Hamburger from "./Navbar/Hamburger"
 import Menu from "./Navbar/Menu"
-import { ClickAwayListener } from "@material-ui/core"
-import Mountain from "./icons/Mountain"
+import NavLink from "./navlink"
 
 const HeaderWrapper = styled.header`
   height: 80px;

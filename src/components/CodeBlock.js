@@ -1,7 +1,6 @@
-import React, { useState } from "react"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/okaidia"
-import Prism from "prism-react-renderer/prism"
+import React from "react"
 import styled from "styled-components"
 
 const Button = styled.button`

@@ -1,16 +1,14 @@
-import React, { useState } from "react"
+import axios from "axios"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
-import Container from "../components/Container"
+import "normalize.css"
+import React, { useState } from "react"
+import Confetti from "react-dom-confetti"
+import ReCAPTCHA from "react-google-recaptcha"
 import styled from "styled-components"
 import Button from "../components/Button"
-import axios from "axios"
-import ReCAPTCHA from "react-google-recaptcha"
-import Particles from "react-tsparticles"
-import "normalize.css"
-
-import Confetti from "react-dom-confetti"
+import Container from "../components/Container"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 
 const Recaptcha_Site_Key = process.env.GATSBY_RECAPTCHA_SITE_KEY
 

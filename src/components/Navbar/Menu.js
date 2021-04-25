@@ -1,9 +1,9 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
-import MenuItems from "./MenuItems"
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
+import MenuItems from "./MenuItems"
 
 const StyledMenu = styled.nav`
   display: flex;

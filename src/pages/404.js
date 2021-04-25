@@ -1,8 +1,7 @@
 import React from "react"
-
+import Container from "../components/Container"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import Container from "../components/Container"
 
 const NotFoundPage = () => (
   <Layout>

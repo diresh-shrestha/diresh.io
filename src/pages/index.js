@@ -1,18 +1,14 @@
-import React from "react"
-
-import Layout from "../components/Layout"
-import Image from "../components/Image"
-import SEO from "../components/Seo"
 import { graphql } from "gatsby"
-import About from "../components/sections/About"
-import Projects from "../components/sections/Projects"
-
+import "normalize.css"
+import React from "react"
+import Particles from "react-tsparticles"
 import Hero from "../components/Hero"
+import Layout from "../components/Layout"
+import About from "../components/sections/About"
 import Experience from "../components/sections/Experience"
 import Latest from "../components/sections/Latest"
-import Particles from "react-tsparticles"
-import { Helmet } from "react-helmet"
-import "normalize.css"
+import Projects from "../components/sections/Projects"
+import SEO from "../components/Seo"
 
 const IndexPage = ({ data }) => (
   <Layout>
