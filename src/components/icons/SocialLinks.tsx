@@ -3,10 +3,12 @@ import Github from "./Github"
 import Linkedin from "./Linkedin"
 import Mail from "./Mail"
 import SourceCode from "./SourceCode"
+import Twitter from "./Twitter"
 
 export default function SocialLinks() {
   return (
     <div>
+      <Twitter />
       <a
         href="https://github.com/diresh-shrestha"
         className="hvr-float-shadow"
@@ -16,7 +18,9 @@ export default function SocialLinks() {
       >
         <Github />
       </a>
+
       <Linkedin />
+
       <Mail />
     </div>
   )
