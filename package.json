@@ -42,7 +42,6 @@
     "loader-utils": "^2.0.0",
     "moment": "^2.29.1",
     "normalize.css": "^8.0.1",
-    "postcss": "^8.2.9",
     "prism-react-renderer": "^1.2.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
