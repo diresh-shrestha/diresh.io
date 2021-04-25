@@ -61,50 +61,50 @@ const TextWrapper = styled(Container)`
   }
 `
 
-// const StyledImg = styled(StaticImage)`
-//   border-radius: 3%;
-//   left: 0;
-//   width: 100%;
-//   z-index: -1;
-//   border: 20px;
-//   height: 700px;
-//   width: 600px;
+const StyledImg = styled.div`
+  // border-radius: 3%;
+  // left: 0;
+  // width: 100%;
+  // z-index: -1;
+  // border: 20px;
+  // height: 700px;
+  // width: 600px;
 
-//   @media (max-width: 1024px) {
-//     width: 500px;
-//     height: 600px;
-//   }
-//   @media (max-width: 768px) {
-//     max-width: 700px;
-//     height: 600px;
-//   }
-//   @media (max-width: 425px) {
-//     display: none;
-//   }
-// `
+  // @media (max-width: 1024px) {
+  //   width: 500px;
+  //   height: 600px;
+  // }
+  // @media (max-width: 768px) {
+  //   max-width: 700px;
+  //   height: 600px;
+  // }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
 
-// const MobileImg = styled(StaticImage)`
-//   border-radius: 3%;
-//   left: 0;
-//   width: 100%;
-//   z-index: -1;
+const MobileImg = styled.div`
+  // border-radius: 3%;
+  // left: 0;
+  // width: 100%;
+  // z-index: -1;
 
-//   border: 20px;
-//   height: auto;
-//   width: 380px;
-//   @media (max-width: 375px) {
-//     width: 350px;
-//   }
-//   @media (max-width: 375px) {
-//     width: 350px;
-//   }
-//   @media (max-width: 320px) {
-//     width: 280px;
-//   }
-//   @media (min-width: 426px) {
-//     display: none;
-//   }
-// `
+  // border: 20px;
+  // height: auto;
+  // width: 380px;
+  // @media (max-width: 375px) {
+  //   width: 350px;
+  // }
+  // @media (max-width: 375px) {
+  //   width: 350px;
+  // }
+  // @media (max-width: 320px) {
+  //   width: 280px;
+  // }
+  @media (min-width: 769px) {
+    display: none;
+  }
+`
 
 const ImgCaption = styled.p`
   font-size: 0.8rem;
@@ -115,6 +115,7 @@ const ImgCaption = styled.p`
 
 const ImageWrapper = styled.div`
   margin: 2rem auto;
+  padding: 1rem;
 
   // .card {
   //   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
@@ -614,8 +615,13 @@ export default function Hero() {
               transform: props.xys.interpolate(trans),
             }}
           >
-            <StaticImage className="wrapper" src="../images/hero.jpg" />
+            <StyledImg>
+              <StaticImage className="wrapper" src="../images/hero.jpg" />
+            </StyledImg>
           </a.div>
+          <MobileImg>
+            <StaticImage className="wrapper" src="../images/hero.jpg" />
+          </MobileImg>
 
           <ImgCaption>
             Picture taken in{" "}
