@@ -1,12 +1,12 @@
-import React from "react"
-import styled from "styled-components"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
+import React from "react"
+import { animated as a, useSpring } from "react-spring"
+import Particles from "react-tsparticles"
+import styled from "styled-components"
+import Button from "./Button"
 import Container from "./Container"
 import SocialLinks from "./icons/SocialLinks"
-import { Link } from "gatsby"
-import Button from "./Button"
-import Particles from "react-tsparticles"
-import { useSpring, animated as a } from "react-spring"
 
 const ContainerWrapper = styled.div`
   width: 100%;
