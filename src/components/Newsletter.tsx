@@ -7,6 +7,7 @@ const Container = styled.div`
   margin: 2rem auto;
   padding: 1rem;
   background: var(--newsletterBg);
+  border-radius: 10px;
 `
 
 const Wrapper = styled.div`

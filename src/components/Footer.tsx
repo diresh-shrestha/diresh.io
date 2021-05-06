@@ -43,7 +43,11 @@ export default function Footer() {
     <StyledFooter>
       <Wrapper>
         <AboutImg className="hvr-float-shadow">
-          <StaticImage className="img" src="../images/About.jpg" />
+          <StaticImage
+            alt="Diresh Shrestha"
+            imgClassName="img"
+            src="../images/About.jpg"
+          />
         </AboutImg>
         <div style={{ margin: `1rem 1rem` }}>
           <Links>
