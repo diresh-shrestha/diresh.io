@@ -3,7 +3,6 @@ import Container from "../Container"
 import styled from "styled-components"
 import Book from "../Book"
 import RecentPosts from "./RecentPosts"
-import Newsletter from "../Newsletter"
 
 const ContentWrapper = styled.div`
   margin: auto 2rem;
@@ -90,7 +89,6 @@ export default function Latest() {
           allowtransparency="true"
           allow="encrypted-media"
         ></SpotifyPlayer>
-        <Newsletter />
       </ContentWrapper>
     </Container>
   )
