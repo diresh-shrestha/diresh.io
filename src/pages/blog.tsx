@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import kebabCase from "lodash/kebabCase"
 import "normalize.css"
 import React from "react"
@@ -12,7 +12,7 @@ import PhilosophyTag from "../components/icons/PhilosophyTag"
 import ReactTag from "../components/icons/ReactTag"
 import WebDevTag from "../components/icons/WebDevTag"
 import Layout from "../components/Layout"
-import Newsletter from "../components/Newsletter"
+
 import SEO from "../components/Seo"
 
 const StyledContainer = styled(Container)`
@@ -53,6 +53,11 @@ const Content = styled.div`
     :nth-child(odd) {
       margin-right: 0rem;
     }
+  }
+
+  .img {
+    border-radius: 10px;
+    max-height: 250px;
   }
 `
 
@@ -99,7 +104,6 @@ const BlogPage = ({ data }) => (
           I write about Software, Philosophy, Books and anything that interests
           me.
         </p>
-        <Newsletter />
 
         <Tags>
           <TagLink
@@ -157,8 +161,9 @@ const BlogPage = ({ data }) => (
             <Content className="hvr-grow-shadow" key={node.id}>
               <Link to={node.fields.slug}>
                 <GatsbyImage
+                  imgClassName="img"
                   image={node.frontmatter.image.childImageSharp.gatsbyImageData}
-                  style={{ borderRadius: `10px`, maxHeight: `250px` }} />
+                />
                 <TextWrapper>
                   <Title>{node.frontmatter.title}</Title>
                   <em>
@@ -181,41 +186,42 @@ const BlogPage = ({ data }) => (
 
 export default BlogPage
 
-export const query = graphql`{
-  mainImg: file(relativePath: {eq: "blog/frontend.png"}) {
-    id
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+export const query = graphql`
+  {
+    mainImg: file(relativePath: { eq: "blog/frontend.png" }) {
+      id
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
     }
-  }
-  allMdx(sort: {fields: [frontmatter___date], order: DESC}, skip: 5) {
-    totalCount
-    edges {
-      node {
-        id
-        frontmatter {
-          title
-          date
-          excerpt
-          image: featured {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, skip: 5) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            excerpt
+            image: featured {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
             }
           }
+          fields {
+            slug
+          }
+          excerpt
+          timeToRead
         }
-        fields {
-          slug
-        }
-        excerpt
-        timeToRead
+      }
+    }
+    tags: allMdx(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }
-  tags: allMdx(limit: 2000) {
-    group(field: frontmatter___tags) {
-      fieldValue
-      totalCount
-    }
-  }
-}
 `
