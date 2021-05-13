@@ -6,6 +6,7 @@ featured: the-thinker.jpg
 description: "Pre-Socratic philosophers like Thales, Anaximander, Parmenides, Democritus and others pondered the nature of reality and tried to explain it outside of gods and divine intervention."
 excerpt: "A brief history of pre-socratic philosophers from Thales to Democritus."
 tags: ["Philosophy"]
+imgAlt: "Pre-Socratics"
 ---
 
 <!-- ![The Thinker](https://cdn.pixabay.com/photo/2014/10/15/15/20/the-thinker-489753_960_720.jpg)
