@@ -121,9 +121,9 @@ const TOC = styled.div`
 export default function BlogPost({ data }) {
   const siteUrl = "https://www.diresh.io/"
   const post = data.post
-  const image = post.frontmatter.featured
-    ? post.frontmatter.featured.childImageSharp.gatsbyImageData
-    : null
+  // const image = data.mainImg.childImageSharp.resize
+  //   ? post.frontmatter.featured.childImageSharp.gatsbyImageData
+  //   : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
@@ -143,7 +143,7 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
-        image={image}
+        image={data.mainImg.childImageSharp.resize}
         pathname={post.frontmatter.slug}
       />
 
@@ -215,6 +215,22 @@ export const query = graphql`
       }
       tableOfContents
       timeToRead
+    }
+    mainImg: mdx(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        featured {
+          childImageSharp {
+            resize(height: 500, width: 600) {
+              src
+              tracedSVG
+              width
+              height
+              aspectRatio
+              originalName
+            }
+          }
+        }
+      }
     }
   }
 `
