@@ -58,6 +58,10 @@ const Content = styled.div`
   .img {
     border-radius: 10px;
   }
+
+  .image-wrapper {
+    height: 250px;
+  }
 `
 
 const TextWrapper = styled.div`
@@ -160,7 +164,9 @@ const BlogPage = ({ data }) => (
             <Content className="hvr-grow-shadow" key={node.id}>
               <Link to={node.fields.slug}>
                 <GatsbyImage
+                  alt={node.frontmatter.imgAlt || node.frontmatter.title}
                   imgClassName="img"
+                  className="image-wrapper"
                   image={node.frontmatter.image.childImageSharp.gatsbyImageData}
                 />
                 <TextWrapper>
@@ -201,6 +207,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            imgAlt
             excerpt
             image: featured {
               childImageSharp {
