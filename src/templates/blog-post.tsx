@@ -143,7 +143,7 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
-        image={data.mainImg.childImageSharp.resize}
+        image={data.mainImg.frontmatter.featured.childImageSharp.resize}
         pathname={post.frontmatter.slug}
       />
 
