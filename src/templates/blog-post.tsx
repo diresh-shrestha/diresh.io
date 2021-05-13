@@ -143,7 +143,7 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
-        image={data.mainImg.frontmatter.featured.childImageSharp.resize}
+        image={post.frontmatter.featured.childImageSharp.resize}
         pathname={post.frontmatter.slug}
       />
 
@@ -209,17 +209,6 @@ export const query = graphql`
         tags
         featured {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
-      }
-      tableOfContents
-      timeToRead
-    }
-    mainImg: mdx(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        featured {
-          childImageSharp {
             resize(height: 500, width: 600) {
               src
               tracedSVG
@@ -228,9 +217,12 @@ export const query = graphql`
               aspectRatio
               originalName
             }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
+      tableOfContents
+      timeToRead
     }
   }
 `
