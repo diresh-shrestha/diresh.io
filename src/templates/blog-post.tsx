@@ -121,9 +121,9 @@ const TOC = styled.div`
 export default function BlogPost({ data }) {
   const siteUrl = "https://www.diresh.io/"
   const post = data.post
-  // const image = data.mainImg.childImageSharp.resize
-  //   ? post.frontmatter.featured.childImageSharp.gatsbyImageData
-  //   : null
+  const image = post.frontmatter.featured
+    ? post.frontmatter.featured.childImageSharp.gatsbyImageData
+    : null
   let disqusConfig = {
     url: `${siteUrl + post.frontmatter.slug}`,
     identifier: post.id,
