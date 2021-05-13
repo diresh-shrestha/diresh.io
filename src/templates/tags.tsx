@@ -49,7 +49,10 @@ const Content = styled.div`
 
   .img {
     border-radius: 10px;
-    max-height: 250px;
+  }
+
+  .image-wrapper {
+    height: 250px;
   }
 `
 
@@ -83,6 +86,7 @@ const Tags = ({ pageContext, data }) => {
               <Content className="hvr-grow-shadow" key={node.id}>
                 <Link to={node.fields.slug}>
                   <GatsbyImage
+                    className="image-wrapper"
                     image={
                       node.frontmatter.featured.childImageSharp.gatsbyImageData
                     }
