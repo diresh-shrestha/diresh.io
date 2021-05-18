@@ -209,17 +209,6 @@ export const query = graphql`
         tags
         featured {
           childImageSharp {
-<<<<<<< HEAD
-            resize(height: 500, width: 600) {
-              src
-              tracedSVG
-              width
-              height
-              aspectRatio
-              originalName
-            }
-=======
->>>>>>> parent of 0d5a187... seo updates
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
