@@ -143,7 +143,11 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
+<<<<<<< HEAD
         image={post.frontmatter.featured.childImageSharp.resize}
+=======
+        image={image}
+>>>>>>> parent of 0d5a187... seo updates
         pathname={post.frontmatter.slug}
       />
 
@@ -209,6 +213,7 @@ export const query = graphql`
         tags
         featured {
           childImageSharp {
+<<<<<<< HEAD
             resize(height: 500, width: 600) {
               src
               tracedSVG
@@ -217,6 +222,8 @@ export const query = graphql`
               aspectRatio
               originalName
             }
+=======
+>>>>>>> parent of 0d5a187... seo updates
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
