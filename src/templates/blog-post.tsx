@@ -143,11 +143,7 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.frontmatter.excerpt}
-<<<<<<< HEAD
-        image={post.frontmatter.featured.childImageSharp.resize}
-=======
         image={image}
->>>>>>> parent of 0d5a187... seo updates
         pathname={post.frontmatter.slug}
       />
 
