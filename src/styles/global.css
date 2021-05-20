@@ -13,6 +13,7 @@ body {
   --boxShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   --quizBg: #fff;
   --newsletterBg: hsl(172, 8.67%, 66.08%);
+  --paginationLink: rgb(181 181 183);
 
   background-color: var(--bg);
   transition: background-color 0.5s ease-out;
@@ -35,6 +36,7 @@ body.dark {
   --boxShadow: none;
   --quizBg: #000;
   --newsletterBg: hsl(175.38, 7.98%, 31.96%);
+  --paginationLink: rgb(32, 32, 36);
 }
 
 .pushable {

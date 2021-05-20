@@ -119,15 +119,22 @@ const TOC = styled.div`
 `
 
 const Pagination = styled.div`
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   h3 {
     margin-top: 10px;
   }
+  span {
+    color: var(--textNormal);
+  }
   .Links {
-    padding: 0.5rem;
-    margin: 0.5rem;
+    background: var(--paginationLink);
+    border-radius: 10px;
+    width: 49%;
+    padding: 1rem;
+    margin: 0.2rem;
   }
 `
 
