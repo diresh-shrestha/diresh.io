@@ -59,6 +59,7 @@
     "react-typography": "^0.16.19",
     "remark-slug": "^6.0.0",
     "styled-components": "^5.2.3",
+    "typescript-plugin-styled-components": "^1.5.0",
     "typography": "^0.16.19",
     "typography-theme-bootstrap": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
