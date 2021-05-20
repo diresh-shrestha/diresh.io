@@ -1,5 +1,5 @@
 import { MDXProvider } from "@mdx-js/react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { CommentCount, Disqus } from "gatsby-plugin-disqus"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -118,7 +118,21 @@ const TOC = styled.div`
   }
 `
 
-export default function BlogPost({ data }) {
+const Pagination = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  h3 {
+    margin-top: 10px;
+  }
+  .Links {
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+`
+
+export default function BlogPost({ data, pageContext }) {
+  const { next, prev } = pageContext
   const siteUrl = "https://www.diresh.io/"
   const post = data.post
   const image = post.frontmatter.featured
@@ -181,6 +195,20 @@ export default function BlogPost({ data }) {
             <MDXProvider components={components}>
               <MDXRenderer>{post.body}</MDXRenderer>
             </MDXProvider>
+            <Pagination>
+              {prev && (
+                <Link className="Links" to={prev.fields.slug}>
+                  <span>Previous</span>
+                  <h3>{prev.frontmatter.title}</h3>
+                </Link>
+              )}
+              {next && (
+                <Link className="Links" to={next.fields.slug}>
+                  <span>Next</span>
+                  <h3>{next.frontmatter.title}</h3>
+                </Link>
+              )}
+            </Pagination>
             <Newsletter />
             <Disqus config={disqusConfig} />
           </Content>
