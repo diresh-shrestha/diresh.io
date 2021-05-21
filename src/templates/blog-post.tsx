@@ -132,10 +132,21 @@ const Pagination = styled.div`
   .Links {
     background: var(--paginationLink);
     border-radius: 10px;
-    width: 49%;
+    width: 48%;
     padding: 1rem;
     margin: 0.2rem;
   }
+`
+const Tags = styled.div`
+  display: inline-block;
+  margin: 1rem auto;
+  font-weight: bold;
+`
+const TagLink = styled(Link)`
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem;
+  background: var(--blog);
+  border-radius: 5px;
 `
 
 export default function BlogPost({ data, pageContext }) {
