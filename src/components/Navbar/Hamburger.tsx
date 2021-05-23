@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const MenuButton = styled.div`
   position: absolute;
-  top: 25%;
+  top: 15%;
   right: 2rem;
   display: flex;
   flex-direction: column;
