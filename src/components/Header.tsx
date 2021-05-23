@@ -10,7 +10,7 @@ import Menu from "./Navbar/Menu"
 import NavLink from "./navlink"
 
 const HeaderWrapper = styled.header`
-  height: 80px;
+  height: 60px;
   background-color: var(--bg);
 
   position: fixed;
@@ -34,7 +34,7 @@ const LinkToHome = styled(Link)`
 `
 
 const HeaderContent = styled.div`
-  margin: auto;
+  margin: -10px auto;
   max-width: 1200px;
   padding: 0.7rem 1rem;
   display: flex;
