@@ -1,0 +1,367 @@
+---
+slug: "/blog/this-in-javascript"
+title: "this in JavaScript"
+date: "2021-05-25"
+featured: images/this.jpg
+description: "What 'this' is in JavScript and how to determine what value it will point to"
+excerpt: "What 'this' is in JavScript and how to determine what value it will point to"
+tags: ["JavaScript"]
+---
+
+import MultipleChoice from "../blogComponents/MultipleChoice"
+
+`this` in JavaScript is one of those confusing topics that I always had trouble with. However, I think I am in good company because even some seasoned developers tend to find it "confusing". To finally get rid of this confusion and come to an understanding of `this`, I read Kyle Simpson's Book 2 of the You Don't Know JS series, and like I did last time with my post on Scopes and Closures, I am going to layout everything I learned. Let us start by looking at common misconceptions and clarify what `this` is _not_ before going into what it _is_ and looking at why we use `this`.
+
+## What `this` is not
+
+Let's say that `this` appears inside a function. It would not be much of a leap to assume that `this` is referencing the function itself (since functions are just objects in JavaScript). However, this is not true.
+
+Here, we have a function that's keeping track of how many times it's called.
+
+```jsx
+function foo() {
+  this.num++
+}
+
+foo.num = 0
+```
+
+Outside the function, we are declaring a new property of the function object as `num` and setting its value as `0`. Now if we call `foo` a bunch of times, we would expect that since `this` is referencing the function itself, the value inside `num` would be incremented and we would have the proper count.
+
+```jsx
+function foo() {
+  this.num++
+}
+
+foo.num = 0
+
+foo()
+foo()
+
+console.log(foo.num)
+```
+
+<MultipleChoice
+  quizNum={1}
+  question="What's the ouput of the above code?"
+  options={["0", "2"]}
+  correctAnswer={"0"}
+  name="quiz1"
+/>
+
+We get `0` as the value of `num` even though we called it twice.
+What's going on here? The line `foo.num = 0` is indeed adding a new property `num` to the function object `foo()`. However, the reference `this` is pointing to an entirely different object than our `foo()`.
+It's pointing at the global object!
+
+One way to work around this would be to not use `this` at all and create a new object with the property `num` and reference that object.
+
+```jsx
+function foo() {
+  count.num++
+}
+
+var count = {
+  num: 0,
+}
+
+foo()
+foo()
+
+console.log(count.num) // 2
+```
+
+Another workaround would be to reference the `foo` identifier itself.
+
+```jsx
+function foo() {
+  foo.num++
+}
+foo.num = 0
+
+foo()
+foo()
+
+console.log(foo.num) // 2
+```
+
+In both these workarounds, we're avoiding `this` like it's the plague.
+But there is a way to utilize `this` and have the desired result using `call()` method.
+
+According to MDN:
+
+> The call() allows for a function/method belonging to one object to be assigned and called for a different object.
+
+Here is an example use case of `call()` :
+
+```jsx
+function greet() {
+  const reply = [
+    this.animal,
+    "typically sleep between",
+    this.sleepDuration,
+  ].join(" ")
+  console.log(reply)
+}
+
+const obj = {
+  animal: "cats",
+  sleepDuration: "12 and 16 hours",
+}
+
+const obj2 = {
+  animal: "dogs",
+  sleepDuration: "12 and 14 hours",
+}
+
+greet.call(obj) // cats typically sleep between 12 and 16 hours
+greet.call(obj2) // dogs typically sleep between 12 and 14 hours
+```
+
+What we're seeing here is that the `greet()` function is being re-used against multiple context objects instead of having to create a new function for each object. We're able to pass an object reference to a function much more elegantly. This is also an example of explicit binding which we'll take a look at later.
+
+Now let's use `call()` to solve our problem.
+
+```jsx
+function foo() {
+  this.num++
+}
+
+foo.num = 0
+
+// using `call(..)`, we ensure the `this`
+// points at the function object (`foo`) itself
+foo.call(foo)
+foo.call(foo)
+
+console.log(foo.num) // 2
+```
+
+Another common misconception is that `this` refers to the function's lexical scope. Although the scope is kind of like an object, it is "out of scope" to JavaScript code meaning it is inaccessible and hence using `this` to look up variables in another function's scope is not possible.
+
+## Why `this`
+
+Like we saw in the earlier example, we can use `this` to re-use a function against multiple context objects.
+
+```jsx
+function identify() {
+  return this.name.toUpperCase()
+}
+
+function speak() {
+  var greeting = "Hello, I'm " + identify.call(this)
+  console.log(greeting)
+}
+
+var me = {
+  name: "Diresh",
+}
+
+var you = {
+  name: "Reader",
+}
+
+identify.call(me) // DIRESH
+identify.call(you) // READER
+
+speak.call(me) // Hello, I'm DIRESH
+speak.call(you) // Hello, I'm READER
+```
+
+This code is much cleaner and it's a better way to pass around object references instead of writing a new function for each object.
+
+## What `this` is
+
+The value of `this` is determined at runtime binding and it cannot be changed during execution. What `this` refers to depends on how the function is called at its call-site.
+
+Call-site is the location where the function is called regardless of where it is declared. Consider the following code.
+
+```jsx
+function foo() {
+  bar() // call-site of bar
+}
+
+function bar() {
+  console.log("bar")
+}
+
+foo() // call-site of foo
+```
+
+Although foo() is being declared at the top, its call-site is at the bottom and bar()'s call-site is inside the foo() function
+
+## How to determine `this`
+
+There are 4 rules to identify what this refers to and we can examine the call-site and check how a function is being called to determine this.
+
+### Default Binding
+
+When you declare a new variable in the global scope, it is created as a member of the global object.
+
+```jsx
+var a = 2 // a becomes a property of the global-object
+```
+
+Let's reference this using `this` inside a function.
+
+```jsx
+var a = 2
+
+function foo() {
+  console.log(this.a)
+}
+```
+
+When we call the function, what will `this.a` resolve to? It depends on how and where (call-site) the function is called. If it's invoked in the global scope with a plain function call, then `this` would default to the global object.
+
+```jsx
+var a = 2
+
+function foo() {
+  console.log(this.a)
+}
+
+foo() // 2
+```
+
+This is default binding. Default binding does not work in strict mode and instead `this` is set to `udefined` and we get a TypeError.
+
+```jsx
+"use strict"
+
+var a = 2
+
+function foo() {
+  console.log(this.a)
+}
+
+foo()
+```
+
+<MultipleChoice
+  quizNum={2}
+  question="What's the ouput of the above code?"
+  options={["2", "Uncaught TypeError"]}
+  correctAnswer={"Uncaught TypeError"}
+  name="quiz2"
+/>
+
+### Implicit Binding
+
+Implicit binding rule applies whenever the function call has a context object, meaning the function is being referenced inside an object.
+
+```jsx
+function foo() {
+  console.log("Hello")
+}
+
+var obj = {
+  foo: foo,
+}
+
+obj.foo() // Hello
+```
+
+Here, we are simply adding `foo` as a reference property inside the `obj` object. `foo` now has a context object when it is called later. If we use `this` inside `foo` now, `this` will bind to the context object, in this case `obj`.
+
+```jsx
+function foo() {
+  console.log(this.greeting)
+}
+
+var obj = {
+  greeting: "Hello",
+  foo: foo,
+}
+
+obj.foo() // Hello
+```
+
+The call-site is using `obj` context to reference the function so the object is used for the function call's `this` binding.
+
+### Explicit Binding
+
+We've already seen the use of the `call()` method earlier. When we explicitly use `call()` or `apply()` to bind an object to a function, we call it explicit binding. `call()` takes an object as parameter to use for `this`.
+
+```jsx
+var obj = {
+  a: "friend",
+}
+
+function foo() {
+  console.log("Hello " + this.a)
+}
+
+foo.call(obj) // Hello friend
+```
+
+Here, we're passing `obj` to be used for `this`.
+
+### `new` Binding
+
+If you call a function with `new` in the front, it will automatically create a new object and it sets the `this` binding to that newly created object.
+
+```jsx
+function foo(a) {
+  this.a = a
+}
+
+var bar = new foo(2)
+console.log(bar.a) // 2
+```
+
+Here, we are invoking `foo` with `new` in front so it creates a new object and binds `this` to that object. We're passing `2` as a parameter and since `this` is bound to the object, the value of `this.a` gets set to `2`.
+
+## ES6 Arrow Function
+
+Unlike normal functions, arrow functions (signified by `() =>`) do not abide by the 4 rules mentioned above. Instead, `this` inside an arrow function gets bound to it's enclosing scope.
+
+```jsx
+function foo() {
+  // return an arrow function
+  return a => {
+    // `this` here is lexically adopted from `foo()`
+    console.log(this.a)
+  }
+}
+
+var obj1 = {
+  a: 2,
+}
+
+var obj2 = {
+  a: 3,
+}
+
+var bar = foo.call(obj1)
+bar.call(obj2)
+```
+
+<MultipleChoice
+  quizNum={3}
+  question="What is the ouput of the above code?"
+  options={["2", "3"]}
+  correctAnswer={"2"}
+  name="quiz3"
+/>
+
+`this` is inside the arrow function and the arrow function derives `this` from its
+enclosing scope which is `foo()`. When we look at `foo`'s call-site, we see that
+it's being `this`-bound to `obj1` meaning `bar` will also be `this`-bound to `obj1`
+even though it's using the `call()` method passing `obj2` as a parameter. It cannot
+be overwritten.
+
+## Precedence
+
+Now that we know all four rules, does one rule take precedence over the other? There are some rules that take precedence over others. Explicit binding takes precedence over implicit binding, and `new` binding takes precedence over both. Default binding applies when no other rules can be applied so it has the least precedence. Let's summarize our rules in order of precedence:
+
+1. If the function is being called with `new`, then `this` gets bounded to the newly created object. For example: `var bar = new foo()`
+2. If the function is called with `call` or `apply` then `this` is whatever object that is explicitly specified. For example: `foo.call(obj)`
+3. If the function is called with a context then `this` is the context object. For example: `obj.foo();`
+4. If none of these rules apply, `this` defaults to the `global` object.
+
+## References/Further Learning
+
+- [YDKJS Book 2: Chapter 1](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch1.md)
+- [YDKJS Book 2: Chapter 2](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch2.md)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+- [w3schools](https://www.w3schools.com/js/js_this.asp)
