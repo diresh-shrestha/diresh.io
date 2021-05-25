@@ -71,8 +71,8 @@ const Content = styled.div`
 
 const TitleContainer = styled.div`
   text-align: left;
-  margin-top: 8rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 `
 
 const SubTitle = styled.p`
@@ -98,10 +98,10 @@ const Column = styled.div`
 const TOC = styled.div`
   position: sticky;
   float: right;
-  top: 100px;
+  top: 80px;
   padding: 0.5rem;
   margin: 1rem;
-  margin-top: 50rem;
+  margin-top: 35rem;
   max-height: calc(100vh - 148px);
   overflow: auto;
   max-width: 300px;
